@@ -102,5 +102,8 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
 
+# Add cabal to path
+PATH=$PATH:~/.cabal/bin/
+
 
 alias s='source ~/.bash_profile'
