@@ -28,3 +28,6 @@ alias s='source ~/.bash_profile'
 PS1='\n\w \n→ '
 
 
+#chalmers login
+alias chalmsshfs='sshfs rarash@remote1.student.chalmers.se:/chalmers/users/rarash/ ~/chalmers/'
+alias chalmssh='ssh -Y rarash@remote1.student.chalmers.se'
