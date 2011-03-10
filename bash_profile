@@ -40,7 +40,8 @@ RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 
-PS1="\n$RED\$(date +%H:%M) $NO_COLOR\w $YELLOW\$(parse_git_branch) $NO_COLOR\$$GREEN \n→$NO_COLOR "
+PS1="\n$RED\$(date +%H:%M) $NO_COLOR\w $YELLOW\$(parse_git_branch) $NO_COLOR\$$GREEN \n"
+PS1="$PS1→\[$NO_COLOR\] "
 
 
 #chalmers login
