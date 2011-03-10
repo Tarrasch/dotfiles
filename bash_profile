@@ -34,12 +34,13 @@ function parse_git_branch {
   echo `(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')`
 }
 
+NO_COLOR='\e[0m' #disable any colors
 BLACK="\[\033[0;30m\]"
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 
-PS1="\n$RED\$(date +%H:%M) $BLACK\w $YELLOW\$(parse_git_branch) $BLACK\$$GREEN \n→$BLACK "
+PS1="\n$RED\$(date +%H:%M) $NO_COLOR\w $YELLOW\$(parse_git_branch) $NO_COLOR\$$GREEN \n→$NO_COLOR "
 
 
 #chalmers login
