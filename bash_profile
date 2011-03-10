@@ -11,6 +11,7 @@ alias gcp='git cherry-pick'
 alias gd='git diff --stat'
 alias gpo='git push origin'
 alias gb='git branch'
+alias gl='git log'
 
 # Edit .gitignore
 alias ge='gvim .gitignore'
