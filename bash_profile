@@ -27,7 +27,19 @@ alias e='gvim ~/.bash_profile'
 # Laddar om alla inställningar 
 alias s='source ~/.bash_profile'
 
-PS1='\n\w \n→ '
+# PS1
+function parse_git_branch {
+#  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+#  echo "("${ref#refs/heads/}")"
+  echo `(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')`
+}
+
+BLACK="\[\033[0;30m\]"
+RED="\[\033[0;31m\]"
+YELLOW="\[\033[0;33m\]"
+GREEN="\[\033[0;32m\]"
+
+PS1="$RED\$(date +%H:%M) $BLACK\w $YELLOW\$(parse_git_branch) $BLACK\$$GREEN \n→$BLACK "
 
 
 #chalmers login
