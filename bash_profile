@@ -4,7 +4,7 @@
 # Git commands 
 alias pull='git pull origin master'
 
-alias gp='git push'
+alias gp='git push origin'
 alias gpm='git push origin master'
 alias gs='git status'
 alias gc='git checkout'
