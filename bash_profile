@@ -32,7 +32,7 @@ alias s='source ~/.bash_profile'
 function parse_git_branch {
 #  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
 #  echo "("${ref#refs/heads/}")"
-  echo `(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')`
+  echo `(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')`
 }
 
 NO_COLOR='\e[0m' #disable any colors
