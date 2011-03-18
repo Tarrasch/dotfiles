@@ -5,6 +5,7 @@
 alias pull='git pull origin master'
 
 alias gp='git push origin'
+alias gpc="git push origin `parse_git_branch`"
 alias gpm='git push origin master'
 alias gs='git status'
 alias gc='git checkout'
