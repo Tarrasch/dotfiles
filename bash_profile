@@ -4,15 +4,16 @@
 # Git commands 
 alias pull='git pull origin master'
 
-alias gp='git push origin'
+#alias gp='git push origin'
+alias gp="git push origin `parse_git_branch`"
 alias gpm='git push origin master'
 alias gs='git status'
 alias gc='git checkout'
-alias gcp='git cherry-pick'
+#alias gcp='git cherry-pick'
 alias gd='git diff --stat'
 alias gpo='git push origin'
 alias gb='git branch'
-alias gl='git log'
+alias gl='git log -n 10'
 
 # Edit .gitignore
 alias ge='gvim .gitignore'
@@ -29,17 +30,17 @@ alias s='source ~/.bash_profile'
 
 # PS1
 function parse_git_branch {
-#  ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-#  echo "("${ref#refs/heads/}")"
-  echo `(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/{\1}/')`
+  echo `(git branch 2> /dev/null | grep -e '\* ' | sed 's/^..\(.*\)/\1/')`
 }
 
+NO_COLOR='\e[0m' #disable any colors
 BLACK="\[\033[0;30m\]"
 RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 
-PS1="\n$RED\$(date +%H:%M) $BLACK\w $YELLOW\$(parse_git_branch) $BLACK\$$GREEN \n→$BLACK "
+PS1="\n$RED\$(date +%H:%M)$NO_COLOR \w $YELLOW{\$(parse_git_branch)}$NO_COLOR \$ $GREEN\n"
+PS1="$PS1→ \[$NO_COLOR\]"
 
 
 #chalmers login
