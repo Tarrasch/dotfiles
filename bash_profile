@@ -34,7 +34,7 @@ function parse_git_branch {
 }
 
 function parse_other {
-  echo `git show --format=format:"%Cgreen{%Cblue%s %Cred%cr%Cgreen}" | head -1`
+  echo `git show --format=format:"%Cgreen{%Cblue%s %Cred%cr%Cgreen}" 2>/dev/null | head -1`
 }
 
 NO_COLOR='\e[0m' #disable any colors
