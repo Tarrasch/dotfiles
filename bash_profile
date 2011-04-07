@@ -34,7 +34,10 @@ function parse_git_branch {
 }
 
 function parse_git_branch_pretty {
-  echo -e " $PYELLOW{`parse_git_branch`}"
+  if [ -d .git ] # only print when in git directory
+  then
+    echo -e " $PYELLOW{`parse_git_branch`}"
+  fi
 }
 
 function parse_other {
