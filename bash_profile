@@ -34,7 +34,7 @@ function parse_git_branch {
 }
 
 function parse_other {
-  echo `git show --format=format:"%Cgreen{%Cblue%s %Cred%cr%Cgreen}" 2>/dev/null | head -1`
+  echo `git show --format=format:"%Cgreen {%Cblue%s %Cred%cr%Cgreen}" 2>/dev/null | head -1`
 }
 
 NO_COLOR='\e[0m' #disable any colors
@@ -43,7 +43,7 @@ RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]"
 
-PS1="\n$RED\$(date +%H:%M)$NO_COLOR \w $YELLOW{\$(parse_git_branch)} \$(parse_other)$NO_COLOR \$ $GREEN\n"
+PS1="\n$RED\$(date +%H:%M)$NO_COLOR \w $YELLOW{\$(parse_git_branch)}\$(parse_other)$NO_COLOR \$ $GREEN\n"
 PS1="$PS1→ \[$NO_COLOR\]"
 
 
