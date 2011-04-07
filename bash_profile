@@ -34,7 +34,8 @@ function parse_git_branch {
 }
 
 function parse_git_branch_pretty {
-  if [ -d .git ] # only print when in git directory
+  git status &> /dev/null
+  if [ $? -eq 0 ] # only print when in git directory
   then
     echo -e " $PYELLOW{`parse_git_branch`}"
   fi
