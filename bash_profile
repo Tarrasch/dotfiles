@@ -35,7 +35,8 @@ function parse_git_branch {
 
 function parse_git_branch_pretty {
   git status &> /dev/null
-  if [ $? -eq 0 ] # only print when in git directory
+  if [ $? -le 1 ] # only print when in git directory
+                  # chalmers school comps returns 1 not 0, so I've used <= 1 instead of == 0
   then
     echo -e " $PYELLOW{`parse_git_branch`}"
   fi
