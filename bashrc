@@ -96,5 +96,9 @@ fi
 # Add cabal to path
 PATH=$PATH:~/.cabal/bin/
 
+if [ -f ~/.bash_mylocal ]; then
+    . ~/.bash_mylocal
+fi
+
 
 alias s='source ~/.bash_profile'
