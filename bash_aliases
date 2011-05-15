@@ -29,3 +29,6 @@ alias e='gvim ~/.bash_profile'
 alias s='source ~/.bash_profile'
 
 
+alias mk='yes | pdflatex *.tex'
+alias mkf='for((i=0;i<1000000;i++)) do mk;sleep 5; done'
+
