@@ -2,6 +2,14 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
+# Laddar om alla inställningar //Linus
+alias s='source ~/.profile'
+
+# for cabal //arash
+PATH="~/.cabal/bin:$PATH"
+
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -82,6 +90,19 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -90,15 +111,5 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # Load RVM into a shell session *as a function*
 
-# Add cabal to path
-PATH=$PATH:~/.cabal/bin/
-
-if [ -f ~/.bash_mylocal ]; then
-    . ~/.bash_mylocal
-fi
-
-
-alias s='source ~/.bash_profile'

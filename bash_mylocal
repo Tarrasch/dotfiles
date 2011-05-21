@@ -1,0 +1,6 @@
+# Add here stuff that is local only for this computer.
+# This file is in .gitignore so it wont be uploaded to all the other repos 
+
+# Add matlab to path
+PATH=$PATH:/usr/local/MATLAB/R2010b/bin/
+

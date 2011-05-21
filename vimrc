@@ -14,6 +14,9 @@ set hls
 " Wrap text instead of being on one line
 set lbr
 
+" Load cyclecolor
+source ~/.vim/cyclecolor.vim
+
 " Change colorscheme from default to delek
 colorscheme delek
 
