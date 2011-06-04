@@ -13,7 +13,7 @@ alias gc='git checkout'
 alias gd='git diff --stat'
 alias gpo='git push origin'
 alias gb='git branch'
-alias gl='git log -n 10'
+alias gl='git log -n 10 --oneline --color'
 
 # Edit .gitignore
 alias ge='gvim .gitignore'
