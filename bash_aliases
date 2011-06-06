@@ -18,6 +18,9 @@ alias gl='git log -n 10 --oneline --color'
 # Edit .gitignore
 alias ge='gvim .gitignore'
 
+# Add template .gitignore
+alias makegitignore='cp ~/dotfiles/.files/.gitignore/ .' #otestad!
+
 function gg() {
   git add . && git commit -v -a -m "$*"
 }
