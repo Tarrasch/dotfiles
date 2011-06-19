@@ -25,3 +25,8 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" For haskell template languages
+au BufEnter *.hamlet  setlocal filetype=hamlet
+au BufEnter *.cassius setlocal filetype=cassius
+au BufEnter *.julius  setlocal filetype=julius
+
