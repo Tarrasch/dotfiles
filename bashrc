@@ -95,6 +95,7 @@ fi
 
 # Add cabal to path
 PATH=$PATH:~/.cabal/bin/
+PATH=~/.bin:$PATH
 
 if [ -f ~/.bash_mylocal ]; then
     . ~/.bash_mylocal
