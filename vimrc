@@ -34,3 +34,4 @@ au BufEnter *.julius  setlocal filetype=julius
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
+source ~/.vim/colqer.vim
