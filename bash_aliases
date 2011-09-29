@@ -43,6 +43,6 @@ alias yd='yesod devel'
 alias dtek='ssh rarash@dtek.se'
 
 # colemak
-COLEMAK="$HOME/colemak/"
+COLEMAK="$HOME/dotfiles/colemak/"
 alias qw='setxkbmap se; xset -r 66'
 alias colemak='cd $COLEMAK && setxkbmap us && xmodmap xmodmap/xmodmap.colemak && xset r 66'
