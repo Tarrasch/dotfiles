@@ -1,3 +1,4 @@
 *~
 *.sw*
 bash_mylocal
+.local_backup
