@@ -14,6 +14,7 @@ alias gd='git diff --stat'
 alias gpo='git push origin'
 alias gb='git branch'
 alias gl='git log -5 --format="%C(yellow)%h %Creset%s %Cred(%ar)"'
+alias gap='git add --patch'
 
 # Edit .gitignore
 alias ge='gvim .gitignore'
