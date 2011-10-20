@@ -29,8 +29,8 @@ keycode  34 =  bracketleft     braceleft    guillemotleft             U2039
 keycode  35 = bracketright    braceright   guillemotright             U203a            
 keycode  51 =    backslash           bar       asciitilde        asciitilde            
                                                                                       
-keycode  38 =            a             A           aacute            Aacute            
-keycode  39 =            r             R       dead_grave        asciitilde            
+keycode  38 =            a             A       adiaeresis        Adiaeresis            
+keycode  39 =            r             R            aring             Aring            
 keycode  40 =            s             S           ssharp        asciitilde            
 keycode  41 =            t             T       dead_acute  dead_doubleacute            
 keycode  42 =            d             D   dead_diaeresis        asciitilde            
@@ -38,7 +38,7 @@ keycode  43 =            h             H       dead_caron        asciitilde
 keycode  44 =            n             N           ntilde            Ntilde            
 keycode  45 =            e             E           eacute            Eacute            
 keycode  46 =            i             I           iacute            Iacute            
-keycode  47 =            o             O           oacute            Oacute            
+keycode  47 =            o             O       odiaeresis        Odiaeresis            
 keycode  48 =   apostrophe      quotedbl           otilde            Otilde            
                                                                                       
 keycode  52 =            z             Z               ae                AE            
