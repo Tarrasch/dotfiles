@@ -35,3 +35,18 @@ au BufEnter *.julius  setlocal filetype=julius
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
 source ~/.vim/colqer.vim
+
+" Hlint support
+autocmd FileType haskell compiler hlint
+"   Above is realized with :Hlint command. To disable calling hlint every
+"   time a buffer is saved put into .vimrc file
+"
+       let g:hlint_onwrite = 0
+"
+"   Opening of QuickFix window can be disabled with
+"
+"       let g:hlint_cwindow = 0
+"
+"   Setting signs for the lines with errors can be disabled with
+"
+"       let g:hlint_signs = 0
