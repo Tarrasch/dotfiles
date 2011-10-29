@@ -1,21 +1,31 @@
+## General .gitignore file by Arash Rouhani (Tarrasch)
+# backup files
 *.swp
+*.swo
+*~
+*.bak
+
+# non-source files
 *.hi
 *.o
+*.pdf
+
+# yesod
 client_session_key.aes
 devel-server
 dist
 static/tmp
-*~
-*.bak
-*.swp
-*.o
+
+# latex
 *.aux
 *.log
 *.out
-report/.nfs000000*
-.DS_Store
+.nfs*
 *#*#
-*.class
 .goutput*
 
+# Java
+*.class
 
+# OS X
+.DS_Store

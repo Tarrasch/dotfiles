@@ -20,7 +20,7 @@ alias gap='git add --patch'
 alias ge='gvim .gitignore'
 
 # Add template .gitignore
-alias makegitignore='cp ~/dotfiles/.files/.gitignore/ .' #otestad!
+alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
 
 function gg() {
   git add . && git commit -v -a -m "$*"
