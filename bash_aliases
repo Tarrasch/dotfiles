@@ -34,6 +34,7 @@ alias s='source ~/.bash_profile'
 
 # jobba med latex
 alias mk='pdflatex *.tex'
+alias mkv='mk && (xdg-open *.pdf > /dev/null 2>&1)'
 alias mkf='for((i=0;i<1000000;i++)) do mk;sleep 5; done'
 
 # yesod
