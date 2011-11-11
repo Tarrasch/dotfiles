@@ -54,5 +54,14 @@ autocmd FileType haskell compiler hlint
 "
 "       let g:hlint_signs = 0
 
+"  Tabular
+let mapleader=","
+if exists(":Tabularize")
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a: :Tabularize /:\zs<CR>
+  vmap <Leader>a: :Tabularize /:\zs<CR>
+endif
+
 " Insert Paste
 set pastetoggle=<F2>
