@@ -53,3 +53,6 @@ autocmd FileType haskell compiler hlint
 "   Setting signs for the lines with errors can be disabled with
 "
 "       let g:hlint_signs = 0
+
+" Insert Paste
+set pastetoggle=<F2>
