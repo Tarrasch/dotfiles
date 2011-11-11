@@ -1,8 +1,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-" Turn on line numbering. Turn it off with "set nonu" 
-set nu 
+" Turn on line numbering. Turn it off with "set nonu"
+set nu
 
 " Indent automatically depending on filetype
 filetype indent on
