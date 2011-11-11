@@ -79,3 +79,6 @@ endfunction
 
 " Insert Paste
 set pastetoggle=<F2>
+
+" Remove trailing whitespace
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
