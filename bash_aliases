@@ -1,4 +1,7 @@
 
+#system
+alias canhaz='sudo apt-get install'
+
 #chalmers login
 alias chalmsshfs='sshfs rarash@remote1.student.chalmers.se:/chalmers/users/rarash/ ~/chalmers/'
 alias chalmssh='ssh -Y rarash@remote1.student.chalmers.se'
