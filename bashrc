@@ -94,7 +94,7 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  
 
 # Add cabal to path
-PATH=$PATH:~/.cabal/bin/
+PATH=~/.cabal/bin:$PATH
 PATH=~/.bin:$PATH
 
 if [ -f ~/.bash_mylocal ]; then
