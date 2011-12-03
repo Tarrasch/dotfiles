@@ -24,6 +24,7 @@ alias ge='gvim .gitignore'
 
 # Add template .gitignore
 alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
+alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Added gitignore" -- .gitignore'
 
 function gg() {
   git add . && git commit -v -a -m "$*"
