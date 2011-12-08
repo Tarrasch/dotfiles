@@ -1,6 +1,17 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" haskell mode from pbrisbin
+" haskellmode-vim needs these set as early as possible
+let g:haddock_browser = $BROWSER
+let g:haddock_indexfiledir = $HOME . '/.vim/'
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+
+
+
+
+
 " Turn on line numbering. Turn it off with "set nonu"
 set nu
 
