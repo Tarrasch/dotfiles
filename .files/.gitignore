@@ -1,14 +1,32 @@
 ## General .gitignore file by Arash Rouhani (Tarrasch)
+## Inspired from whitespace bot GunioRobot
+
 # backup files
 *.swp
 *.swo
-*~
 *.bak
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
 
 # non-source files
 *.hi
 *.o
 *.pdf
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
 
 # yesod
 client_session_key.aes
@@ -24,8 +42,30 @@ static/tmp
 *#*#
 .goutput*
 
-# Java
-*.class
-
 # OS X
 .DS_Store
+
+# OS or Editor folders
+###################
+.DS_Store
+Icon?
+Thumbs.db
+ehthumbs.db
+nbproject
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+
+# Dreamweaver added files
+###################
+_notes
+dwsync.xml
+
+# Komodo
+###################
+*.komodoproject
+.komodotools
