@@ -69,3 +69,8 @@ dwsync.xml
 ###################
 *.komodoproject
 .komodotools
+
+# XMonad
+###################
+*.errors
+*-i386-linux
