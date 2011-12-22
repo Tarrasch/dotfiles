@@ -31,7 +31,7 @@ set lbr
 " Load cyclecolor
 source ~/.vim/cyclecolor.vim
 
-" Change colorscheme from default to delek
+" Change colorscheme
 colorscheme delek
 
 set smartindent
