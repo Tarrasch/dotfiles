@@ -117,7 +117,7 @@ function parse_git_branch_pretty {
   fi
 }
 
-function parse_other {
+function parse_commit {
   echo `git show --format=format:"%Cgreen {%Cblue%s %Cred%cr%Cgreen}" 2>/dev/null | head -1`
 }
 
@@ -128,7 +128,7 @@ YELLOW="\[\033[0;33m\]"
 PYELLOW="\033[0;33m"
 GREEN="\[\033[0;32m\]"
 
-PS1="\n$RED\$(date +%H:%M)$NO_COLOR \w\$(parse_git_branch_pretty)\$(parse_other)$NO_COLOR \$ $GREEN\n"
+PS1="\n$RED\$(date +%H:%M)$NO_COLOR \w\$(parse_git_branch_pretty)\$(parse_commit)$NO_COLOR \$ $GREEN\n"
 PS1="$PS1→ \[$NO_COLOR\]"
 
 
