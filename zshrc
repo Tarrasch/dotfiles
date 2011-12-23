@@ -21,6 +21,7 @@ colors
 # Other modules we want to source
 . ~/.zsh/zsh_aliases
 . ~/.zsh/zsh_prompt
+# . ~/.zsh/zshrc.zsh-template # uncomment to activate oh-my-zsh
 
 ##############################
 # Key bidings
