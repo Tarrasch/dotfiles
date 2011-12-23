@@ -1,0 +1,57 @@
+#system
+alias canhaz='sudo apt-get install'
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+#chalmers login
+alias chalmsshfs='sshfs rarash@remote1.student.chalmers.se:/chalmers/users/rarash/ ~/chalmers/'
+alias chalmssh='ssh -Y rarash@remote1.student.chalmers.se'
+
+# Git commands
+alias pull='git pull origin master'
+alias gp="git push origin "
+alias gpm='git push origin master'
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log -5 --format="%C(yellow)%h %Creset%s %Cred(%ar)"'
+alias gap='git add --patch'
+
+# Edit .gitignore
+alias ge='vim .gitignore'
+
+# Add template .gitignore
+alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
+alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Added gitignore" -- .gitignore'
+
+function gg() {
+  git add . && git commit -v -a -m "$*"
+}
+
+# jobba med latex
+alias mk='pdflatex *.tex'
+alias mkv='mk && (xdg-open *.pdf > /dev/null 2>&1)'
+alias mkf='for((i=0;i<1000000;i++)) do mk;sleep 5; done'
+
+# yesod
+alias yc='yesod configure'
+alias yd='yesod devel'
+
+# dtek
+alias dtek='ssh rarash@dtek.se'
+
+# colemak
+COLEMAK="$HOME/dotfiles/.colemak/"
+alias qw='setxkbmap se; xset -r 66'
+alias cm='cd $COLEMAK && setxkbmap us && xmodmap xmodmap/xmodmap.colemak && xset r 66'
