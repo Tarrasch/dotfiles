@@ -10,15 +10,15 @@ myManageHook = composeAll (
     , className =? "Unity-2d-launcher" --> doFloat
 
     -- Gnome DO
-    , resource  =? "Do"   --> doIgnore 
+    , resource  =? "Do"   --> doIgnore
+
     ])
 
-myKeys = colemakKeys <+> keys gnomeConfig
+myKeys = colemakKeys
 
 myConfig = gnomeConfig {
     manageHook = myManageHook
-  , keys = myKeys  
+  , keys = myKeys
     }
 
 main = xmonad myConfig
-

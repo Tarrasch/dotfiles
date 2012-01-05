@@ -2,6 +2,7 @@ module XMonad.Colemak where
 
 import XMonad
 import System.Exit
+import XMonad.Hooks.ManageDocks
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -11,12 +12,6 @@ colemakKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
     -- launch a terminal
     [ ((modMask .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
-
-    -- launch dmenu
-    , ((modMask,               xK_l     ), spawn "exe=`dmenu_path | dmenu` && eval \"exec $exe\"")
-
-    -- launch gmrun
-    , ((modMask .|. shiftMask, xK_l     ), spawn "gmrun")
 
     -- close focused window
     , ((modMask .|. shiftMask, xK_k     ), kill)
@@ -68,8 +63,7 @@ colemakKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
 
 
     -- toggle the status bar gap
-    -- TODO, update this binding with avoidStruts
-    ----, ((modMask              , xK_apostrophe )),
+    , ((modMask, xK_comma), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modMask .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -77,3 +71,21 @@ colemakKeys conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     -- Restart xmonad
     , ((modMask              , xK_q     ), restart "xmonad" True)
     ]
+    ++
+
+    --
+    -- mod-[1..9], Switch to workspace N
+    -- mod-shift-[1..9], Move client to workspace N
+    --
+    [((m .|. modMask, k), windows $ f i)
+        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+    ++
+
+    --
+    -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
+    -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
+    --
+    [((m .|. modMask, key), screenWorkspace sc >>= flip whenJust (windows . f))
+        | (key, sc) <- zip [xK_u, xK_y, xK_semicolon] [0..]
+        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
