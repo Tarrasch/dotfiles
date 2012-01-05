@@ -20,10 +20,14 @@ colors
 
 # Other modules we want to source
 . ~/.zsh/zsh_aliases
+. ~/.zsh/zshrc.zsh-template # uncomment to activate oh-my-zsh
 . ~/.zsh/zsh_prompt
-# . ~/.zsh/zshrc.zsh-template # uncomment to activate oh-my-zsh
 
 ##############################
 # Key bidings
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
+
+##############################
+# RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function

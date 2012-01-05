@@ -1,5 +1,6 @@
 #system
 alias canhaz='sudo apt-get install'
+alias s='. ~/.zshrc' # Reload configuration
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
