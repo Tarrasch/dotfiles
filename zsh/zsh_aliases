@@ -21,7 +21,6 @@ alias chalmsshfs='sshfs rarash@remote1.student.chalmers.se:/chalmers/users/raras
 alias chalmssh='ssh -Y rarash@remote1.student.chalmers.se'
 
 # Git commands
-alias pull='git pull origin master'
 alias gp="git push origin "
 alias gpm='git push origin master'
 alias gs='git status'
