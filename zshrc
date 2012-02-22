@@ -31,3 +31,6 @@ bindkey ";5D" backward-word
 ##############################
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
+
+# Temporary folderjumps
+alias m='cd ~/repos/Water/mainline'
