@@ -21,8 +21,6 @@ alias chalmsshfs='sshfs rarash@remote1.student.chalmers.se:/chalmers/users/raras
 alias chalmssh='ssh -Y rarash@remote1.student.chalmers.se'
 
 # Git commands
-alias gp="git push origin "
-alias gpm='git push origin master'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log -5 --format="%C(yellow)%h %Creset%s %Cred(%ar)"'
@@ -34,10 +32,6 @@ alias ge='vim .gitignore'
 # Add template .gitignore
 alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
 alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Added gitignore" -- .gitignore'
-
-function gg() {
-  git add . && git commit -v -a -m "$*"
-}
 
 # jobba med latex
 alias mk='([ -f *.tex ] && pdflatex *.tex) || ([ -f *.markdown ] && markdown2pdf *.markdown)'
