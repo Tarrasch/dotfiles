@@ -1,0 +1,46 @@
+#!/bin/zsh
+
+# For grading "Programmeringolympiaden 2012"
+
+#[[ -n $names && –n $tests ]]
+#[ -n $names ] || (echo "Set vars before running" && exit 1)
+
+id=$1 # Problem id
+names=(kapreker skrivmaskinen choklad avrundning fyrtornen trafik volley)
+name=$names[$id]
+
+if [ -n $name ] # $name is set?
+then
+  echo "Ok, gogo task $name"
+else
+  echo "No such task with id $id"
+  exit 1
+fi
+
+PREPARE="prepare.zsh"
+RUN="run.zsh"
+
+if [ -e $PREPARE ]
+then
+  echo "Compiling ..."
+  ./$PREPARE $id
+  echo "Done"
+else
+  echo "Nothing to compile (prolly interpreted language)"
+fi
+
+tests="/media/sda6/PO/testfall"
+infile="$PWD/$name.dat"
+
+for case in $tests/$id/*
+do
+  echo "Running testcase $case... "
+  cp $case $infile
+  /usr/bin/time --format="time=%U" timelimit -t 14 -T 1 ./run.zsh $id < $infile
+  echo "Finised case! Next (Y/n)?"
+  read yn
+  [[ "$yn" == "n" ]] && echo "Quitting then" && exit 0
+done
+
+rm $infile
+echo "Ok, all done for problem $id!"
