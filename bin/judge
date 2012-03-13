@@ -34,9 +34,9 @@ infile="$PWD/$name.dat"
 
 for case in $tests/$id/*
 do
-  echo "Running testcase $case... "
+  echo "case $case... "
   cp $case $infile
-  /usr/bin/time --format="time=%U" timelimit -t 14 -T 1 ./run.zsh $id < $infile
+  /usr/bin/time --format="time=%U" timelimit -t14 -T1 ./run.zsh $id < $infile
   echo "Finised case! Next (Y/n)?"
   read yn
   [[ "$yn" == "n" ]] && echo "Quitting then" && exit 0
