@@ -66,7 +66,7 @@ autocmd FileType haskell compiler hlint
 "       let g:hlint_signs = 0
 
 "  Tabular
-let mapleader=","
+let mapleader="h"
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
