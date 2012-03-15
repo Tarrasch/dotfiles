@@ -8,6 +8,8 @@ let g:haddock_indexfiledir = $HOME . '/.vim/'
 " use ghc functionality for haskell files
 au Bufenter *.hs compiler ghc
 
+" Tags
+set tags=./tags;/
 
 
 
@@ -93,3 +95,6 @@ set pastetoggle=<F2>
 
 " Remove trailing whitespace
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" LustyExplorer told me to do this on startup //Arash
+set hidden
