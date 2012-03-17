@@ -11,8 +11,9 @@ au Bufenter *.hs compiler ghc
 " Tags
 set tags=./tags;/
 
-
-
+" Taken from vimcast 'bubbling text'
+" Visually select the text that was last edited/pasted
+nmap gV `[v`]
 
 " Turn on line numbering. Turn it off with "set nonu"
 set nu
