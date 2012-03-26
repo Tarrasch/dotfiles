@@ -22,6 +22,24 @@
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/bundle/rake"]
+	path = vim/bundle/rake
+	url = https://github.com/tpope/vim-rake
+[submodule "vim/bundle/commentary"]
+	path = vim/bundle/commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundle/cucumber"]
+	path = vim/bundle/cucumber
+	url = https://github.com/tpope/vim-cucumber
 [submodule "vim/bundle/unimpaired"]
 	path = vim/bundle/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
+	url = https://github.com/tpope/vim-unimpaired
+[submodule "vim/bundle/textobj-rubyblock"]
+	path = vim/bundle/textobj-rubyblock
+	url = https://github.com/nelstrom/vim-textobj-rubyblock
+[submodule "vim/bundle/textobj-user"]
+	path = vim/bundle/textobj-user
+	url = https://github.com/kana/vim-textobj-user
