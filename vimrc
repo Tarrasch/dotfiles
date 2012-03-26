@@ -11,8 +11,12 @@ au Bufenter *.hs compiler ghc
 " Tags
 set tags=./tags;/
 
-
-
+" For textobj-rubyblock
+runtime macros/matchit.vim
+set nocompatible
+if has("autocmd")
+  filetype indent plugin on
+endif
 
 " Turn on line numbering. Turn it off with "set nonu"
 set nu
