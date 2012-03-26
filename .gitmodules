@@ -19,3 +19,18 @@
 [submodule "vim/bundle/lusty"]
 	path = vim/bundle/lusty
 	url = https://github.com/sjbach/lusty.git
+[submodule "vim/bundle/rake"]
+	path = vim/bundle/rake
+	url = https://github.com/tpope/vim-rake
+[submodule "vim/bundle/commentary"]
+	path = vim/bundle/commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim/bundle/surround"]
+	path = vim/bundle/surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundle/cucumber"]
+	path = vim/bundle/cucumber
+	url = https://github.com/tpope/vim-cucumber
+[submodule "vim/bundle/unimpaired"]
+	path = vim/bundle/unimpaired
+	url = https://github.com/tpope/vim-unimpaired
