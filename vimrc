@@ -29,9 +29,6 @@ set nu
 filetype indent on
 set autoindent
 
-" Case insensitive search
-set ic
-
 " Higlhight search
 set hls
 
