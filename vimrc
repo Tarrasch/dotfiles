@@ -103,3 +103,10 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " LustyExplorer told me to do this on startup //Arash
 set hidden
+
+" Nice shortcut for hlb, Lusty stuff
+nmap k :LustyBufferExplorer<CR>
+nmap K :LustyBufferGrep<CR>
+nmap l :LustyFilesystemExplorer<CR>
+nmap L :LustyFilesystemExplorerFromHere<CR>
+
