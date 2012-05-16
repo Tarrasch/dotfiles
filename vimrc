@@ -1,6 +1,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" No vi comptiblilty (I think) /Arash
+set nocompatible
+
 " haskell mode from pbrisbin
 " haskellmode-vim needs these set as early as possible
 let g:haddock_browser = $BROWSER
@@ -17,7 +20,6 @@ nmap gV `[v`]
 
 " For textobj-rubyblock
 runtime macros/matchit.vim
-set nocompatible
 if has("autocmd")
   filetype indent plugin on
 endif
@@ -31,6 +33,8 @@ set autoindent
 
 " Higlhight search
 set hls
+
+set incsearch     " show search matches as you type
 
 " Wrap text instead of being on one line
 set lbr
@@ -110,3 +114,4 @@ nmap K :LustyBufferGrep<CR>
 nmap l :LustyFilesystemExplorer<CR>
 nmap L :LustyFilesystemExplorerFromHere<CR>
 
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc
