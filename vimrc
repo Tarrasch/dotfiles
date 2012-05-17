@@ -11,6 +11,9 @@ let g:haddock_indexfiledir = $HOME . '/.vim/'
 " use ghc functionality for haskell files
 au Bufenter *.hs compiler ghc
 
+" Define leader
+let mapleader="h"
+
 " Tags
 set tags=./tags;/
 
@@ -77,7 +80,6 @@ autocmd FileType haskell compiler hlint
 "       let g:hlint_signs = 0
 
 "  Tabular
-let mapleader="h"
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
