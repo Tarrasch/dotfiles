@@ -58,3 +58,6 @@
 [submodule "vim/bundle/git"]
 	path = vim/bundle/git
 	url = https://github.com/tpope/vim-git.git
+[submodule "vim/bundle/ruby"]
+	path = vim/bundle/ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
