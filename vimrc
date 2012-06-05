@@ -115,3 +115,6 @@ nmap l :LustyFilesystemExplorer<CR>
 nmap L :LustyFilesystemExplorerFromHere<CR>
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc
+
+" For vim plugin
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
