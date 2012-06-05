@@ -64,3 +64,6 @@
 [submodule "vim/bundle/localvimrc"]
 	path = vim/bundle/localvimrc
 	url = https://github.com/vim-scripts/localvimrc
+[submodule "vim/bundle/a"]
+	path = vim/bundle/a
+	url = https://github.com/vim-scripts/a.vim
