@@ -19,3 +19,5 @@ do
     fi
 done
 
+##### Git config
+git config --global core.excludesfile ~/.gitignore-global
