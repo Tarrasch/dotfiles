@@ -32,6 +32,9 @@ source ~/.vim/cyclecolor.vim
 " Change colorscheme
 colorscheme delek
 
+" Use syntax highlighting
+syntax on
+
 set smartindent
 set tabstop=2
 set shiftwidth=2
