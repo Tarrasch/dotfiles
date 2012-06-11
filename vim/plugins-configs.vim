@@ -25,3 +25,6 @@ runtime macros/matchit.vim
 if has("autocmd")
   filetype indent plugin on
 endif
+
+" For ack plugin (Ubuntu only)
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
