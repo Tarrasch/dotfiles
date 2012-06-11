@@ -26,9 +26,6 @@ set incsearch     " show search matches as you type
 " Wrap text instead of being on one line
 set lbr
 
-" Load cyclecolor
-source ~/.vim/cyclecolor.vim
-
 " Change colorscheme
 colorscheme delek
 
@@ -43,8 +40,6 @@ set expandtab
 " Show trailing whitepace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
-
-source ~/.vim/find.vim
 
 " Insert Paste
 set pastetoggle=<F2>
@@ -63,5 +58,7 @@ nmap L :LustyFilesystemExplorerFromHere<CR>
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc
 
-" Source all plugin requirement options
-source ~/.vim/plugins-configs.vim
+" Sourcings
+source ~/.vim/find.vim
+source ~/.vim/cyclecolor.vim
+source ~/.vim/plugins-configs.vim " Source all plugin requirement options
