@@ -43,9 +43,6 @@ set expandtab
 
 source ~/.vim/find.vim
 
-"  Tabular
-let mapleader="h"
-
 " Insert Paste
 set pastetoggle=<F2>
 
