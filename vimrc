@@ -37,11 +37,6 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" For haskell template languages
-au BufEnter *.hamlet  setlocal filetype=hamlet
-au BufEnter *.cassius setlocal filetype=cassius
-au BufEnter *.julius  setlocal filetype=julius
-
 " Show trailing whitepace and spaces before a tab:
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
