@@ -17,6 +17,9 @@ myManageHook = composeAll (
 
 myKeys = colemakKeys <+> unityLauncherLikeKeys
 
+gmailInFirefox = 
+  spawn "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+1'"
+
 unityLauncherLikeKeys = const $ M.fromList $ concatMap aux [
       t xK_a "nautilus" "Nautilus"
     , t xK_r "gnome-terminal" "Gnome-terminal"
