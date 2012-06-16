@@ -46,9 +46,6 @@
 [submodule "vim/bundle/fugitive"]
 	path = vim/bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/llvm"]
-	path = vim/bundle/llvm
-	url = git://github.com/Superbil/llvm.vim.git
 [submodule "vim/bundle/indent-object"]
 	path = vim/bundle/indent-object
 	url = https://github.com/michaeljsmith/vim-indent-object.git
@@ -61,3 +58,18 @@
 [submodule "vim/bundle/ruby"]
 	path = vim/bundle/ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "vim/bundle/markdown"]
+	path = vim/bundle/markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "vim/bundle/ack"]
+	path = vim/bundle/ack
+	url = https://github.com/mileszs/ack.vim
+[submodule "vim/bundle/c"]
+	path = vim/bundle/c
+	url = https://github.com/vim-scripts/c.vim
+[submodule "vim/bundle/localvimrc"]
+	path = vim/bundle/localvimrc
+	url = https://github.com/vim-scripts/localvimrc
+[submodule "vim/bundle/a"]
+	path = vim/bundle/a
+	url = https://github.com/vim-scripts/a.vim

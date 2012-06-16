@@ -1,6 +1,6 @@
 #!/bin/sh
 
-
+##### Copy over files
 mkdir .local_backup/
 time=`date +%s`
 bupf=.local_backup/$time/
@@ -19,3 +19,5 @@ do
     fi
 done
 
+##### Git config
+git config --global core.excludesfile ~/.gitignore-global

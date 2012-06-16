@@ -77,4 +77,4 @@ dwsync.xml
 # XMonad
 ###################
 *.errors
-*-i386-linux
+xmonad-*-linux
