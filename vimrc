@@ -57,6 +57,8 @@ nmap L :LustyFilesystemExplorerFromHere<CR>
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.d
 
+" Wildmenu
+set wildmenu
 
 " Sourcings
 source ~/.vim/find.vim
