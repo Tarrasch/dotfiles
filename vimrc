@@ -37,8 +37,8 @@ set shiftwidth=2
 set expandtab
 
 " Show trailing whitepace and spaces before a tab:
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
 " Insert Paste
 set pastetoggle=<F2>
