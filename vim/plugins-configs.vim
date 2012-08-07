@@ -27,6 +27,8 @@ if has("autocmd")
 endif
 
 " For ack plugin (Ubuntu only)
+noremap <Leader># "ayiw:Ack <C-r>a<CR>
+vnoremap <Leader># "ay:Ack <C-r>a<CR>
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " For haskell template languages
