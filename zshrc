@@ -34,3 +34,6 @@ bindkey ";5D" backward-word
 
 # Temporary folderjumps
 alias m='cd ~/repos/Water/mainline'
+
+# Initialize antigen
+. ~/.zsh/init-antigen.zsh
