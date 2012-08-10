@@ -7,9 +7,6 @@
 [submodule "vim/bundle/haskellmode"]
 	path = vim/bundle/haskellmode
 	url = git://github.com/lukerandall/haskellmode-vim.git
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/bundle/rails"]
 	path = vim/bundle/rails
 	url = http://github.com/tpope/vim-rails.git

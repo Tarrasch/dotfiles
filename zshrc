@@ -20,7 +20,6 @@ colors
 
 # Other modules we want to source
 . ~/.zsh/zsh_aliases
-. ~/.zsh/zshrc.zsh-template # uncomment to activate oh-my-zsh
 # . ~/.zsh/zsh_prompt
 
 ##############################
