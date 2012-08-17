@@ -1,6 +1,10 @@
 # Load antigen
 . ~/.zsh/antigen/antigen.zsh
 
+# Load oh-my-zsh
+antigen-lib
+
+# Functional
 antigen-bundle Tarrasch/zsh-functional
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
