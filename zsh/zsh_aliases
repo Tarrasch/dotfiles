@@ -28,7 +28,7 @@ alias gap='git add --patch'
 
 # Add template .gitignore
 alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
-alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Added gitignore" -- .gitignore'
+alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Add gitignore" -- .gitignore'
 
 # jobba med latex
 alias mk='([ -f *.tex ] && pdflatex *.tex) || (MD=$(ls *.markdown) && [ -f $MD ] && pandoc $MD -o $(basename $MD markdown)pdf)'
