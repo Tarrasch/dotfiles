@@ -4,6 +4,9 @@
 # Load oh-my-zsh
 antigen-lib
 
+# Auto env
+antigen-bundle kennethreitz/autoenv
+
 # Functional
 antigen-bundle Tarrasch/zsh-functional
 
