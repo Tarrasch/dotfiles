@@ -36,3 +36,6 @@ alias m='cd ~/repos/Water/mainline'
 
 # Initialize antigen
 . ~/.zsh/init-antigen.zsh
+
+# Python autocompletion (http://stackoverflow.com/a/246779/621449)
+export PYTHONSTARTUP=~/.pythonrc
