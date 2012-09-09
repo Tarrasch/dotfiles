@@ -76,3 +76,9 @@
 [submodule "zsh/antigen"]
 	path = zsh/antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "vim/bundle/pddl"]
+	path = vim/bundle/pddl
+	url = https://github.com/Tarrasch/pddl.vim.git
+[submodule "vim/bundle/rename"]
+	path = vim/bundle/rename
+	url = https://github.com/danro/rename.vim.git
