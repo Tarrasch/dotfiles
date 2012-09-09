@@ -55,7 +55,7 @@ nmap K :LustyBufferGrep<CR>
 nmap l :LustyFilesystemExplorer<CR>
 nmap L :LustyFilesystemExplorerFromHere<CR>
 
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.d
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.d,*.gif
 
 " Wildmenu
 set wildmenu
