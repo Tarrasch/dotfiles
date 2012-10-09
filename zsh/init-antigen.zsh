@@ -16,6 +16,9 @@ antigen-bundle command-not-found
 # Syntax highlighting bundle.
 antigen-bundle zsh-users/zsh-syntax-highlighting
 
+# History search
+antigen-bundle zsh-users/zsh-history-substring-search
+
 # Load the theme.
 antigen-theme kolo
 
