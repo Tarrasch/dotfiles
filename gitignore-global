@@ -2,3 +2,29 @@
 tags
 tags-te
 
+# backup files
+*.swp
+*.swo
+*.bak
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
+
+# non-source files
+*.hi
+*.o
+*.pdf
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
