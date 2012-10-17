@@ -31,7 +31,9 @@ alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
 alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Add gitignore" -- .gitignore'
 
 # jobba med latex
-alias mk='([ -f *.tex ] && pdflatex *.tex) || (MD=$(ls *.markdown) && [ -f $MD ] && pandoc $MD -o $(basename $MD markdown)pdf)'
+alias mklatex='([ -f *.tex ] && pdflatex *.tex)'
+alias mkmarkdown='(MD=$(ls *.markdown) && [ -f $MD ] && pandoc $MD -o $(basename $MD markdown)pdf)'
+alias mk='mklatex || mkmarkdown'
 alias mkv='mk && (xdg-open *.pdf > /dev/null 2>&1)'
 alias mkf='for((i=0;i<1000000;i++)) do mk;sleep 5; done'
 
