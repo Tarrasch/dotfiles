@@ -39,3 +39,6 @@ alias m='cd ~/repos/Water/mainline'
 
 # Python autocompletion (http://stackoverflow.com/a/246779/621449)
 export PYTHONSTARTUP=~/.pythonrc
+
+# I know what I'm doing function
+alias ik='echo "Are you sure you want to do this? (y/n)" && read -qs'
