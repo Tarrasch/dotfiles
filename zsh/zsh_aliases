@@ -31,10 +31,15 @@ alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
 alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Add gitignore" -- .gitignore'
 
 # jobba med latex
-alias mklatex='([ -f *.tex ] && echo X | pdflatex *.tex)'
+mklatex() {
+  (ls | grep --silent '\.tex') || return 1
+  pdflatex -interaction=nonstopmode *.tex || echo "$fg_bold[red] latexing failed! $reset_color"
+  return $?
+}
 alias mkmarkdown='(MD=$(ls *.markdown) && [ -f $MD ] && pandoc $MD -o $(basename $MD markdown)pdf)'
 alias mk='mklatex || mkmarkdown'
-alias mkv='mk && (xdg-open *.pdf > /dev/null 2>&1)'
+alias view-pdf='(xdg-open *.pdf > /dev/null 2>&1)'
+alias mkv='mk && view-pdf'
 alias mkf='for((i=0;i<1000000;i++)) do mk;sleep 5; done'
 
 # yesod
