@@ -1,9 +1,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = git://github.com/godlygeek/tabular.git
-[submodule "bundle/haskellmode"]
-	path = bundle/haskellmode
-	url = git://github.com/lukerandall/haskellmode-vim.git
 [submodule "vim/bundle/haskellmode"]
 	path = vim/bundle/haskellmode
 	url = git://github.com/lukerandall/haskellmode-vim.git
