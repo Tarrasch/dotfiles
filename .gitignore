@@ -1,6 +1,7 @@
 .local_backup
 vim/.netrwhist
 vim/haskellmode.config
+vim/spell
 
 ## General .gitignore file by Arash Rouhani (Tarrasch)
 ## Inspired from whitespace bot GunioRobot
