@@ -3,8 +3,10 @@ import XMonad
 import XMonad.Config.Gnome
 import XMonad.Colemak
 import XMonad.Actions.WindowGo
+import XMonad.Layout.IndependentScreens
 import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
+import qualified XMonad.StackSet as W
 
 -- This file can be tested out (before doing alt-q) with ghci:
 --
@@ -21,7 +23,11 @@ myManageHook = composeAll (
     , resource  =? "Do"   --> doIgnore
     ])
 
-myKeys = colemakKeys <+> unityLauncherLikeKeys <+> swapWorkspaceKeys
+myKeys = idHook
+    <+> workspaceKeys
+    <+> colemakKeys
+    <+> unityLauncherLikeKeys
+    <+> swapWorkspaceKeys
 
 gmailInFirefox :: X ()
 gmailInFirefox =
@@ -50,4 +56,23 @@ myConfig = gnomeConfig {
   , keys = myKeys
     }
 
-main = xmonad myConfig
+oneToNine = map show [1 :: Int .. 9]
+
+workspaceKeys conf = let modm = modMask conf
+                     in M.fromList $
+    -- Regular jumping but for independent screens
+    [((m .|. modm, k), windows $ onCurrentScreen f i)
+        | (i, k) <- zip oneToNine [xK_1 .. xK_9]
+        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+
+    -- Swap workspaces
+     ++
+     [((modm .|. controlMask, k), windows $ onCurrentScreen swapWithCurrent i)
+         | (i, k) <- zip oneToNine [xK_1 ..]]
+
+
+main = do
+  nScreens <- countScreens
+  xmonad $ myConfig {
+      workspaces = withScreens nScreens oneToNine
+    }
