@@ -38,3 +38,4 @@ au BufEnter *.julius  setlocal filetype=julius
 
 " Neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+source ~/.vim/plugin-configs/neocomplcache.vim " Source all plugin requirement options

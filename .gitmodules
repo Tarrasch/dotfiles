@@ -82,3 +82,15 @@
 [submodule "vim/bundle/gnuplot"]
 	path = vim/bundle/gnuplot
 	url = git://github.com/vlaadbrain/gnuplot.vim.git
+[submodule "vim/bundle/neocomplcache"]
+	path = vim/bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
+[submodule "vim/bundle/neco-ghc"]
+	path = vim/bundle/neco-ghc
+	url = git://github.com/ujihisa/neco-ghc.git
+[submodule "vim/bundle/ghcmod"]
+	path = vim/bundle/ghcmod
+	url = git://github.com/eagletmt/ghcmod-vim.git
+[submodule "vim/bundle/vimproc"]
+	path = vim/bundle/vimproc
+	url = git://github.com/Shougo/vimproc.git
