@@ -35,3 +35,6 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 au BufEnter *.hamlet  setlocal filetype=hamlet
 au BufEnter *.cassius setlocal filetype=cassius
 au BufEnter *.julius  setlocal filetype=julius
+
+" Neocomplcache
+let g:neocomplcache_enable_at_startup = 1

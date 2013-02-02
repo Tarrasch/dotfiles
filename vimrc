@@ -63,4 +63,4 @@ set wildmenu
 " Sourcings
 source ~/.vim/find.vim
 source ~/.vim/cyclecolor.vim
-source ~/.vim/plugins-configs.vim " Source all plugin requirement options
+source ~/.vim/plugin-configs.vim " Source all plugin requirement options
