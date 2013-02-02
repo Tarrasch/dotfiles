@@ -26,7 +26,8 @@ set incsearch     " show search matches as you type
 set lbr
 
 " Change colorscheme
-colorscheme delek
+colorscheme solarized
+set t_Co=16 " <https://github.com/sigurdga/gnome-terminal-colors-solarized>
 
 " Use syntax highlighting
 syntax on
