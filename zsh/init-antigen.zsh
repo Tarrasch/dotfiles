@@ -7,8 +7,9 @@ antigen-lib
 # Auto env
 antigen-bundle kennethreitz/autoenv
 
-# Functional
+# My own plugins
 antigen-bundle Tarrasch/zsh-functional
+antigen-bundle Tarrasch/zsh-mcd
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen-bundle command-not-found
