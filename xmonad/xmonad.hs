@@ -1,7 +1,9 @@
+{-# LANGUAGE RecordWildCards #-}
 import XMonad
 import XMonad.Config.Gnome
 import XMonad.Colemak
 import XMonad.Actions.WindowGo
+import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
 
 -- This file can be tested out (before doing alt-q) with ghci:
@@ -19,7 +21,7 @@ myManageHook = composeAll (
     , resource  =? "Do"   --> doIgnore
     ])
 
-myKeys = colemakKeys <+> unityLauncherLikeKeys
+myKeys = colemakKeys <+> unityLauncherLikeKeys <+> swapWorkspaceKeys
 
 gmailInFirefox :: X ()
 gmailInFirefox =
@@ -36,6 +38,11 @@ unityLauncherLikeKeys = const $ M.fromList $ concatMap aux [
           , ((mod4Mask .|. shiftMask, key ), spawn          process )
           ]
         t a b c = (a, b, c)
+
+swapWorkspaceKeys (XConfig {..}) =
+  M.fromList $
+    [((modMask .|. controlMask, k), windows $ swapWithCurrent i)
+      | (i, k) <- zip workspaces [xK_1 .. xK_9]]
 
 myConfig = gnomeConfig {
     manageHook = myManageHook
