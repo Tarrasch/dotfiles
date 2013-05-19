@@ -6,6 +6,10 @@ SAVEHIST=20000
 PATH=~/.cabal/bin:$PATH
 PATH=~/.bin:$PATH
 
+# Add to completions
+fpath=(~/dotfiles/zsh/plugins/completions/src $fpath)
+
+
 # Initialize colors
 autoload -U colors
 colors

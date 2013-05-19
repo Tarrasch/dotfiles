@@ -97,3 +97,6 @@
 [submodule "vim/bundle/colors-solarized.git"]
 	path = vim/bundle/colors-solarized.git
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "zsh/plugins/completions"]
+	path = zsh/plugins/completions
+	url = git://github.com/zsh-users/zsh-completions.git
