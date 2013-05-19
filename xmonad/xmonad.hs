@@ -4,6 +4,10 @@ import XMonad.Colemak
 import XMonad.Actions.WindowGo
 import qualified Data.Map        as M
 
+-- This file can be tested out (before doing alt-q) with ghci:
+--
+--     ghci -ilib xmonad.hs
+
 myManageHook = composeAll (
     [ manageHook gnomeConfig
 
