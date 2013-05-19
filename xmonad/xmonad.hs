@@ -18,7 +18,7 @@ myManageHook = composeAll (
 myKeys = colemakKeys <+> unityLauncherLikeKeys
 
 gmailInFirefox :: X ()
-gmailInFirefox = 
+gmailInFirefox =
   spawn "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+1'"
 
 unityLauncherLikeKeys = const $ M.fromList $ concatMap aux [
