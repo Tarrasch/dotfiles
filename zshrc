@@ -33,4 +33,9 @@ bindkey ";5D" backward-word
 export PYTHONSTARTUP=~/.pythonrc
 
 # I know what I'm doing function
-alias ik='echo "Are you sure you want to do this? (y/n)" && read -qs'
+ik () {
+  (($#>0)) && {
+    [[ $1 != $(basename $PWD ) ]] && echo "$0: Argument doesn't match PWD, refusing to continue" && return 1
+  }
+  echo "Are you sure you want to do this? (y/n)" && read -qs
+}
