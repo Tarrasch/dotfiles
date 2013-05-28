@@ -10,9 +10,6 @@
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
 	url = https://github.com/xolox/vim-easytags.git
-[submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -100,3 +97,6 @@
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = git://github.com/zsh-users/zsh-completions.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git

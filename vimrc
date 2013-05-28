@@ -47,14 +47,16 @@ set pastetoggle=<F2>
 " Remove trailing whitespace
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
-" LustyExplorer told me to do this on startup //Arash
-set hidden
+" Estimate of the old shortcuts I had for Lusty etc.
+nmap k :CtrlPBuffer<CR>
+nmap K :CtrlPMRU<CR>
+nmap l :CtrlP<CR>
+nmap L :CtrlP %:h<CR>
 
-" Nice shortcut for hlb, Lusty stuff
-nmap k :LustyBufferExplorer<CR>
-nmap K :LustyBufferGrep<CR>
-nmap l :LustyFilesystemExplorer<CR>
-nmap L :LustyFilesystemExplorerFromHere<CR>
+" I start off without extensions to start off easy and lightweight
+let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
+      \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
+
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.d,*.gif,*.pdf,_site,_cache
 
