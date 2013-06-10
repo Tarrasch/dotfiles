@@ -97,3 +97,12 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/t-bone"]
+	path = vim/bundle/t-bone
+	url = https://github.com/tpope/vim-tbone.git
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "vim/bundle/arcanist"]
+	path = vim/bundle/arcanist
+	url = https://github.com/phleet/vim-arcanist.git
