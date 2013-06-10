@@ -34,3 +34,6 @@ export PYTHONSTARTUP=~/.pythonrc
 
 # I know what I'm doing function
 alias ik='echo "Are you sure you want to do this? (y/n)" && read -qs'
+
+# Import omz stuff
+. ~/.zsh/from-omz.zsh
