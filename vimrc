@@ -25,7 +25,9 @@ set incsearch     " show search matches as you type
 " Wrap text instead of being on one line
 set lbr
 
-" Change colorscheme
+" Set solarized (from `:help solarized`)
+syntax enable
+set background=dark
 colorscheme solarized
 set t_Co=16 " <https://github.com/sigurdga/gnome-terminal-colors-solarized>
 
