@@ -53,9 +53,7 @@ set hidden
 
 " Estimate of the old shortcuts I had for Lusty etc.
 nmap k :CtrlPBuffer<CR>
-nmap K :CtrlPMRU<CR>
 nmap l :CtrlP<CR>
-nmap L :CtrlP %:h<CR>
 
 " I start off without extensions to start off easy and lightweight
 let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
