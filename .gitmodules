@@ -10,9 +10,6 @@
 [submodule "vim/bundle/easytags"]
 	path = vim/bundle/easytags
 	url = https://github.com/xolox/vim-easytags.git
-[submodule "vim/bundle/lusty"]
-	path = vim/bundle/lusty
-	url = https://github.com/sjbach/lusty.git
 [submodule "vim/bundle/repeat"]
 	path = vim/bundle/repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -67,9 +64,6 @@
 [submodule "vim/bundle/a"]
 	path = vim/bundle/a
 	url = https://github.com/vim-scripts/a.vim
-[submodule "vim/bundle/command-t"]
-	path = vim/bundle/command-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "zsh/antigen"]
 	path = zsh/antigen
 	url = https://github.com/zsh-users/antigen.git
@@ -100,3 +94,15 @@
 [submodule "zsh/plugins/completions"]
 	path = zsh/plugins/completions
 	url = git://github.com/zsh-users/zsh-completions.git
+[submodule "vim/bundle/ctrlp"]
+	path = vim/bundle/ctrlp
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/t-bone"]
+	path = vim/bundle/t-bone
+	url = https://github.com/tpope/vim-tbone.git
+[submodule "vim/bundle/python-mode"]
+	path = vim/bundle/python-mode
+	url = https://github.com/klen/python-mode.git
+[submodule "vim/bundle/arcanist"]
+	path = vim/bundle/arcanist
+	url = https://github.com/phleet/vim-arcanist.git
