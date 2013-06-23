@@ -47,6 +47,10 @@ set pastetoggle=<F2>
 " Remove trailing whitespace
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
+" Hidden means that buffers undo history are still in history when you switch
+" between them http://stackoverflow.com/a/2732336/621449
+set hidden
+
 " Estimate of the old shortcuts I had for Lusty etc.
 nmap k :CtrlPBuffer<CR>
 nmap K :CtrlPMRU<CR>
