@@ -1,7 +1,8 @@
-call pathogen#infect()
-
 " No vi comptiblilty (I think) /Arash
 set nocompatible
+
+" NeoBundle
+source ~/.vim/plugin-configs/neobundle.vim
 
 " Tags
 set tags=./tags;/
