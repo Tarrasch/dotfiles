@@ -15,6 +15,7 @@ NeoBundle 'Shougo/vimproc'
 
 " Main plugins
 NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'bling/vim-airline'
 NeoBundle 'danro/rename.vim'
 NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'elixir-lang/vim-elixir'

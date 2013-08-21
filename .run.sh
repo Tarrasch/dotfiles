@@ -21,3 +21,6 @@ done
 
 ##### Git config
 git config --global core.excludesfile ~/.gitignore-global
+
+##### Fix fonts for vim-airline
+fc-cache -vf ~/.fonts
