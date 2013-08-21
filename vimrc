@@ -71,3 +71,6 @@ set wildmenu
 source ~/.vim/find.vim
 source ~/.vim/cyclecolor.vim
 source ~/.vim/plugin-configs.vim " Source all plugin requirement options
+
+" No delayed "ESC"
+set timeoutlen=1000 ttimeoutlen=0
