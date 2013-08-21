@@ -41,8 +41,8 @@ set shiftwidth=2
 set expandtab
 
 " Show trailing whitepace and spaces before a tab:
-highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+" highlight ExtraWhitespace ctermbg=red guibg=red
+" autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
 " Insert Paste
 set pastetoggle=<F2>
@@ -55,12 +55,11 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 set hidden
 
 " Estimate of the old shortcuts I had for Lusty etc.
-nmap k :CtrlPBuffer<CR>
-nmap l :CtrlP<CR>
+noremap k :Unite -start-insert buffer<CR>
+noremap l :Unite -start-insert file_rec/async<CR>
+let g:unite_source_history_yank_enable = 1
+nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
-" I start off without extensions to start off easy and lightweight
-let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
-      \ 'undo', 'line', 'changes', 'mixed', 'bookmarkdir']
 
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.d,*.gif,*.pdf,_site,_cache
