@@ -20,12 +20,6 @@ autocmd FileType haskell compiler hlint
 "
 "       let g:hlint_signs = 0
 
-" For textobj-rubyblock
-runtime macros/matchit.vim
-if has("autocmd")
-  filetype indent plugin on
-endif
-
 " For ack plugin (Ubuntu only)
 noremap <Leader># "ayiw:Ack <C-r>a<CR>
 vnoremap <Leader># "ay:Ack <C-r>a<CR>
