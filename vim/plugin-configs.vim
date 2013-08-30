@@ -34,6 +34,15 @@ au BufEnter *.julius  setlocal filetype=julius
 let g:neocomplcache_enable_at_startup = 1
 source ~/.vim/plugin-configs/neocomplcache.vim " Source all plugin requirement options
 
+" Things all of unite uses
+source ~/.vim/plugin-configs/unite-common.vim
+
+" Unite
+source ~/.vim/plugin-configs/unite.vim
+
+" VimFiler
+source ~/.vim/plugin-configs/vimfiler.vim
+
 " vim-airline
 set laststatus=2 " Make it appear, even when no splits
 let g:airline_powerline_fonts = 1 " Cool fonts
