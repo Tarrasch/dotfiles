@@ -54,9 +54,14 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " between them http://stackoverflow.com/a/2732336/621449
 set hidden
 
+" hjkl mappings
 " Estimate of the old shortcuts I had for Lusty etc.
-noremap k :Unite -start-insert buffer<CR>
-noremap l :Unite -start-insert file_rec/async<CR>
+noremap k :CtrlPBuffer<CR>
+noremap l :CtrlP<CR>
+" noremap k :Unite -start-insert buffer<CR>
+" noremap l :Unite -start-insert file_rec/async<CR>
+noremap gl :VimFiler<CR>
+noremap gL :VimFilerCurrentDir<CR>
 let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
