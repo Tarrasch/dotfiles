@@ -32,6 +32,7 @@ unityLauncherLikeKeys = const $ M.fromList $ concatMap aux [
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
     , t xK_t "thunderbird" "Thunderbird"
+    , t xK_n "rednotebook" "Rednotebook"
   ]
   where aux (key, process, cN) = [
             ((mod4Mask              , key ), runOrRaiseNext process   (className =? cN       ))
