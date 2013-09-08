@@ -1,13 +1,11 @@
 # Load antigen
 . ~/.zsh/antigen/antigen.zsh
 
-# Auto env
-antigen-bundle kennethreitz/autoenv
-
 # My own plugins
 antigen-bundle Tarrasch/zsh-functional
 antigen-bundle Tarrasch/zsh-mcd
 antigen-bundle Tarrasch/zsh-command-not-found
+antigen-bundle Tarrasch/zsh-autoenv
 
 # Syntax highlighting bundle.
 antigen-bundle zsh-users/zsh-syntax-highlighting
