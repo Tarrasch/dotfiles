@@ -19,12 +19,12 @@ filetype indent on
 set autoindent
 
 " Higlhight search
-set hls
+set hlsearch
 
 set incsearch     " show search matches as you type
 
 " Wrap text instead of being on one line
-set lbr
+set linebreak
 
 " Set solarized (from `:help solarized`)
 syntax enable
