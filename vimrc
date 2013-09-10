@@ -63,7 +63,7 @@ noremap l :CtrlP<CR>
 noremap gl :VimFiler<CR>
 noremap gL :VimFilerCurrentDir<CR>
 let g:unite_source_history_yank_enable = 1
-nnoremap <leader>y :<C-u>Unite history/yank<CR>
+nnoremap h :<C-u>Unite history/yank<CR>
 
 
 
