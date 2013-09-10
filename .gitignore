@@ -2,6 +2,7 @@
 vim/.netrwhist
 vim/haskellmode.config
 vim/spell
+vim/bundle
 
 ## General .gitignore file by Arash Rouhani (Tarrasch)
 ## Inspired from whitespace bot GunioRobot
