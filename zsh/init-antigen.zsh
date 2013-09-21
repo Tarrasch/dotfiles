@@ -20,3 +20,20 @@ antigen-bundle sindresorhus/pure
 
 # Tell antigen that you're done.
 antigen-apply
+
+# TODO: MOVE TO OTHER FILE!!
+# bind UP and DOWN arrow keys for zsh-history-substring-search
+zmodload zsh/terminfo
+
+# The official hint below didn't work
+# bindkey "$terminfo[kcuu1]" history-substring-search-up
+# bindkey "$terminfo[kcud1]" history-substring-search-down
+#
+# But this below works ($terminfo[kcuu1]=='A') withou the '^[['
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# And omg can somebody explain why the below doesn't work!?!?
+# echo $terminfo[kcuu1]
+# bindkey "^[[$terminfo[kcuu1]" history-substring-search-up
+# bindkey "^[[$terminfo[kcud1]" history-substring-search-down
