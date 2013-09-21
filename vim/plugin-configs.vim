@@ -48,3 +48,7 @@ source ~/.vim/plugin-configs/vimfiler.vim
 " vim-airline
 set laststatus=2 " Make it appear, even when no splits
 let g:airline_powerline_fonts = 1 " Cool fonts
+
+" Easmotion, it's a trade off here, I choose the "slower" binding that on the
+" other hand is less likely to clog with other bindings
+let g:EasyMotion_leader_key = '<Leader><Leader>'
