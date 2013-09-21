@@ -14,8 +14,9 @@ antigen-bundle zsh-users/zsh-syntax-highlighting
 # History search
 antigen-bundle zsh-users/zsh-history-substring-search
 
-# Load the theme.
-antigen-theme kolo
+# Load the theme
+# Note: antigen-theme is stupid and have undocumented conventions
+antigen-bundle sindresorhus/pure
 
 # Tell antigen that you're done.
 antigen-apply
