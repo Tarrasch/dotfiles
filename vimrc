@@ -40,6 +40,12 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
+" Folding -- Start everything unfolded please
+" Note, perl automatically sets foldmethod in the syntax file
+" autocmd Syntax c,cpp,vim,xml,html,xhtml setlocal foldmethod=syntax
+" autocmd Syntax c,cpp,vim,xml,html,xhtml,perl normal zR
+set foldlevelstart=20
+
 " Show trailing whitepace and spaces before a tab:
 " highlight ExtraWhitespace ctermbg=red guibg=red
 " autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
