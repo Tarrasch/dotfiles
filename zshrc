@@ -32,13 +32,5 @@ bindkey ";5D" backward-word
 # Python autocompletion (http://stackoverflow.com/a/246779/621449)
 export PYTHONSTARTUP=~/.pythonrc
 
-# I know what I'm doing function
-ik () {
-  (($#>0)) && {
-    [[ $1 != $(basename $PWD ) ]] && echo "$0: Argument doesn't match PWD, refusing to continue" && return 1
-  }
-  echo "Are you sure you want to do this? (y/n)" && read -qs
-}
-
 # Import omz stuff
 . ~/.zsh/from-omz.zsh
