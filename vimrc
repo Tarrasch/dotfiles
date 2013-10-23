@@ -1,6 +1,9 @@
 " No vi comptiblilty (I think) /Arash
 set nocompatible
 
+" Map leader key
+let mapleader = " "
+
 " NeoBundle
 source ~/.vim/plugin-configs/neobundle.vim
 
@@ -70,9 +73,6 @@ noremap gl :VimFiler<CR>
 noremap gL :VimFilerCurrentDir<CR>
 let g:unite_source_history_yank_enable = 1
 nnoremap h :<C-u>Unite history/yank<CR>
-
-" Map leader key
-let mapleader = " "
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.d,*.gif,*.pdf,_site,_cache
 
