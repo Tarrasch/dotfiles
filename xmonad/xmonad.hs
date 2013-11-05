@@ -28,7 +28,7 @@ gmailInFirefox =
   spawn "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+1'"
 
 unityLauncherLikeKeys = const $ M.fromList $ concatMap aux [
-      t xK_a "nautilus" "Nautilus"
+      t xK_a "nemo" "Nemo"
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
     , t xK_t "thunderbird" "Thunderbird"
