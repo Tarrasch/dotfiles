@@ -10,7 +10,8 @@ import qualified XMonad.StackSet as W
 
 -- This file can be tested out (before doing alt-q) with ghci:
 --
---     ghci -ilib xmonad.hs
+--     $ cd ~/dotfiles/xmonad
+--     $ ghci -ilib xmonad.hs
 
 myManageHook = composeAll (
     [ manageHook gnomeConfig
