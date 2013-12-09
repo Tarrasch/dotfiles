@@ -47,6 +47,7 @@ NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'vim-scripts/localvimrc'
+NeoBundle 'vim-scripts/SudoEdit.vim'
 NeoBundle 'xolox/vim-easytags'
 NeoBundle 'xolox/vim-misc'
 
