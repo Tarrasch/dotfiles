@@ -18,6 +18,9 @@ antigen-bundle zsh-users/zsh-history-substring-search
 # Load the theme
 # Note: antigen-theme is stupid and have undocumented conventions
 antigen-bundle sindresorhus/pure
+# antigen-bundle Tarrasch/zsh-prompt-powerline
+# antigen theme https://gist.github.com/3750104.git agnoster
+setopt prompt_subst
 
 # Tell antigen that you're done.
 antigen-apply
@@ -27,12 +30,12 @@ antigen-apply
 zmodload zsh/terminfo
 
 # The official hint below didn't work
-# bindkey "$terminfo[kcuu1]" history-substring-search-up
-# bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 #
 # But this below works ($terminfo[kcuu1]=='A') withou the '^[['
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
 
 # And omg can somebody explain why the below doesn't work!?!?
 # echo $terminfo[kcuu1]
