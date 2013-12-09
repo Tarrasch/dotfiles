@@ -34,6 +34,14 @@ gmailInFirefox :: X ()
 gmailInFirefox =
   spawn "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+1'"
 
+-- In order to get the window names, the commands
+--
+--    $ xev
+--    $ xwininfo
+--    $ xprop
+--    $ xprop | grep 'WM_CLASS(STRING)'
+--
+-- Will come in handy
 unityLauncherLikeKeys = const $ M.fromList $ concatMap aux [
       t xK_a "nemo" "Nemo"
     , t xK_r "gnome-terminal" "Gnome-terminal"
