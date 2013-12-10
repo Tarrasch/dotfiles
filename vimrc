@@ -86,3 +86,7 @@ source ~/.vim/plugin-configs.vim " Source all plugin requirement options
 
 " No delayed "ESC"
 set timeoutlen=1000 ttimeoutlen=0
+
+" Use par as formatprg
+" (http://vimcasts.org/episodes/formatting-text-with-par/)
+set formatprg=par
