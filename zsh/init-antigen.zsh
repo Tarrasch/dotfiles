@@ -17,7 +17,8 @@ antigen-bundle zsh-users/zsh-history-substring-search
 
 # Load the theme
 # Note: antigen-theme is stupid and have undocumented conventions
-antigen-bundle sindresorhus/pure
+# antigen-bundle sindresorhus/pure
+antigen-bundle Tarrasch/pure # My own version is purer
 # antigen-bundle Tarrasch/zsh-prompt-powerline
 # antigen theme https://gist.github.com/3750104.git agnoster
 setopt prompt_subst
