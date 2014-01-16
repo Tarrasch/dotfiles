@@ -56,3 +56,7 @@ let g:EasyMotion_leader_key = '<Leader><Leader>'
 " Surround, add latex support, see
 " https://github.com/tpope/vim-surround/issues/47
 let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
+
+" Ctrl-P
+" I want it to use the current folder, not repo root
+let g:ctrlp_working_path_mode = '0'
