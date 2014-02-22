@@ -24,3 +24,12 @@ git config --global core.excludesfile ~/.gitignore-global
 
 ##### Fix fonts for vim-airline
 fc-cache -vf ~/.fonts
+
+##### NeoBundle installation
+echo << EOL
+Don't forget to run:
+
+mkdir -p ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+
+EOL
