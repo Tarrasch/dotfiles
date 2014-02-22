@@ -8,6 +8,7 @@ antigen-bundle Tarrasch/zsh-command-not-found
 antigen-bundle Tarrasch/zsh-autoenv
 antigen-bundle Tarrasch/zsh-bd
 antigen-bundle Tarrasch/zsh-i-know
+antigen-bundle Tarrasch/zsh-colors
 
 # Syntax highlighting bundle.
 antigen-bundle zsh-users/zsh-syntax-highlighting
