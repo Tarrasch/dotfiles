@@ -2,6 +2,9 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=20000
 
+# Allow extended glob patterns (like '**/' is actually '(*/)#')
+setopt extended_glob
+
 # Add to path
 PATH=~/.cabal/bin:$PATH
 PATH=~/.bin:$PATH
