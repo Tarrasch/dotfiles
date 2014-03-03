@@ -90,3 +90,10 @@ set timeoutlen=1000 ttimeoutlen=0
 " Use par as formatprg
 " (http://vimcasts.org/episodes/formatting-text-with-par/)
 set formatprg=par
+
+" https://app.asana.com/0/2677909504410/10631479299225
+" Basically, <Leader>p is same as paste from clipboard
+noremap <Leader>p "+p
+noremap <Leader>P "+P
+noremap <Leader>y "+y
+noremap <Leader>Y "+Y
