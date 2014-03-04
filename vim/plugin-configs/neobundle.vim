@@ -52,6 +52,9 @@ NeoBundle 'vim-scripts/SudoEdit.vim'
 NeoBundle 'xolox/vim-easytags'
 NeoBundle 'xolox/vim-misc'
 
+" From now on I don't sort the list anymore, I'll just append here
+NeoBundle 'dahu/vim-fanfingtastic'
+
 " " My Bundles here:
 " "
 " " Note: You don't set neobundle setting in .gvimrc!
