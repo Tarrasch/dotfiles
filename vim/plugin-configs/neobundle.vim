@@ -27,7 +27,7 @@ NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 NeoBundle 'lukerandall/haskellmode-vim'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'mileszs/ack.vim'
-NeoBundle 'moll/vim-bbye'
+NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/neocomplcache'
