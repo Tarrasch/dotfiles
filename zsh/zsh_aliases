@@ -13,18 +13,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -CF'
-
-#chalmers login
-alias chalmsshfs='sshfs rarash@remote1.student.chalmers.se:/chalmers/users/rarash/ ~/chalmers/'
-alias chalmssh='ssh -Y rarash@remote1.student.chalmers.se'
-
-# Git commands
-alias gs='git status'
-alias gd='git diff'
-alias gl='git log -5 --format="%C(yellow)%h %Creset%s %Cred(%ar)"'
-alias gap='git add --patch'
 
 # Add template .gitignore
 alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
@@ -40,14 +29,6 @@ alias mkmarkdown='(MD=$(ls *.markdown) && [ -f $MD ] && pandoc $MD -o $(basename
 alias mk='mklatex || mkmarkdown'
 alias view-pdf='(xdg-open *.pdf > /dev/null 2>&1)'
 alias mkv='mk && view-pdf'
-alias mkf='for((i=0;i<1000000;i++)) do mk;sleep 5; done'
-
-# yesod
-alias yc='yesod configure'
-alias yd='yesod devel'
-
-# dtek
-alias dtek='ssh rarash@dtek.se'
 
 # colemak
 COLEMAK="$HOME/dotfiles/.colemak/"
