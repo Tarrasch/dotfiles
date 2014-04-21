@@ -37,3 +37,4 @@ alias cm='cd $COLEMAK && setxkbmap us && xmodmap xmodmap/xmodmap.colemak && xset
 
 # other
 alias ack=ack-grep
+alias neobundle='vim $HOME/.vim/plugin-configs/neobundle.vim'
