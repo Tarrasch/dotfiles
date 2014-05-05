@@ -30,6 +30,15 @@ myKeys = idHook
     <+> unityLauncherLikeKeys
     <+> swapWorkspaceKeys
 
+-- | Move to first tab in firefox, use like this:
+--
+--      [
+--        ((mod4Mask              , xK_t ), gmailInFirefox )
+--      ]
+--
+--  And don't forget to do
+--
+--      sudo apt-get install xdotool
 gmailInFirefox :: X ()
 gmailInFirefox =
   spawn "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+1'"
