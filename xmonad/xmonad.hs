@@ -3,7 +3,7 @@ import XMonad
 import XMonad.Config.Gnome
 import XMonad.Colemak
 import XMonad.Actions.WindowGo
-import XMonad.Layout.IndependentScreens
+import qualified XMonad.Layout.IndependentScreens as IS
 import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
@@ -83,18 +83,18 @@ oneToNine = map show [1 :: Int .. 9]
 workspaceKeys conf = let modm = modMask conf
                      in M.fromList $
     -- Regular jumping but for independent screens
-    [((m .|. modm, k), windows $ onCurrentScreen f i)
+    [((m .|. modm, k), windows $ IS.onCurrentScreen f i)
         | (i, k) <- zip oneToNine [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
     -- Swap workspaces
      ++
-     [((modm .|. controlMask, k), windows $ onCurrentScreen swapWithCurrent i)
+     [((modm .|. controlMask, k), windows $ IS.onCurrentScreen swapWithCurrent i)
          | (i, k) <- zip oneToNine [xK_1 ..]]
 
 
 main = do
-  nScreens <- countScreens
+  nScreens <- IS.countScreens
   xmonad $ myConfig {
-      workspaces = withScreens nScreens oneToNine
+      workspaces = IS.withScreens nScreens oneToNine
     }
