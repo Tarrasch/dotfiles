@@ -80,3 +80,7 @@ dwsync.xml
 ###################
 *.errors
 xmonad-*-linux
+
+# Spotify stuff
+###################
+zsh/spotify.zsh
