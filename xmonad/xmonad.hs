@@ -9,6 +9,7 @@ import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.SetWMName (setWMName) -- For IntelliJ
 import XMonad.Hooks.ICCCMFocus (takeTopFocus) -- For IntelliJ
+import GetProfile (getProfile, Profile(Spotify, Rest))
 
 -- This file can be tested out (before doing alt-q) with ghci:
 --
@@ -26,10 +27,10 @@ myManageHook = composeAll (
     , resource  =? "Do"   --> doIgnore
     ])
 
-myKeys = idHook
+myKeysP profile = idHook
     <+> workspaceKeys
     <+> colemakKeys
-    <+> unityLauncherLikeKeys
+    <+> unityLauncherLikeKeysP profile
     <+> swapWorkspaceKeys
 
 -- | Move to first tab in firefox, use like this:
@@ -53,27 +54,35 @@ gmailInFirefox =
 --    $ xprop | grep 'WM_CLASS(STRING)'
 --
 -- Will come in handy
-unityLauncherLikeKeys = const $ M.fromList $ concatMap aux [
-      t xK_a "nemo" "Nemo"
+unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
+      key_a
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
-    , t xK_t "thunderbird" "Thunderbird"
     , t xK_n "rednotebook" "Rednotebook"
+  ] ++
+  concat [
+    key_t
   ]
   where aux (key, process, cN) = [
             ((mod4Mask              , key ), runOrRaiseNext process   (className =? cN       ))
           , ((mod4Mask .|. shiftMask, key ), spawn          process )
           ]
         t a b c = (a, b, c)
+        key_a = case profile of
+                  Spotify -> t xK_a "nautilus" "Nautilus"
+                  Rest    -> t xK_a "nemo" "Nemo"
+        key_t = case profile of
+                  Spotify -> [((mod4Mask              , xK_t ), gmailInFirefox )]
+                  Rest    -> aux $ t xK_t "thunderbird" "Thunderbird"
 
 swapWorkspaceKeys (XConfig {..}) =
   M.fromList $
     [((modMask .|. controlMask, k), windows $ swapWithCurrent i)
       | (i, k) <- zip workspaces [xK_1 .. xK_9]]
 
-myConfig = gnomeConfig {
+myConfigP profile = gnomeConfig {
     manageHook = myManageHook
-  , keys = myKeys
+  , keys = myKeysP profile
   , startupHook = setWMName "LG3D" -- For IntelliJ
   , logHook = takeTopFocus -- For IntelliJ
     }
@@ -94,7 +103,8 @@ workspaceKeys conf = let modm = modMask conf
 
 
 main = do
-  nScreens <- IS.countScreens
-  xmonad $ myConfig {
+  nScreens <- return (2) -- IS.countScreens
+  profile <- getProfile
+  xmonad $ (myConfigP profile) {
       workspaces = IS.withScreens nScreens oneToNine
     }
