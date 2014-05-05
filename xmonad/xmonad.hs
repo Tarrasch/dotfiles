@@ -7,6 +7,8 @@ import XMonad.Layout.IndependentScreens
 import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
+import XMonad.Hooks.SetWMName (setWMName) -- For IntelliJ
+import XMonad.Hooks.ICCCMFocus (takeTopFocus) -- For IntelliJ
 
 -- This file can be tested out (before doing alt-q) with ghci:
 --
@@ -72,6 +74,8 @@ swapWorkspaceKeys (XConfig {..}) =
 myConfig = gnomeConfig {
     manageHook = myManageHook
   , keys = myKeys
+  , startupHook = setWMName "LG3D" -- For IntelliJ
+  , logHook = takeTopFocus -- For IntelliJ
     }
 
 oneToNine = map show [1 :: Int .. 9]
