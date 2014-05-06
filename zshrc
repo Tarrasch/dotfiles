@@ -14,6 +14,9 @@ fpath=(~/dotfiles/zsh/plugins/completions/src $fpath)
 
 
 # Initialize colors
+# Necessary for
+#     $ echo "$fg[blue] hello world"
+# Like is uesd in zsh-colors
 autoload -U colors
 colors
 
