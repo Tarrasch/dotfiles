@@ -25,10 +25,6 @@ colors
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-##############################
-# RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-
 # Initialize antigen
 . ~/.zsh/init-antigen.zsh
 
