@@ -1,6 +1,27 @@
 # Load antigen
 . ~/.zsh/antigen/antigen.zsh
 
+# Example usage:
+#
+#    local-test-and-delete zsh-i-know
+#
+# replacing
+#
+#    antigen-bundle Tarrasch/zsh-i-know
+#
+# And then do
+#
+#    $ ik zsh-i-know && git add --all . && git commit -m'yay'
+#
+# From ~/repos/zsh-i-know
+#
+local-test-and-delete () {
+  REPOS='/home/arash/repos'
+  REPO="$REPOS/$1"
+  trash-put $(-antigen-get-clone-dir $REPO)
+  antigen-bundle $REPO
+}
+
 # My own plugins
 antigen-bundle Tarrasch/zsh-functional
 antigen-bundle Tarrasch/zsh-mcd
