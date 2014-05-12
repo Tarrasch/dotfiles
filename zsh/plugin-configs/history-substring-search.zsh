@@ -6,7 +6,8 @@ zmodload zsh/terminfo
 # shell variables set for you, like $DISTRIB_RELEASE
 [[ -s "/etc/lsb-release" ]] && . /etc/lsb-release
 
-if [[ $DISTRIB_RELEASE == "13.10" ]]
+if [[ $DISTRIB_RELEASE == "13.10" ||
+      $DISTRIB_RELEASE == "14.04" ]]
 then
   bindkey "$terminfo[kcuu1]" history-substring-search-up
   bindkey "$terminfo[kcud1]" history-substring-search-down
