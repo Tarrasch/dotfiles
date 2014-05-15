@@ -62,6 +62,9 @@ NeoBundle 'xolox/vim-misc'
 
 " From now on I don't sort the list anymore, I'll just append here
 NeoBundle 'dahu/vim-fanfingtastic'
+NeoBundle 'nelstrom/vim-visual-star-search'
+NeoBundle 'nono/vim-handlebars'  " (Temporary - until Bootcamp 27 is over)
+NeoBundle 'groenewege/vim-less' " (Temporary - until Bootcamp 27 is over)
 
 " " My Bundles here:
 " "
