@@ -32,6 +32,25 @@ myKeysP profile = idHook
     <+> colemakKeys
     <+> unityLauncherLikeKeysP profile
     <+> swapWorkspaceKeys
+    <+> spotifyKeys
+
+-- | Controlling spotify hack
+--
+-- Assuming the existence of binary in ~/.bin/spotifycommand.exe
+-- (Get the binary from https://github.com/Tarrasch/SpotifyWinCmd, also, it is
+-- just a bash script and not a binary, so the spotifycommand.exe.so must be
+-- present in ~/.bin as well)
+--
+-- Note, this is for spotify under wine, not the linux client!
+spotifycommand :: String -> X ()
+spotifycommand cmd = spawn $ "~/.bin/spotifycommand.exe " ++ cmd
+
+spotifyKeys (XConfig {..}) =
+  M.fromList $
+    [((mod4Mask, xK_c), spotifycommand "playpause"),
+     ((mod4Mask, xK_v), spotifycommand "next")]
+    -- [((modMask .|. controlMask, k), windows $ swapWithCurrent i)
+    --   | (i, k) <- zip workspaces [xK_1 .. xK_9]]
 
 -- | Move to first tab in firefox, use like this:
 --
