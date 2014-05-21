@@ -41,13 +41,18 @@ myKeysP profile = idHook
 -- just a bash script and not a binary, so the spotifycommand.exe.so must be
 -- present in ~/.bin as well)
 --
+--   $ spotifycommand.exe     
+--   spotify_cmd version 0.5, copyright by Mattias Runge 2009
+--   Usage: ./spotify_cmd [playpause|prev|next|stop|mute|volup|voldown|status]
+--
 -- Note, this is for spotify under wine, not the linux client!
 spotifycommand :: String -> X ()
 spotifycommand cmd = spawn $ "~/.bin/spotifycommand.exe " ++ cmd
 
 spotifyKeys (XConfig {..}) =
   M.fromList $
-    [((mod4Mask, xK_c), spotifycommand "playpause"),
+    [((mod4Mask, xK_x), spotifycommand "prev"),
+     ((mod4Mask, xK_c), spotifycommand "playpause"),
      ((mod4Mask, xK_v), spotifycommand "next")]
     -- [((modMask .|. controlMask, k), windows $ swapWithCurrent i)
     --   | (i, k) <- zip workspaces [xK_1 .. xK_9]]
