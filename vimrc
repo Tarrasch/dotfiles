@@ -97,3 +97,10 @@ noremap <Leader>p "+p
 noremap <Leader>P "+P
 noremap <Leader>y "+y
 noremap <Leader>Y "+Y
+
+" Create <leader>gf binding, like gf but creating file if it doesn't exist.
+" 
+" https://app.asana.com/0/2677909504410/8354666017829
+" http://superuser.com/questions/277325/create-a-file-under-the-cursor-in-vim
+map <leader>gf :e <cfile><cr>
+vmap <leader>gf "ay:e <C-r>a<cr>
