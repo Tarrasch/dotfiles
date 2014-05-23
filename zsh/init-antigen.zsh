@@ -43,7 +43,6 @@ antigen-bundle zsh-users/zsh-history-substring-search
 antigen-bundle Tarrasch/pure # My own version is purer
 # antigen-bundle Tarrasch/zsh-prompt-powerline
 # antigen theme https://gist.github.com/3750104.git agnoster
-setopt prompt_subst
 
 # Tell antigen that you're done.
 antigen-apply
