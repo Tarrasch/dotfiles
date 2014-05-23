@@ -28,8 +28,8 @@ colors
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
-# Initialize antigen
-. ~/.zsh/init-antigen.zsh
+# Initialize antigen-hs
+. ~/.zsh/antigen-hs/init.zsh
 
 # Python autocompletion (http://stackoverflow.com/a/246779/621449)
 export PYTHONSTARTUP=~/.pythonrc
