@@ -104,3 +104,9 @@ noremap <Leader>Y "+Y
 " http://superuser.com/questions/277325/create-a-file-under-the-cursor-in-vim
 map <leader>gf :e <cfile><cr>
 vmap <leader>gf "ay:e <C-r>a<cr>
+
+" Make backspace work again.
+" When I removed NeoComplCache, backspace stopped working for some reason
+"
+" http://vim.wikia.com/wiki/Backspace_and_delete_problems
+set backspace=indent,eol,start

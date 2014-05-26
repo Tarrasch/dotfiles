@@ -38,7 +38,6 @@ NeoBundle 'mileszs/ack.vim'
 NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimshell.vim'
@@ -65,6 +64,7 @@ NeoBundle 'dahu/vim-fanfingtastic'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'  " (Temporary - until Bootcamp 27 is over)
 NeoBundle 'groenewege/vim-less' " (Temporary - until Bootcamp 27 is over)
+NeoBundle 'Valloric/YouCompleteMe'
 
 " " My Bundles here:
 " "
