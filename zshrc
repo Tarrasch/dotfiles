@@ -5,6 +5,13 @@ SAVEHIST=20000
 # Allow extended glob patterns (like '**/' is actually '(*/)#')
 setopt extended_glob
 
+# Allow comments to be put in the command-line
+#
+#   $ echo 'Hello World'    # This comment will be valid now
+#
+# http://stackoverflow.com/questions/11670935/comments-in-command-line-zsh
+setopt interactivecomments
+
 # Add to path
 PATH=~/.cabal/bin:$PATH
 PATH=~/.bin:$PATH
