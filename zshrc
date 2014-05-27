@@ -17,7 +17,7 @@ PATH=~/.cabal/bin:$PATH
 PATH=~/.bin:$PATH
 
 # Add to completions
-fpath=(~/dotfiles/zsh/plugins/completions/src $fpath)
+fpath=(~/.zsh/plugins/completions/src $fpath)
 
 # Initialize colors
 # Necessary for
