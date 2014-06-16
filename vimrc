@@ -110,3 +110,19 @@ vmap <leader>gf "ay:e <C-r>a<cr>
 "
 " http://vim.wikia.com/wiki/Backspace_and_delete_problems
 set backspace=indent,eol,start
+
+" http://stackoverflow.com/a/4255960
+"
+" Keep window position when switching between buffers.
+"
+" I never saw any breakage after adding this but I didn't notice that much
+" problems with this before adding this either.
+if v:version >= 700
+  au BufLeave * let b:winview = winsaveview()
+  au BufEnter * if(exists('b:winview')) | call winrestview(b:winview) | endif
+endif
+
+" http://stackoverflow.com/a/8292950
+"
+" Keep cursor column when switching between buffers.
+set nostartofline
