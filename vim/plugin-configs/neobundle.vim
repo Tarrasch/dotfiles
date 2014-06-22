@@ -63,7 +63,11 @@ NeoBundle 'dahu/vim-fanfingtastic'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'  " (Temporary - until Bootcamp 27 is over)
 NeoBundle 'groenewege/vim-less' " (Temporary - until Bootcamp 27 is over)
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe', {
+            \ 'build' : {
+            \   'unix' : './install.sh'
+            \ },
+\ } " https://github.com/chicham/dotfiles/blob/master/vimrc#L126-L130
 
 " " My Bundles here:
 " "
