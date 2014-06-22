@@ -126,3 +126,8 @@ endif
 "
 " Keep cursor column when switching between buffers.
 set nostartofline
+
+" Python completeing started hanging on dot,
+" http://stackoverflow.com/a/21769051/621449
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion = 0
