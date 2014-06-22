@@ -48,6 +48,27 @@ let g:airline_powerline_fonts = 1 " Cool fonts
 " Easmotion, it's a trade off here, I choose the "slower" binding that on the
 " other hand is less likely to clog with other bindings
 let g:EasyMotion_leader_key = '<Leader><Leader>'
+" default:              'asdghklqwertyuiopzxcvbnmfj;'
+let g:EasyMotion_keys = 'arsdheiqwfpgjluy;zxcvbkmtno' " Colemak
+
+" I (Arash) choose to not use the default easyoperator bindings but bind it in
+" the way I'm used to since before, I found the default bindings of 4
+" characters to be too long (altough maybe more logical).
+" easyoperator-line
+let g:EasyOperator_line_do_mapping = 0
+omap u                           <Plug>(easyoperator-line-select)
+xmap <Plug>(easymotion-prefix)u  <Plug>(easyoperator-line-select)
+nmap du                          <Plug>(easyoperator-line-delete)
+nmap yu                          <Plug>(easyoperator-line-yank)
+" Hint: xmap == vmap   (almost) // Arash
+" Note: the last two might seem to be redundant of the :omap one, but they
+" actually implement cursor jump-backs which is very nice. :) // Arash
+
+let g:EasyOperator_phrase_do_mapping = 0
+omap y                           <Plug>(easyoperator-phrase-select)
+xmap <Plug>(easymotion-prefix)y  <Plug>(easyoperator-phrase-select)
+nmap dy                          <Plug>(easyoperator-phrase-delete)
+nmap yy                          <Plug>(easyoperator-phrase-yank)
 
 " Surround, add latex support, see
 " https://github.com/tpope/vim-surround/issues/47

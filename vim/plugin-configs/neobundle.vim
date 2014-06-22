@@ -40,7 +40,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'Tarrasch/vim-easymotion'
 NeoBundle 'termoshtt/unite-bibtex'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
@@ -70,6 +69,12 @@ NeoBundle 'Valloric/YouCompleteMe', {
 \ } " https://github.com/chicham/dotfiles/blob/master/vimrc#L126-L130
 NeoBundle 'vim-scripts/groovyindent'
 NeoBundle 'guns/vim-clojure-static'
+
+" The easy* plugins
+" https://app.asana.com/0/7514515131835/10893630261974
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'haya14busa/vim-easyoperator-phrase'
+NeoBundle 'haya14busa/vim-easyoperator-line'
 
 " " My Bundles here:
 " "
