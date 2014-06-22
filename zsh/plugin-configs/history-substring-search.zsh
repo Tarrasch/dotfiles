@@ -17,4 +17,8 @@ then
   # At least for somewhat older Ubuntu versions like 12.04
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
+else
+  # This worked for me on the debian machines at Spotify
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
 fi
