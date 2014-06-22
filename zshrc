@@ -49,3 +49,19 @@ export PYTHONSTARTUP=~/.pythonrc
 [[ -s "$HOME/.zsh/spotify.zsh" ]] && . ~/.zsh/spotify.zsh
 
 . ~/.zsh/plugin-configs.zsh
+
+rsync-dotfiles () {
+  # Usage:
+  #
+  # rsync-dotfiles my.ssh.server.com:/home/arash
+
+  if ! [[ $1 =~ ':' ]]
+  then
+    echo "Warning, no colon (:) in path, maybe use :/home/arash as suffix?"
+    return 1
+  fi
+  FILES_TO_RSYNC=( .antigen-hs .bash_aliases .bash_mylocal .bash_profile \
+                   .bashrc dotfiles .gitconfig .gitignore-global .pythonrc \
+                   .screenrc .vim .vimrc .zsh .zshrc )
+  (cd $HOME && rsync --links --recursive --exclude='YouCompleteMe/' $FILES_TO_RSYNC $1)
+}
