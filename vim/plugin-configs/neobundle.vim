@@ -72,9 +72,16 @@ NeoBundle 'guns/vim-clojure-static'
 
 " The easy* plugins
 " https://app.asana.com/0/7514515131835/10893630261974
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'haya14busa/vim-easyoperator-phrase'
-NeoBundle 'haya14busa/vim-easyoperator-line'
+" I set >= 7.4 dependency so it doesn't complain on startups //Arash
+NeoBundle 'Lokaltog/vim-easymotion', {
+    \   'vim_version' : '7.4'
+    \ }
+NeoBundle 'haya14busa/vim-easyoperator-phrase', {
+    \   'vim_version' : '7.4'
+    \ }
+NeoBundle 'haya14busa/vim-easyoperator-line', {
+    \   'vim_version' : '7.4'
+    \ }
 
 " " My Bundles here:
 " "

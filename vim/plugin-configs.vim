@@ -77,3 +77,9 @@ let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 " Ctrl-P
 " I want it to use the current folder, not repo root
 let g:ctrlp_working_path_mode = '0'
+
+
+" Easytags
+" Since exuberant-ctags isn't always installed on machines I ssh into, I don't
+" want to get a warning each time i open up vim
+let g:easytags_suppress_ctags_warning = 1
