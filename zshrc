@@ -63,5 +63,7 @@ rsync-dotfiles () {
   FILES_TO_RSYNC=( .antigen-hs .bash_aliases .bash_mylocal .bash_profile \
                    .bashrc dotfiles .gitconfig .gitignore-global .pythonrc \
                    .screenrc .vim .vimrc .zsh .zshrc )
-  (cd $HOME && rsync --links --recursive --exclude='YouCompleteMe/' $FILES_TO_RSYNC $1)
+  local excludes
+  excludes=(--exclude='.git/' --exclude='YouCompleteMe/' --exclude='xmonad/')
+  (cd $HOME && rsync --verbose --links --recursive $excludes $FILES_TO_RSYNC $1)
 }
