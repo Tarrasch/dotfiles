@@ -131,3 +131,13 @@ set nostartofline
 " http://stackoverflow.com/a/21769051/621449
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 0
+
+" In combination with tmux, vim behaves weirdly on <Ctrl>+ArrowLeft
+" http://superuser.com/a/402084/97600
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif

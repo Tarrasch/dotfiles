@@ -34,6 +34,11 @@ colors
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
 
+# Due to tmux being weird
+# http://clock.co.uk/blog/zsh-ctrl-left-arrow-outputting-5d
+bindkey "5C" forward-word
+bindkey "5D" backward-word
+
 # Initialize antigen-hs
 . ~/.zsh/antigen-hs/init.zsh
 
@@ -62,7 +67,7 @@ rsync-dotfiles () {
   fi
   FILES_TO_RSYNC=( .antigen-hs .bash_aliases .bash_mylocal .bash_profile \
                    .bashrc dotfiles .gitconfig .gitignore-global .pythonrc \
-                   .screenrc .vim .vimrc .zsh .zshrc )
+                   .screenrc .vim .vimrc .zsh .zshrc .tmux.conf )
   local excludes
   excludes=(--exclude='.git/' --exclude='YouCompleteMe/' --exclude='xmonad/')
   (cd $HOME && rsync --verbose --links --recursive $excludes $FILES_TO_RSYNC $1)
