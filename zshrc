@@ -67,8 +67,15 @@ rsync-dotfiles () {
   fi
   FILES_TO_RSYNC=( .antigen-hs .bash_aliases .bash_mylocal .bash_profile \
                    .bashrc dotfiles .gitconfig .gitignore-global .pythonrc \
-                   .screenrc .vim .vimrc .zsh .zshrc .tmux.conf )
+                   .screenrc .vim .vimrc .zsh .zshrc .tmux.conf \
+                   .ssh/rc \
+                   )
   local excludes
   excludes=(--exclude='.git/' --exclude='YouCompleteMe/' --exclude='xmonad/')
-  (cd $HOME && rsync --verbose --links --recursive $excludes $FILES_TO_RSYNC $1)
+  # We use --relative to Keep folder structure http://serverfault.com/q/39522,
+  # for say .ssh/rc
+  (cd $HOME && \
+      rsync \
+        --relative \
+        --verbose --links --recursive $excludes $FILES_TO_RSYNC $1)
 }

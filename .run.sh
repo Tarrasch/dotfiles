@@ -19,6 +19,9 @@ do
     fi
 done
 
+mkdir "$HOME/.ssh"
+ln -s "$PWD/.ssh/rc" "$HOME/.ssh/rc"
+
 ##### Git config
 git config --global core.excludesfile ~/.gitignore-global
 
