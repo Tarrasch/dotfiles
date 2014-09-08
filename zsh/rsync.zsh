@@ -38,6 +38,14 @@ rsync-repos-generic () {
   local src=$1
   local dst_path=$2
   local dst_hostname=$3
+  local optional_qualifier=$4
+
+  if [[ $optional_qualifier != "" ]]
+  then
+    dst_path+="/$(basename $src)"
+    src+="/$optional_qualifier"
+  fi
+
   local excludes
   excludes=(\
     --exclude='.git/' \
