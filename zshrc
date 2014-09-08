@@ -56,27 +56,4 @@ export PYTHONSTARTUP=~/.pythonrc
 
 . ~/.zsh/plugin-configs.zsh
 
-rsync-dotfiles () {
-  # Usage:
-  #
-  # rsync-dotfiles my.ssh.server.com:/home/arash
-
-  if ! [[ $1 =~ ':' ]]
-  then
-    echo "Warning, no colon (:) in path, maybe use :/home/arash as suffix?"
-    return 1
-  fi
-  FILES_TO_RSYNC=( .antigen-hs .bash_aliases .bash_mylocal .bash_profile \
-                   .bashrc dotfiles .gitconfig .gitignore-global .pythonrc \
-                   .screenrc .vim .vimrc .zsh .zshrc .tmux.conf \
-                   .ssh/rc \
-                   )
-  local excludes
-  excludes=(--exclude='.git/' --exclude='YouCompleteMe/' --exclude='xmonad/')
-  # We use --relative to Keep folder structure http://serverfault.com/q/39522,
-  # for say .ssh/rc
-  (cd $HOME && \
-      rsync \
-        --relative \
-        --verbose --links --recursive $excludes $FILES_TO_RSYNC $1)
-}
+. ~/.zsh/rsync.zsh
