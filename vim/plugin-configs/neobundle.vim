@@ -67,7 +67,6 @@ NeoBundle 'Valloric/YouCompleteMe', {
             \   'unix' : './install.sh'
             \ },
 \ } " https://github.com/chicham/dotfiles/blob/master/vimrc#L126-L130
-NeoBundle 'vim-scripts/groovyindent'
 NeoBundle 'guns/vim-clojure-static'
 
 " The easy* plugins
@@ -114,4 +113,4 @@ filetype plugin indent on     " Required!
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 " Installation check.
-NeoBundleCheck
+" NeoBundleCheck  " XXX: Temporary so remote machines don't ask for YCM
