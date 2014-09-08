@@ -15,6 +15,7 @@ setopt interactivecomments
 # Add to path
 PATH=~/.cabal/bin:$PATH
 PATH=~/.bin:$PATH
+PATH=~/repos/arcanist/bin:$PATH
 
 # Add to completions
 fpath=(~/.zsh/plugins/completions/src $fpath)
