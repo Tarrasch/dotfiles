@@ -31,3 +31,20 @@ rsync-dotfiles () {
         --relative \
         --verbose --links --recursive $excludes $files_to_rsync $1)
 }
+
+rsync-repos-generic () {
+  # Rsync repositories
+  #
+  local src=$1
+  local dst_path=$2
+  local dst_hostname=$3
+  local excludes
+  excludes=(\
+    --exclude='.git/' \
+    --exclude='*.pyc' \
+    --exclude='*.swp' \
+    --exclude='*.jar' \
+  )
+  rsync --verbose --links --recursive $excludes \
+    $src "$dst_hostname:$dst_path"
+}
