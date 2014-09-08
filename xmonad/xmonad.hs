@@ -27,6 +27,7 @@ myManageHook = composeAll (
     , resource  =? "Do"   --> doIgnore
     ])
 
+myKeysP :: Profile -> (XConfig Layout -> M.Map (ButtonMask, KeySym) (X ()))
 myKeysP profile = idHook
     <+> workspaceKeys
     <+> colemakKeys
