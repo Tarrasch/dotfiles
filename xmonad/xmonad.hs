@@ -3,6 +3,8 @@ import XMonad
 import XMonad.Config.Gnome
 import XMonad.Colemak
 import XMonad.Actions.WindowGo
+import XMonad.Config.Xfce
+import qualified XMonad.ManageHook as ManageHook
 import qualified XMonad.Layout.IndependentScreens as IS
 import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
@@ -16,11 +18,9 @@ import GetProfile (getProfile, Profile(Spotify, Rest))
 --     $ cd ~/dotfiles/xmonad
 --     $ ghci -ilib xmonad.hs
 
-myManageHook = composeAll (
-    [ manageHook gnomeConfig
-
-    -- Unity compatibility
-    , className =? "Unity-2d-panel" --> doIgnore
+myAdditionalManageHook = ManageHook.composeAll (
+    [ -- Unity compatibility
+      className =? "Unity-2d-panel" --> doIgnore
     , className =? "Unity-2d-launcher" --> doFloat
 
     -- Gnome DO
@@ -104,12 +104,18 @@ swapWorkspaceKeys (XConfig {..}) =
     [((modMask .|. controlMask, k), windows $ swapWithCurrent i)
       | (i, k) <- zip workspaces [xK_1 .. xK_9]]
 
-myConfigP profile = gnomeConfig {
-    manageHook = myManageHook
+myConfigP profile = desktopConfig {
+    manageHook = manageHook desktopConfig <+> myAdditionalManageHook
   , keys = myKeysP profile
   , startupHook = setWMName "LG3D" -- For IntelliJ
   , logHook = takeTopFocus -- For IntelliJ
     }
+  where
+    desktopConfig = case profile of
+                      Spotify -> gnomeConfig
+                      Rest    -> gnomeConfig -- xfceConfig -- I'm using
+                       -- gnomeConfig until it hurts. I wasn't able to start my
+                       -- terminal when I had xfceConfig.
 
 oneToNine = map show [1 :: Int .. 9]
 
