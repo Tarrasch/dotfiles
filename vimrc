@@ -141,3 +141,6 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
+
+" Make hsc files to Haskell files (like ExecutionStack.hsc)
+au BufRead,BufNewFile *.hsc set filetype=haskell
