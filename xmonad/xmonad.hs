@@ -43,7 +43,7 @@ myKeysP profile = idHook
 -- just a bash script and not a binary, so the spotifycommand.exe.so must be
 -- present in ~/.bin as well)
 --
---   $ spotifycommand.exe     
+--   $ spotifycommand.exe
 --   spotify_cmd version 0.5, copyright by Mattias Runge 2009
 --   Usage: ./spotify_cmd [playpause|prev|next|stop|mute|volup|voldown|status]
 --
@@ -73,8 +73,13 @@ spotifyKeys (XConfig {..}) =
 --
 --      http://ohspite.net/2013/05/02/keepass-global-autotype-in-xmonad/
 gmailInFirefox :: X ()
-gmailInFirefox =
-  spawn "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+1'"
+gmailInFirefox = openFirefoxTab 1
+
+openFirefoxTab :: Int -> X ()
+openFirefoxTab x = spawn $
+    "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+" ++
+    show x ++
+    "'"
 
 -- In order to get the window names, the commands
 --
@@ -85,14 +90,22 @@ gmailInFirefox =
 --
 -- Will come in handy
 unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
+    -- Applications
       key_a
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
-    , t xK_n "rednotebook" "Rednotebook"
   ] ++
   concat [
     key_t
+  ] ++
+  [
+    -- Firefox shortcuts
+      ((mod4Mask, xK_n), openFirefoxTab 1)
+    , ((mod4Mask, xK_e), openFirefoxTab 2)
+    , ((mod4Mask, xK_i), openFirefoxTab 3)
+    , ((mod4Mask, xK_o), openFirefoxTab 4)
   ]
+
   where aux (key, process, cN) = [
             ((mod4Mask              , key ), runOrRaiseNext process   (className =? cN       ))
           , ((mod4Mask .|. shiftMask, key ), spawn          process )
