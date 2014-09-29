@@ -10,6 +10,7 @@ import qualified XMonad.StackSet as W
 import XMonad.Hooks.SetWMName (setWMName) -- For IntelliJ
 import XMonad.Hooks.ICCCMFocus (takeTopFocus) -- For IntelliJ
 import GetProfile (getProfile, Profile(Spotify, Rest))
+import XMonad.Hooks.EwmhDesktops (ewmh) -- http://ohspite.net/2013/05/02/keepass-global-autotype-in-xmonad/
 
 -- This file can be tested out (before doing alt-q) with ghci:
 --
@@ -67,6 +68,10 @@ spotifyKeys (XConfig {..}) =
 --  And don't forget to do
 --
 --      sudo apt-get install xdotool
+--
+--  Also, this is required:
+--
+--      http://ohspite.net/2013/05/02/keepass-global-autotype-in-xmonad/
 gmailInFirefox :: X ()
 gmailInFirefox =
   spawn "xdotool search 'Mozilla Firefox' windowactivate --sync key --clearmodifiers 'alt+1'"
@@ -130,6 +135,7 @@ workspaceKeys conf = let modm = modMask conf
 main = do
   nScreens <- return (2) -- IS.countScreens
   profile <- getProfile
-  xmonad $ (myConfigP profile) {
+  xmonad $ ewmh
+         $ (myConfigP profile) {
       workspaces = IS.withScreens nScreens oneToNine
     }
