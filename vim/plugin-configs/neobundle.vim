@@ -66,7 +66,9 @@ NeoBundle 'Valloric/YouCompleteMe', {
             \ 'build' : {
             \   'unix' : './install.sh'
             \ },
-\ } " https://github.com/chicham/dotfiles/blob/master/vimrc#L126-L130
+\ }
+
+NeoBundle 'vim-scripts/groovyindent'
 NeoBundle 'guns/vim-clojure-static'
 
 " The easy* plugins

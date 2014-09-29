@@ -56,6 +56,7 @@ export PYTHONSTARTUP=~/.pythonrc
 # confidentialities and should therefor not be checked in!
 [[ -s "$HOME/.zsh/spotify.zsh" ]] && . ~/.zsh/spotify.zsh
 
+. ~/.zsh/util.zsh
 . ~/.zsh/plugin-configs.zsh
 
 . ~/.zsh/rsync.zsh
