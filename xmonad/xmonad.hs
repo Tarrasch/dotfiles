@@ -13,6 +13,7 @@ import XMonad.Hooks.SetWMName (setWMName) -- For IntelliJ
 import XMonad.Hooks.ICCCMFocus (takeTopFocus) -- For IntelliJ
 import GetProfile (getProfile, Profile(Spotify, Rest))
 import XMonad.Hooks.EwmhDesktops (ewmh) -- http://ohspite.net/2013/05/02/keepass-global-autotype-in-xmonad/
+import qualified Graphics.X11.ExtraTypes.XF86 as XF86
 
 -- This file can be tested out (before doing alt-q) with ghci:
 --
@@ -35,6 +36,27 @@ myKeysP profile = idHook
     <+> unityLauncherLikeKeysP profile
     <+> swapWorkspaceKeys
     <+> spotifyKeys
+    <+> (case profile of Spotify -> idHook; Rest -> volumeKeys)
+
+
+-- | Controlling volume, in case you don't have that built in to your desktop
+-- environment.
+--
+-- http://superuser.com/q/389737/97600
+volumeKeys (XConfig {..}) =
+  M.fromList $
+    [((mod4Mask, xK_u),         amixer "4%-"),
+     ((mod4Mask, xK_y),         amixer "4%+"),
+     ((mod4Mask, xK_semicolon), amixer "toggle"),
+    -- This didn't work
+     ((noModMask, XF86.xF86XK_AudioLowerVolume), amixer "4%-"),
+     ((noModMask, XF86.xF86XK_AudioRaiseVolume), amixer "4%+"),
+     ((noModMask, XF86.xF86XK_AudioMute),        amixer "toggle")]
+  where
+    noModMask = 0 :: ButtonMask
+
+amixer :: String -> X ()
+amixer cmd = spawn $ "amixer -D pulse sset Master " ++ cmd
 
 -- | Controlling spotify hack
 --
