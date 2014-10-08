@@ -132,7 +132,9 @@ myConfigP profile = desktopConfig {
   where
     desktopConfig = case profile of
                       Spotify -> gnomeConfig
-                      Rest    -> gnomeConfig -- xfceConfig -- I'm using
+                      Rest    -> xfceConfig {
+                        terminal = "gnome-terminal"
+                      } -- I'm using
                        -- gnomeConfig until it hurts. I wasn't able to start my
                        -- terminal when I had xfceConfig.
 
