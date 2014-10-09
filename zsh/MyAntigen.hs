@@ -2,7 +2,10 @@
 {-# LANGUAGE ExtendedDefaultRules #-}
 module MyAntigen where
 
-import Antigen (AntigenConfiguration (..), bundle, antigen)
+import Antigen (AntigenConfiguration (..)
+              , bundle
+              , antigen
+              , developFromFileSystem)
 import Shelly (shelly)
 
 bundles =
@@ -16,6 +19,7 @@ bundles =
   , bundle "Tarrasch/zsh-mcd"
   , bundle "zsh-users/zsh-syntax-highlighting"
   , bundle "zsh-users/zsh-history-substring-search"
+  -- , developFromFileSystem "/home/arash/repos/zsh-snakebite-completion"
   ]
 
 config = AntigenConfiguration bundles
