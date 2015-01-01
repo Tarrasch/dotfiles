@@ -74,7 +74,7 @@ noremap gL :VimFilerCurrentDir<CR>
 let g:unite_source_history_yank_enable = 1
 nnoremap h :<C-u>Unite history/yank<CR>
 
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.gif,*.pdf,_site,_cache
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.gif,*.pdf,_site,_cache,target
 
 " Wildmenu
 set wildmenu
