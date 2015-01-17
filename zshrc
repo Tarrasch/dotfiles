@@ -18,6 +18,8 @@ PATH=~/.bin:$PATH
 PATH=~/repos/arcanist/bin:$PATH
 PATH="/usr/lib/ccache:$PATH"  # http://askubuntu.com/a/470636/43106
 PATH=~/sbt/bin:$PATH  # https://class.coursera.org/progfun-005/wiki/ToolsSetup
+PATH=~/repos/problemtools:$PATH
+
 
 # Add to completions
 fpath=(~/.zsh/plugins/completions/src $fpath)
