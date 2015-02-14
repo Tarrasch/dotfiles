@@ -1,10 +1,11 @@
-set nocompatible               " Be iMproved
-
 if has('vim_starting')
+  if &compatible
+    set nocompatible
+  endif
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -62,6 +63,8 @@ NeoBundle 'dahu/vim-fanfingtastic'
 NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'  " (Temporary - until Bootcamp 27 is over)
 NeoBundle 'groenewege/vim-less' " (Temporary - until Bootcamp 27 is over)
+
+let g:neobundle#install_process_timeout = 1800  "YouCompleteMe is so slow
 NeoBundle 'Valloric/YouCompleteMe', {
             \ 'build' : {
             \   'unix' : './install.sh'
@@ -106,6 +109,8 @@ NeoBundle 'haya14busa/vim-easyoperator-line', {
 " NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
 
 " ...
+
+call neobundle#end()
 
 filetype plugin indent on     " Required!
 "
