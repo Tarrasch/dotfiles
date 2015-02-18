@@ -63,10 +63,7 @@ export PYTHONSTARTUP=~/.pythonrc
 
 . ~/.zsh/rsync.zsh
 
-if [[ $DISTRIB_RELEASE == "14.04" ]]
-then
-  # For some reasone I always had to enter my ssh-key all the time when I
-  # upgraded to 14.04. Ubuntu stopped doing keychain management for me
-  # automatically. Instead, I employ this cli-software instead.
-  eval $(keychain --eval --agents ssh id_rsa)
-fi
+# For some reasone I always had to enter my ssh-key all the time when I
+# upgraded to 14.04. Ubuntu stopped doing keychain management for me
+# automatically. Instead, I employ this cli-software instead.
+eval $(keychain --eval --agents ssh id_rsa)

@@ -55,7 +55,7 @@ NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'vim-scripts/localvimrc'
-NeoBundle 'xolox/vim-easytags'
+" NeoBundle 'xolox/vim-easytags'  " This is slow as fuck for python
 NeoBundle 'xolox/vim-misc'
 
 " From now on I don't sort the list anymore, I'll just append here
@@ -71,7 +71,7 @@ NeoBundle 'Valloric/YouCompleteMe', {
             \ },
 \ }
 
-NeoBundle 'vim-scripts/groovyindent'
+" NeoBundle 'vim-scripts/groovyindent'  " Gives me stack traces wtf
 NeoBundle 'guns/vim-clojure-static'
 
 " The easy* plugins
