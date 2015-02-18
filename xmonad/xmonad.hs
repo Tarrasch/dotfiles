@@ -37,6 +37,15 @@ myKeysP profile = idHook
     <+> swapWorkspaceKeys
     <+> spotifyKeys
     <+> volumeKeys
+    <+> lockScreenKeys
+
+-- | Lock screen, using slock for now (suckless software)
+--
+--   $ canhaz suckless-tools
+lockScreenKeys (XConfig {..}) =
+    M.fromList [((ctrlPlusAlt, xK_l),         spawn "slock")]
+  where
+    ctrlPlusAlt = controlMask .|. mod1Mask :: ButtonMask
 
 
 -- | Controlling volume, in case you don't have that built in to your desktop
