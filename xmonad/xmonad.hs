@@ -36,7 +36,7 @@ myKeysP profile = idHook
     <+> unityLauncherLikeKeysP profile
     <+> swapWorkspaceKeys
     <+> spotifyKeys
-    <+> (case profile of Spotify -> idHook; Rest -> volumeKeys)
+    <+> volumeKeys
 
 
 -- | Controlling volume, in case you don't have that built in to your desktop
@@ -136,6 +136,8 @@ unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
         key_a = case profile of
                   Spotify -> t xK_a "nautilus" "Nautilus"
                   Rest    -> t xK_a "nemo" "Nemo"
+                  -- TODO: Not sure, but nautilus seems to not use
+                  -- search-as-you-type anymore on my Spotify 14.04 laptop.
         key_t = case profile of
                   Spotify -> [((mod4Mask              , xK_t ), gmailInFirefox )]
                   Rest    -> aux $ t xK_t "thunderbird" "Thunderbird"
@@ -152,13 +154,7 @@ myConfigP profile = desktopConfig {
   , logHook = takeTopFocus -- For IntelliJ
     }
   where
-    desktopConfig = case profile of
-                      Spotify -> gnomeConfig
-                      Rest    -> xfceConfig {
-                        terminal = "gnome-terminal"
-                      } -- I'm using
-                       -- gnomeConfig until it hurts. I wasn't able to start my
-                       -- terminal when I had xfceConfig.
+    desktopConfig = xfceConfig { terminal = "gnome-terminal" }
 
 oneToNine = map show [1 :: Int .. 9]
 
