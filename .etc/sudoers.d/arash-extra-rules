@@ -1,0 +1,7 @@
+# Arash kustom rules
+# https://wiki.archlinux.org/index.php/sudo
+# Ville ha 20 min sudo tid
+Defaults:arash timestamp_timeout=20
+
+# Spara password across sessions
+Defaults !tty_tickets
