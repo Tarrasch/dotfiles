@@ -33,3 +33,7 @@ Setup.lhs
 *.so
 *.pyc
 .lvimrc
+
+
+# I added this for Spotify's puppet repo
+.bundle/config
