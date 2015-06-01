@@ -64,6 +64,7 @@ NeoBundle 'nelstrom/vim-visual-star-search'
 NeoBundle 'nono/vim-handlebars'  " (Temporary - until Bootcamp 27 is over)
 NeoBundle 'groenewege/vim-less' " (Temporary - until Bootcamp 27 is over)
 NeoBundle 'ekalinin/Dockerfile.vim'
+NeoBundle 'tpope/vim-sleuth'
 
 let g:neobundle#install_process_timeout = 1800  "YouCompleteMe is so slow
 NeoBundle 'Valloric/YouCompleteMe', {
