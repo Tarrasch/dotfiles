@@ -25,7 +25,8 @@ mklatex() {
   pdflatex -interaction=nonstopmode *.tex || echo "$fg_bold[red] latexing failed! $reset_color"
   return $?
 }
-alias mkmarkdown='(MD=$(ls *.markdown) && [ -f $MD ] && pandoc $MD -o $(basename $MD markdown)pdf)'
+# *.m*d* == oneof(markdown, md, mkd, etc.)
+alias mkmarkdown='(MD=$(ls *.m*d*) && [[ -f $MD ]] && pandoc $MD -o $(fold '"'"'basename $acc $x'"'"' $MD md markdown)pdf)'
 alias mk='mklatex || mkmarkdown'
 alias view-pdf='(xdg-open *.pdf > /dev/null 2>&1)'
 alias mkv='mk && view-pdf'
