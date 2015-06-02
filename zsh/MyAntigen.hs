@@ -20,6 +20,7 @@ bundles =
   , bundle "zsh-users/zsh-syntax-highlighting"
   , bundle "zsh-users/zsh-history-substring-search"
   -- , developFromFileSystem "/home/arash/repos/zsh-snakebite-completion"
+  -- , developFromFileSystem "/home/arash/repos/zsh-colors"
   ]
 
 config = AntigenConfiguration bundles
