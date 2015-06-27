@@ -39,8 +39,6 @@ set t_Co=16 " <https://github.com/sigurdga/gnome-terminal-colors-solarized>
 syntax on
 
 set smartindent
-set tabstop=2
-set shiftwidth=2
 set expandtab
 
 " Folding -- Start everything unfolded please

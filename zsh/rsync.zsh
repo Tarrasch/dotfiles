@@ -49,6 +49,7 @@ rsync-repos-generic () {
   local excludes
   excludes=(\
     --exclude='.git/' \
+    --exclude='.tox/' \
     --exclude='*.pyc' \
     --exclude='*.swp' \
     --exclude='*.jar' \

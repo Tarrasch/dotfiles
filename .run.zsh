@@ -61,3 +61,22 @@ read \?" awaiting keypress ... "
 
 sudo visudo --file=/etc/sudoers.d/arash-extra-rules
 sudo visudo --check
+
+
+cat << EOL
+
+Now lets install some packages
+
+""""""""""""""""
+canhaz vim-gnome
+""""""""""""""""
+
+Also, after fixing your keyboard layout to colemak. Do it also at the "system
+level". Otherwise you'll have this annoying bug where the layouts are different
+for laptop and USB-keyboard.
+
+""""""""""""""""
+sudo dpkg-reconfigure keyboard-configuration
+""""""""""""""""
+
+EOL
