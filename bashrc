@@ -137,3 +137,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+
+# added by travis gem
+[ -f /home/arash/.travis/travis.sh ] && source /home/arash/.travis/travis.sh
