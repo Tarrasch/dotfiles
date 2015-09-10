@@ -35,6 +35,14 @@ rsync-dotfiles () {
 rsync-repos-generic () {
   # Rsync repositories
   #
+  # Use like this:
+  #
+  # rsync-repos () {
+  #   local src=~/spotify/repos
+  #   local dst=/home/arash/spotify
+  #   rsync-repos-generic $src $dst $@
+  # }
+
   local src=$1
   local dst_path=$2
   local dst_hostname=$3
@@ -56,4 +64,10 @@ rsync-repos-generic () {
   )
   rsync --verbose --links --recursive $excludes \
     $src "$dst_hostname:$dst_path"
+}
+
+fssh () {
+  # First ssh to a new machine, first rsync-dotifles, then ssh
+  rsync-dotfiles "${1}:"
+  ssh "${1}"
 }
