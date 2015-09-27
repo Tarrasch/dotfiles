@@ -20,9 +20,9 @@ autocmd FileType haskell compiler hlint
 "
 "       let g:hlint_signs = 0
 
-" For ack plugin (Ubuntu only)
-noremap <Leader># "ayiw:Ack <C-r>a<CR>
-vnoremap <Leader># "ay:Ack <C-r>a<CR>
+" For ag plugin (Ubuntu only)
+noremap <Leader># "ayiw:Ag <C-r>a<CR>
+vnoremap <Leader># "ay:Ag <C-r>a<CR>
 
 " This is done automatically now
 " let g:ackprg="ack-grep -H --nocolor --nogroup --column"
