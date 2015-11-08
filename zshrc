@@ -53,10 +53,10 @@ export PYTHONSTARTUP=~/.pythonrc
 # Import omz stuff
 . ~/.zsh/from-omz.zsh
 
-# -- Import Spotify specific stuff --
+# -- Import VNG specific stuff --
 # This should only be done from my work computer and the file might contain
 # confidentialities and should therefor not be checked in!
-[[ -s "$HOME/.zsh/spotify.zsh" ]] && . ~/.zsh/spotify.zsh
+[[ -s "$HOME/.zsh/vng.zsh" ]] && . ~/.zsh/vng.zsh
 
 . ~/.zsh/util.zsh
 . ~/.zsh/plugin-configs.zsh
