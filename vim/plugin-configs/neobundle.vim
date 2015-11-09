@@ -27,13 +27,10 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 " NeoBundle 'dag/vim2hs' " https://github.com/dag/vim2hs/issues/70
 NeoBundle 'danro/rename.vim'
-NeoBundle 'eagletmt/ghcmod-vim'
-NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'kien/ctrlp.vim'
 " NeoBundle 'klen/python-mode'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
-NeoBundle 'lukerandall/haskellmode-vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
 NeoBundle 'rking/ag.vim'
@@ -41,7 +38,6 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'termoshtt/unite-bibtex'
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-dispatch'
@@ -61,8 +57,6 @@ NeoBundle 'xolox/vim-misc'
 " From now on I don't sort the list anymore, I'll just append here
 NeoBundle 'dahu/vim-fanfingtastic'
 NeoBundle 'nelstrom/vim-visual-star-search'
-NeoBundle 'nono/vim-handlebars'  " (Temporary - until Bootcamp 27 is over)
-NeoBundle 'groenewege/vim-less' " (Temporary - until Bootcamp 27 is over)
 NeoBundle 'ekalinin/Dockerfile.vim'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'solarnz/arcanist.vim'
@@ -125,4 +119,4 @@ filetype plugin indent on     " Required!
 " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
 " Installation check.
-" NeoBundleCheck  " XXX: Temporary so remote machines don't ask for YCM
+NeoBundleCheck
