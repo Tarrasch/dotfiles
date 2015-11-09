@@ -28,24 +28,13 @@ git config --global core.excludesfile ~/.gitignore-global
 ##### Fix fonts for vim-airline
 fc-cache -vf ~/.fonts
 
-##### NeoBundle installation
-cat << EOL
-Don't forget to run:
-
-""""""""""""""""
-mkdir -p ~/.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-""""""""""""""""
-
-EOL
-
 read \?" awaiting keypress ... "
 
 ##### Configure sudoers file
 sudo echo "Just asking for password"
-echo "visudo --check *Before* copying arash-extra-rules ..."
+echo "run 'sudo visudo --check' to see that current state validates (before we start messing)"
 cat << EOL
-Ok, now will run
+Ok, now we will run for you
 
 sudo visudo --file=/etc/sudoers.d/arash-extra-rules
 
@@ -66,10 +55,6 @@ sudo visudo --check
 cat << EOL
 
 Now lets install some packages
-
-""""""""""""""""
-canhaz vim-gnome
-""""""""""""""""
 
 Also, after fixing your keyboard layout to colemak. Do it also at the "system
 level". Otherwise you'll have this annoying bug where the layouts are different
