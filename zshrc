@@ -67,6 +67,3 @@ export PYTHONSTARTUP=~/.pythonrc
 # upgraded to 14.04. Ubuntu stopped doing keychain management for me
 # automatically. Instead, I employ this cli-software instead.
 eval $(keychain --eval --agents ssh id_rsa)
-
-# added by travis gem
-[ -f /home/arash/.travis/travis.sh ] && source /home/arash/.travis/travis.sh
