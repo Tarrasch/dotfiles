@@ -2,11 +2,10 @@
 {-# LANGUAGE ExtendedDefaultRules #-}
 module MyAntigen where
 
-import Antigen (AntigenConfiguration (..)
+import Antigen (AntigenConfig (..)
+              , defaultConfig
               , bundle
-              , antigen
-              , developFromFileSystem)
-import Shelly (shelly)
+              , antigen)
 
 bundles =
   [ bundle "Tarrasch/zsh-functional"
@@ -19,11 +18,9 @@ bundles =
   , bundle "Tarrasch/zsh-mcd"
   , bundle "zsh-users/zsh-syntax-highlighting"
   , bundle "zsh-users/zsh-history-substring-search"
-  -- , developFromFileSystem "/home/arash/repos/zsh-snakebite-completion"
-  -- , developFromFileSystem "/home/arash/repos/zsh-colors"
   ]
 
-config = AntigenConfiguration bundles
+config = defaultConfig { plugins = bundles }
 
 main :: IO ()
-main = shelly $ antigen config
+main = antigen config
