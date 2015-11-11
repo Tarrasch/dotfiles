@@ -78,7 +78,6 @@ set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.gif,*.pdf,_site,_
 set wildmenu
 
 " Sourcings
-source ~/.vim/find.vim
 source ~/.vim/cyclecolor.vim
 source ~/.vim/plugin-configs.vim " Source all plugin requirement options
 
