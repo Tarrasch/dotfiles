@@ -49,7 +49,6 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'vim-scripts/localvimrc'
 " NeoBundle 'xolox/vim-easytags'  " This is slow as fuck for python
 NeoBundle 'xolox/vim-misc'
