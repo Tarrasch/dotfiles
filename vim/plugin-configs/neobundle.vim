@@ -62,6 +62,7 @@ NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'solarnz/arcanist.vim'
 NeoBundle 'jlfwong/vim-arcanist'
 NeoBundle 'rodjek/vim-puppet'
+NeoBundle 'qualiabyte/vim-colorstepper'
 
 let g:neobundle#install_process_timeout = 1800  "YouCompleteMe is so slow
 NeoBundle 'Valloric/YouCompleteMe', {
