@@ -13,9 +13,9 @@ rsync-dotfiles () {
     return 1
   fi
   local files_to_rsync
-  files_to_rsync=( .antigen-hs .bash_aliases .bash_mylocal .bash_profile \
+  files_to_rsync=( .antigen-hs \
                    .bashrc dotfiles .gitconfig .gitignore-global .pythonrc \
-                   .screenrc .vim .vimrc .zsh .zshrc .tmux.conf \
+                   .vim .vimrc .zsh .zshrc .tmux.conf \
                    .ssh/rc \
                    )
   local excludes
