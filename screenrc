@@ -1,8 +1,0 @@
-vbell off
-autodetach on
-startup_message off
-defscrollback 10000
-escape "^  "
-
-#statusbar at bottom
-hardstatus alwayslastline "%{wk} %H%{K}    < %-w%{Wb} %n %t %{-}%+w > %=%{wk}[%c]"
