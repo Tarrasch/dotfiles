@@ -25,11 +25,9 @@ NeoBundle 'Shougo/vimproc', {
 " Main plugins
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
-" NeoBundle 'dag/vim2hs' " https://github.com/dag/vim2hs/issues/70
 NeoBundle 'danro/rename.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'kien/ctrlp.vim'
-" NeoBundle 'klen/python-mode'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
@@ -50,7 +48,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/localvimrc'
-" NeoBundle 'xolox/vim-easytags'  " This is slow as fuck for python
 NeoBundle 'xolox/vim-misc'
 
 " From now on I don't sort the list anymore, I'll just append here
@@ -76,7 +73,7 @@ NeoBundle 'guns/vim-clojure-static'
 " The easy* plugins
 " https://app.asana.com/0/7514515131835/10893630261974
 " I set >= 7.4 dependency so it doesn't complain on startups //Arash
-NeoBundle 'Lokaltog/vim-easymotion', {
+NeoBundle 'easymotion/vim-easymotion', {
     \   'vim_version' : '7.4'
     \ }
 NeoBundle 'haya14busa/vim-easyoperator-phrase', {
@@ -86,37 +83,11 @@ NeoBundle 'haya14busa/vim-easyoperator-line', {
     \   'vim_version' : '7.4'
     \ }
 
-" " My Bundles here:
-" "
-" " Note: You don't set neobundle setting in .gvimrc!
-" " Original repos on github
-" NeoBundle 'tpope/vim-fugitive'
-" NeoBundle 'Lokaltog/vim-easymotion'
-" NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" " vim-scripts repos
-" NeoBundle 'L9'
-" NeoBundle 'FuzzyFinder'
-" NeoBundle 'rails.vim'
-" " Non github repos
-" NeoBundle 'git://git.wincent.com/command-t.git'
-" " gist repos
-" NeoBundle 'gist:Shougo/656148', {
-"       \ 'name': 'everything.vim',
-"       \ 'script_type': 'plugin'}
-" " Non git repos
-" NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
-" NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
-
-" ...
-
 call neobundle#end()
 
-filetype plugin indent on     " Required!
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" Required: (says NeoBundle README)
+filetype plugin indent on
 
-" Installation check.
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
 NeoBundleCheck
