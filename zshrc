@@ -33,6 +33,7 @@ colors
 
 # Other modules we want to source
 . ~/.zsh/zsh_aliases
+. ~/.zsh/from-omz.zsh  # Import omz stuff
 
 ##############################
 # Key bidings
@@ -50,8 +51,6 @@ bindkey "5D" backward-word
 # Python autocompletion (http://stackoverflow.com/a/246779/621449)
 export PYTHONSTARTUP=~/.pythonrc
 
-# Import omz stuff
-. ~/.zsh/from-omz.zsh
 
 # -- Import VNG specific stuff --
 # This should only be done from my work computer and the file might contain
