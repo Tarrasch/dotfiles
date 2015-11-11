@@ -29,11 +29,6 @@ alias mk='mklatex || mkmarkdown'
 alias view-pdf='(xdg-open *.pdf > /dev/null 2>&1)'
 alias mkv='mk && view-pdf'
 
-# colemak
-COLEMAK="$HOME/dotfiles/.colemak/"
-alias qw='setxkbmap se; xset -r 66'
-alias cm='cd $COLEMAK && setxkbmap us && xmodmap xmodmap/xmodmap.colemak && xset r 66'
-
 # other
 alias ack=ack-grep
 alias neobundle='(cd $HOME/dotfiles && vim vim/plugin-configs/neobundle.vim)'
