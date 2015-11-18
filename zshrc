@@ -45,6 +45,13 @@ bindkey ";5D" backward-word
 bindkey "5C" forward-word
 bindkey "5D" backward-word
 
+# At VNG I had this problem when I sshed into their CentOS machines.  Both tmux
+# and non-tmux was affected (in different ways). With these two lines, it seems
+# like Home/End keys always work.
+# https://wiki.archlinux.org/index.php/Home_and_End_keys_not_working
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+
 # Initialize antigen-hs
 . ~/.zsh/antigen-hs/init.zsh
 
