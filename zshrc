@@ -69,7 +69,12 @@ export PYTHONSTARTUP=~/.pythonrc
 
 . ~/.zsh/rsync.zsh
 
-# For some reasone I always had to enter my ssh-key all the time when I
+# For some reason I always had to enter my ssh-key all the time when I
 # upgraded to 14.04. Ubuntu stopped doing keychain management for me
 # automatically. Instead, I employ this cli-software instead.
-eval $(keychain --eval --agents ssh id_rsa)
+# Nov 2015: Also only run conditionally if not sshing
+[[ -z $SSH_TTY ]] && eval $(keychain --eval --agents ssh id_rsa)
+
+# Always make last command successful. Note that all errors (but the very last
+# command) is not going to be surfaced anyway.
+true
