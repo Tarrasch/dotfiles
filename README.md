@@ -52,8 +52,25 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 # https://wiki.ubuntu.com/CustomXSession#LightDM_configuration (LightDM config section)
 sudo cp ~/dotfiles/.files/custom.desktop /usr/share/xsessions/custom.desktop
 
+##### Git config
+# This old gist is kind of related, but nowadays outdated I'll try to keep
+# these following lines to be the real source of truth.
+#
+# https://gist.github.com/Tarrasch/40bf9892342cce7efe8a
+git config --global core.excludesfile ~/.gitignore-global
+git config --global core.pager 'less -+$LESS -R'
+
+##### Fix fonts for vim-airline
+fc-cache -vf ~/.fonts
+
+# After fixing your keyboard layout to colemak. Do it also at the "system
+# level". Otherwise you'll have this annoying bug where the layouts are different
+# for laptop and USB-keyboard.
+sudo dpkg-reconfigure keyboard-configuration
+
+
 # Now we can run ./.run.sh
-# It contains many manual instructions
+# It contains partially automatic and partially interactive instructions
 cd ~/dotfiles
 ./.run.sh
 ```

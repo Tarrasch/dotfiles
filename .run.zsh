@@ -22,12 +22,6 @@ done
 mkdir "$HOME/.ssh"
 ln -s "$PWD/.ssh/rc" "$HOME/.ssh/rc"
 
-##### Git config
-git config --global core.excludesfile ~/.gitignore-global
-
-##### Fix fonts for vim-airline
-fc-cache -vf ~/.fonts
-
 read \?" awaiting keypress ... "
 
 ##### Configure sudoers file
@@ -51,17 +45,6 @@ read \?" awaiting keypress ... "
 sudo visudo --file=/etc/sudoers.d/arash-extra-rules
 sudo visudo --check
 
-
 cat << EOL
-
-Now lets install some packages
-
-Also, after fixing your keyboard layout to colemak. Do it also at the "system
-level". Otherwise you'll have this annoying bug where the layouts are different
-for laptop and USB-keyboard.
-
-""""""""""""""""
-sudo dpkg-reconfigure keyboard-configuration
-""""""""""""""""
 
 EOL
