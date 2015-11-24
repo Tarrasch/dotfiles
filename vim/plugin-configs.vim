@@ -83,3 +83,14 @@ let g:ctrlp_working_path_mode = '0'
 " Since exuberant-ctags isn't always installed on machines I ssh into, I don't
 " want to get a warning each time i open up vim
 let g:easytags_suppress_ctags_warning = 1
+
+
+" Syntastic
+" Stuff regarding using python 3 (which I do at VNG)
+let g:syntastic_python_python_exec = 'python3'
+
+" For this it is required to do
+" pip3 install --upgrade --user flake8
+" See http://stackoverflow.com/a/29195533/621449
+let g:syntastic_python_flake8_exec = 'python3'
+let g:syntastic_python_flake8_args = ['-m', 'flake8']
