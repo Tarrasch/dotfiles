@@ -2,9 +2,6 @@
 noremap <Leader># "ayiw:Ag <C-r>a<CR>
 vnoremap <Leader># "ay:Ag <C-r>a<CR>
 
-" Things all of unite uses
-source ~/.vim/plugin-configs/unite-common.vim
-
 " Unite
 source ~/.vim/plugin-configs/unite.vim
 
