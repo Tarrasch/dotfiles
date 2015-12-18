@@ -12,13 +12,24 @@ setopt extended_glob
 # http://stackoverflow.com/questions/11670935/comments-in-command-line-zsh
 setopt interactivecomments
 
-# Add to path
-PATH=~/.cabal/bin:$PATH
-PATH=~/.bin:$PATH
-PATH=~/repos/arcanist/bin:$PATH
-PATH="/usr/lib/ccache:$PATH"  # http://askubuntu.com/a/470636/43106
-PATH=~/sbt/bin:$PATH  # https://class.coursera.org/progfun-005/wiki/ToolsSetup
-PATH=~/repos/problemtools:$PATH
+# Add to path conditionally
+#
+# The idea is that I noticed my $PATH to contain clutter, and something output
+# from "env" like programs makes me scrollblind as it shows irrelevant output.
+#
+# An by-arash-improved version of http://superuser.com/a/39995/97600
+addpath () {
+    if [[ -d "$1" ]] &&  [[ ":$PATH:" != *":$1:"* ]];
+    then
+        export PATH="$1:$PATH"
+    fi
+}
+addpath ~/.cabal/bin
+addpath ~/.bin
+addpath ~/repos/arcanist/bin
+addpath /usr/lib/ccache  # http://askubuntu.com/a/470636/43106
+addpath ~/sbt/bin  # https://class.coursera.org/progfun-005/wiki/ToolsSetup
+addpath ~/repos/problemtools/src
 
 
 # Add to completions
