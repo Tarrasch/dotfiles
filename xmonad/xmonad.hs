@@ -10,7 +10,7 @@ import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.SetWMName (setWMName) -- For IntelliJ
-import GetProfile (getProfile, Profile(Spotify, Rest))
+import GetProfile (getProfile, Profile(Rest))
 import XMonad.Hooks.EwmhDesktops (ewmh) -- http://ohspite.net/2013/05/02/keepass-global-autotype-in-xmonad/
 import qualified Graphics.X11.ExtraTypes.XF86 as XF86
 
@@ -141,14 +141,8 @@ unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
           , ((mod4Mask .|. shiftMask, key ), spawn          process )
           ]
         t a b c = (a, b, c)
-        key_a = case profile of
-                  Spotify -> t xK_a "nautilus" "Nautilus"
-                  Rest    -> t xK_a "nemo" "Nemo"
-                  -- TODO: Not sure, but nautilus seems to not use
-                  -- search-as-you-type anymore on my Spotify 14.04 laptop.
-        key_t = case profile of
-                  Spotify -> [((mod4Mask              , xK_t ), gmailInFirefox )]
-                  Rest    -> aux $ t xK_t "thunderbird" "Thunderbird"
+        key_a = t xK_a "nemo" "Nemo"
+        key_t = aux $ t xK_t "thunderbird" "Thunderbird"
 
 swapWorkspaceKeys (XConfig {..}) =
   M.fromList $
