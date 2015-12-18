@@ -140,3 +140,12 @@ endif
 
 " Make hsc files to Haskell files (like ExecutionStack.hsc)
 au BufRead,BufNewFile *.hsc set filetype=haskell
+
+" Prefer vertical diff over horizontal
+"
+" I noticed this due to that `:Gd` started to do horizontal diffs which are
+" useless. One could do `:Gvdiff` to make the diff vertical, but I don't yet
+" understand why one would ever want horizontal diffs.
+"
+" https://github.com/tpope/vim-fugitive/issues/523
+set diffopt+=vertical
