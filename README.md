@@ -28,7 +28,7 @@ sudo apt-get install git vim zsh vim-gnome keychain silversearcher-ag xmonad suc
 # ghc, cabal and zlib1g-dev: For antigen-hs
 # nemo: It was in my .xsession file. Dunno if we still prefer over nautilus
 # cmake, g++ and python-dev:
-sudo apt-get install ghc cabal-install zlib1g-dev nemo gnome-open-terminal cmake g++ python-dev
+sudo apt-get install ghc cabal-install zlib1g-dev nemo gnome-open-terminal cmake g++ python-dev xdotool
 
 # More crap for nowadays bloated antigen-hs
 cabal install cabal-install  # (requires zlib1g-dev)

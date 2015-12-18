@@ -19,15 +19,6 @@ import qualified Graphics.X11.ExtraTypes.XF86 as XF86
 --     $ cd ~/dotfiles/xmonad
 --     $ ghci -ilib xmonad.hs
 
-myAdditionalManageHook = ManageHook.composeAll (
-    [ -- Unity compatibility
-      className =? "Unity-2d-panel" --> doIgnore
-    , className =? "Unity-2d-launcher" --> doFloat
-
-    -- Gnome DO
-    , resource  =? "Do"   --> doIgnore
-    ])
-
 myKeysP :: Profile -> (XConfig Layout -> M.Map (ButtonMask, KeySym) (X ()))
 myKeysP profile = idHook
     <+> workspaceKeys
@@ -121,12 +112,10 @@ openFirefoxTab x = spawn $
 -- Will come in handy
 unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
     -- Applications
-      key_a
+      t xK_a "nemo" "Nemo"
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
-  ] ++
-  concat [
-    key_t
+    , t xK_t "chromium-browser" "chromium-browser"
   ] ++
   [
     -- Firefox shortcuts
@@ -141,8 +130,6 @@ unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
           , ((mod4Mask .|. shiftMask, key ), spawn          process )
           ]
         t a b c = (a, b, c)
-        key_a = t xK_a "nemo" "Nemo"
-        key_t = aux $ t xK_t "thunderbird" "Thunderbird"
 
 swapWorkspaceKeys (XConfig {..}) =
   M.fromList $
@@ -150,7 +137,7 @@ swapWorkspaceKeys (XConfig {..}) =
       | (i, k) <- zip workspaces [xK_1 .. xK_9]]
 
 myConfigP profile = desktopConfig {
-    manageHook = manageHook desktopConfig <+> myAdditionalManageHook
+    manageHook = manageHook desktopConfig
   , keys = myKeysP profile
   , startupHook = setWMName "LG3D" -- For IntelliJ
     }
