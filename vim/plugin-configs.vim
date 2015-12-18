@@ -8,8 +8,8 @@ source ~/.vim/plugin-configs/unite-common.vim
 " Unite
 source ~/.vim/plugin-configs/unite.vim
 
-" VimFiler
-source ~/.vim/plugin-configs/vimfiler.vim
+" If I don't set this I'll never use it otherwise
+let g:vimfiler_as_default_explorer = 1
 
 " vim-airline
 set laststatus=2 " Make it appear, even when no splits
