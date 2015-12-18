@@ -10,7 +10,6 @@ import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
 import XMonad.Hooks.SetWMName (setWMName) -- For IntelliJ
-import XMonad.Hooks.ICCCMFocus (takeTopFocus) -- For IntelliJ
 import GetProfile (getProfile, Profile(Spotify, Rest))
 import XMonad.Hooks.EwmhDesktops (ewmh) -- http://ohspite.net/2013/05/02/keepass-global-autotype-in-xmonad/
 import qualified Graphics.X11.ExtraTypes.XF86 as XF86
@@ -160,7 +159,6 @@ myConfigP profile = desktopConfig {
     manageHook = manageHook desktopConfig <+> myAdditionalManageHook
   , keys = myKeysP profile
   , startupHook = setWMName "LG3D" -- For IntelliJ
-  , logHook = takeTopFocus -- For IntelliJ
     }
   where
     desktopConfig = xfceConfig { terminal = "gnome-terminal" }
