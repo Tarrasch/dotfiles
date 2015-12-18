@@ -48,7 +48,6 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-tbone'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'vim-scripts/localvimrc'
-NeoBundle 'xolox/vim-misc'
 
 " From now on I don't sort the list anymore, I'll just append here
 NeoBundle 'dahu/vim-fanfingtastic'
@@ -60,6 +59,7 @@ NeoBundle 'jlfwong/vim-arcanist'
 NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'qualiabyte/vim-colorstepper'
 NeoBundle 'derekwyatt/vim-scala'
+NeoBundle 'Shougo/neoyank.vim'
 
 let g:neobundle#install_process_timeout = 1800  "YouCompleteMe is so slow
 NeoBundle 'Valloric/YouCompleteMe', {
@@ -67,9 +67,6 @@ NeoBundle 'Valloric/YouCompleteMe', {
             \   'unix' : './install.sh'
             \ },
 \ }
-
-" NeoBundle 'vim-scripts/groovyindent'  " Gives me stack traces wtf
-NeoBundle 'guns/vim-clojure-static'
 
 " The easy* plugins
 " https://app.asana.com/0/7514515131835/10893630261974
