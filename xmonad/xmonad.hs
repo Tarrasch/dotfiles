@@ -24,6 +24,7 @@ myKeysP profile = idHook
     <+> workspaceKeys
     <+> colemakKeys
     <+> unityLauncherLikeKeysP profile
+    <+> keyboardLayoutKeys
     <+> swapWorkspaceKeys
     <+> spotifyKeys
     <+> volumeKeys
@@ -102,6 +103,14 @@ openFirefoxTab x = spawn $
     show x ++
     "'"
 
+keyboardLayoutKeys (XConfig {..}) =
+  -- We pick "m" because it's the same for colemak and qwerty, which is nice
+  -- when I panic and want to switch back to colemak
+  M.fromList $
+    [((mod4Mask, xK_m), spawn "ibus engine xkb:us:colemak:eng")
+    ,((mod4Mask, xK_k), spawn "ibus engine Unikey") -- Thsi does not work for whatever reason ...
+    ]
+
 -- In order to get the window names, the commands
 --
 --    $ xev
@@ -116,14 +125,14 @@ unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
     , t xK_t "chromium-browser" "chromium-browser"
-  ] ++
+    , t xK_n "kupfer" "Kupfer"
+  ] {- ++
   [
     -- Firefox shortcuts
-      ((mod4Mask, xK_n), openFirefoxTab 1)
-    , ((mod4Mask, xK_e), openFirefoxTab 2)
+      ((mod4Mask, xK_e), openFirefoxTab 2)
     , ((mod4Mask, xK_i), openFirefoxTab 3)
     , ((mod4Mask, xK_o), openFirefoxTab 4)
-  ]
+  ] -}
 
   where aux (key, process, cN) = [
             ((mod4Mask              , key ), runOrRaiseNext process   (className =? cN       ))
