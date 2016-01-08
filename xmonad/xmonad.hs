@@ -121,7 +121,7 @@ keyboardLayoutKeys (XConfig {..}) =
 -- Will come in handy
 unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
     -- Applications
-      t xK_a "nemo" "Nemo"
+      t xK_a "nautilus" "Nautilus"
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
     , t xK_t "chromium-browser" "chromium-browser"
