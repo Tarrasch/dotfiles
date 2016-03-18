@@ -89,3 +89,7 @@ export PYTHONSTARTUP=~/.pythonrc
 # Always make last command successful. Note that all errors (but the very last
 # command) is not going to be surfaced anyway.
 true
+
+# Make netbeans and stuff work with xmonad
+# http://superuser.com/a/480682/97600
+export _JAVA_AWT_WM_NONREPARENTING=1
