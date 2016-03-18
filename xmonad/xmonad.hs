@@ -106,9 +106,13 @@ openFirefoxTab x = spawn $
 keyboardLayoutKeys (XConfig {..}) =
   -- We pick "m" because it's the same for colemak and qwerty, which is nice
   -- when I panic and want to switch back to colemak
+  --
+  -- This line also make it work in firefox, TODO, think where to put it...
+  -- ibus-daemon --daemonize --replace --xim
   M.fromList $
     [((mod4Mask, xK_m), spawn "ibus engine xkb:us:colemak:eng")
-    ,((mod4Mask, xK_k), spawn "ibus engine Unikey") -- Thsi does not work for whatever reason ...
+    ,((mod4Mask, xK_k), spawn "ibus engine Unikey") -- This does not work for whatever reason ...
+    ,((mod4Mask, xK_b), spawn "ibus-daemon --daemonize --replace --xim") -- if there's problems with firefox
     ]
 
 -- In order to get the window names, the commands

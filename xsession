@@ -1,4 +1,12 @@
 #!/bin/sh
+
+# Ibus (vietnamese typing) in fx:
+# https://bbs.archlinux.org/viewtopic.php?id=189990 Still unclear if this is
+# useful or if only my Win+b keybinding in xmonad is enough.
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 xmonad &
 nm-applet &
 kupfer --no-splash &
