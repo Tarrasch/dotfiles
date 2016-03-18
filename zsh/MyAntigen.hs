@@ -5,7 +5,8 @@ module MyAntigen where
 import Antigen (AntigenConfig (..)
               , defaultConfig
               , bundle
-              , antigen)
+              , antigen
+              , antigenSourcingStrategy)
 
 bundles =
   [ bundle "Tarrasch/zsh-functional"
@@ -17,7 +18,7 @@ bundles =
   , bundle "Tarrasch/pure"
   , bundle "Tarrasch/zsh-mcd"
   , bundle "zsh-users/zsh-syntax-highlighting"
-  , bundle "zsh-users/zsh-history-substring-search"
+  , (bundle "zsh-users/zsh-history-substring-search") { sourcingStrategy = antigenSourcingStrategy }
   ]
 
 config = defaultConfig { plugins = bundles }
