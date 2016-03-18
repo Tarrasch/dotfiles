@@ -61,12 +61,15 @@ NeoBundle 'qualiabyte/vim-colorstepper'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'Shougo/neoyank.vim'
 
-let g:neobundle#install_process_timeout = 1800  "YouCompleteMe is so slow
-NeoBundle 'Valloric/YouCompleteMe', {
-            \ 'build' : {
-            \   'unix' : './install.sh'
-            \ },
-\ }
+let g:localSession = ($SSH_CLIENT == "")
+if g:localSession
+  let g:neobundle#install_process_timeout = 1800  "YouCompleteMe is so slow
+  NeoBundle 'Valloric/YouCompleteMe', {
+              \ 'build' : {
+              \   'unix' : './install.sh'
+              \ },
+  \ }
+endif
 
 " The easy* plugins
 " https://app.asana.com/0/7514515131835/10893630261974
