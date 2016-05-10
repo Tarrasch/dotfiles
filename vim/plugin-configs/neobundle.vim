@@ -60,6 +60,7 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'qualiabyte/vim-colorstepper'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'Shougo/neoyank.vim'
+NeoBundle 'ludovicchabant/vim-gutentags'
 
 let g:localSession = ($SSH_CLIENT == "")
 if g:localSession
