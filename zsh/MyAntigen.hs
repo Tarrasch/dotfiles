@@ -6,7 +6,9 @@ import Antigen (AntigenConfig (..)
               , defaultConfig
               , bundle
               , antigen
-              , antigenSourcingStrategy)
+              , antigenSourcingStrategy
+              , ZshPlugin(..)
+              , )
 
 bundles =
   [ bundle "Tarrasch/zsh-functional"
