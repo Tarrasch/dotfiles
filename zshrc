@@ -93,3 +93,7 @@ true
 # Make netbeans and stuff work with xmonad
 # http://superuser.com/a/480682/97600
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/arashrk/.sdkman"
+[[ -s "/home/arashrk/.sdkman/bin/sdkman-init.sh" ]] && source "/home/arashrk/.sdkman/bin/sdkman-init.sh"

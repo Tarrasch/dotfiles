@@ -8,3 +8,7 @@ PS1="\n$RED\$(date +%H:%M)$NO_COLOR \$ $GREEN\n"
 PS1="$PS1→ \[$NO_COLOR\]"
 
 alias canhaz='sudo apt-get install'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/arashrk/.sdkman"
+[[ -s "/home/arashrk/.sdkman/bin/sdkman-init.sh" ]] && source "/home/arashrk/.sdkman/bin/sdkman-init.sh"
