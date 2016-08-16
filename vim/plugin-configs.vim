@@ -44,6 +44,8 @@ let g:surround_{char2nr('c')} = "\\\1command\1{\r}"
 " Ctrl-P
 " I want it to use the current folder, not repo root
 let g:ctrlp_working_path_mode = '0'
+" Also ignore gitignored files
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
 " Easytags

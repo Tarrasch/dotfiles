@@ -27,7 +27,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'danro/rename.vim'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
