@@ -12,3 +12,9 @@ alias canhaz='sudo apt-get install'
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/arashrk/.sdkman"
 [[ -s "/home/arashrk/.sdkman/bin/sdkman-init.sh" ]] && source "/home/arashrk/.sdkman/bin/sdkman-init.sh"
+
+# added by travis gem
+[ -f /home/arashrk/.travis/travis.sh ] && source /home/arashrk/.travis/travis.sh
+
+# added by Anaconda3 4.1.1 installer
+export PATH="/home/arashrk/anaconda3/bin:$PATH"

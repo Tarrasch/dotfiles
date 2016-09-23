@@ -86,10 +86,6 @@ export PYTHONSTARTUP=~/.pythonrc
 # Nov 2015: Also only run conditionally if not sshing
 [[ -z $SSH_TTY ]] && eval $(keychain --eval --agents ssh id_rsa)
 
-# Always make last command successful. Note that all errors (but the very last
-# command) is not going to be surfaced anyway.
-true
-
 # Make netbeans and stuff work with xmonad
 # http://superuser.com/a/480682/97600
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -97,3 +93,14 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/arashrk/.sdkman"
 [[ -s "/home/arashrk/.sdkman/bin/sdkman-init.sh" ]] && source "/home/arashrk/.sdkman/bin/sdkman-init.sh"
+
+# added by travis gem
+[ -f /home/arashrk/.travis/travis.sh ] && source /home/arashrk/.travis/travis.sh
+
+# added by Anaconda3 4.1.1 installer
+export PATH="/home/arashrk/anaconda3/bin:$PATH"
+
+# Always make last command successful. Note that all errors (but the very last
+# command) is not going to be surfaced anyway.
+# https://github.com/Tarrasch/dotfiles/commit/214274da5b8734d9806c7d968d9a217f621a1888
+true
