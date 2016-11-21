@@ -24,7 +24,7 @@ Setup.lhs
 # non-source files
 *.hi
 *.o
-*.pdf
+# *.pdf  # Maybe some projects need this
 *.com
 *.class
 *.dll
