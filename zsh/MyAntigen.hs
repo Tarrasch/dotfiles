@@ -6,7 +6,10 @@ import Antigen (AntigenConfig (..)
               , defaultConfig
               , bundle
               , antigen
-              , antigenSourcingStrategy)
+              , antigenSourcingStrategy
+              , local
+              , ZshPlugin(..)
+              , )
 
 bundles =
   [ bundle "Tarrasch/zsh-functional"
@@ -17,8 +20,8 @@ bundles =
   , bundle "Tarrasch/zsh-i-know"
   , bundle "Tarrasch/pure"
   , bundle "Tarrasch/zsh-mcd"
-  , bundle "zsh-users/zsh-syntax-highlighting"
-  , (bundle "zsh-users/zsh-history-substring-search") { sourcingStrategy = antigenSourcingStrategy }
+  , bundle "Tarrasch/zsh-syntax-highlighting" -- Just to pinpoint the version
+  , bundle "Tarrasch/zsh-history-substring-search" -- Upstream started to break
   ]
 
 config = defaultConfig { plugins = bundles }

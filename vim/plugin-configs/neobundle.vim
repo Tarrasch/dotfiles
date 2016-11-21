@@ -27,7 +27,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'danro/rename.vim'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
@@ -60,6 +60,8 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'qualiabyte/vim-colorstepper'
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'Shougo/neoyank.vim'
+NeoBundle 'ludovicchabant/vim-gutentags'
+NeoBundle 'tfnico/vim-gradle'
 
 let g:localSession = ($SSH_CLIENT == "")
 if g:localSession
