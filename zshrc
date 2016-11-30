@@ -29,7 +29,7 @@ addpath ~/.bin
 addpath ~/repos/arcanist/bin
 addpath /usr/lib/ccache  # http://askubuntu.com/a/470636/43106
 addpath ~/sbt/bin  # https://class.coursera.org/progfun-005/wiki/ToolsSetup
-addpath ~/repos/problemtools/src
+addpath ~/repos/problemtools/bin
 
 
 # Add to completions
