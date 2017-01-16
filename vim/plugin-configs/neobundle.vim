@@ -25,43 +25,36 @@ NeoBundle 'Shougo/vimproc', {
 " Main plugins
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
-NeoBundle 'danro/rename.vim'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'LaTeX-Box-Team/LaTeX-Box'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
 NeoBundle 'rking/ag.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimshell.vim'
-NeoBundle 'tpope/vim-abolish'
+NeoBundle 'tpope/vim-abolish'  " :Subvert/child{,ren}/adult{,s}/g
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
+NeoBundle 'tpope/vim-eunuch'  " Add unix commands, like :Rename
+NeoBundle 'tpope/vim-fugitive'  " Git plugin
 NeoBundle 'tpope/vim-markdown'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-tbone'
-NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-tbone'  " Tmux stuff
+NeoBundle 'tpope/vim-unimpaired'  " undesrstand paraenthesis
 NeoBundle 'vim-scripts/localvimrc'
 
 " From now on I don't sort the list anymore, I'll just append here
-NeoBundle 'dahu/vim-fanfingtastic'
-NeoBundle 'nelstrom/vim-visual-star-search'
-NeoBundle 'ekalinin/Dockerfile.vim'
-NeoBundle 'tpope/vim-sleuth'
-NeoBundle 'solarnz/arcanist.vim'
-NeoBundle 'jlfwong/vim-arcanist'
-NeoBundle 'rodjek/vim-puppet'
-NeoBundle 'qualiabyte/vim-colorstepper'
+NeoBundle 'dahu/vim-fanfingtastic'  " 'Find a char across lines'
+NeoBundle 'bronson/vim-visual-star-search' " Start a * or # search from a visual block
+NeoBundle 'tpope/vim-sleuth'  " automatically adjusts 'shiftwidth' and 'expandtab'
+NeoBundle 'qualiabyte/vim-colorstepper'  " Cycle vim color schemes, F6 and F7 keys
 NeoBundle 'derekwyatt/vim-scala'
 NeoBundle 'Shougo/neoyank.vim'
-NeoBundle 'ludovicchabant/vim-gutentags'
+NeoBundle 'ludovicchabant/vim-gutentags'  "  Manages your tag files (Arash still dont know how/if it works)
 NeoBundle 'tfnico/vim-gradle'
+NeoBundle 'AndrewRadev/linediff.vim'  " Add :Linediff
+
 
 let g:localSession = ($SSH_CLIENT == "")
 if g:localSession
