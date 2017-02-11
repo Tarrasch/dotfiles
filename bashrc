@@ -16,5 +16,5 @@ export SDKMAN_DIR="/home/arashrk/.sdkman"
 # added by travis gem
 [ -f /home/arashrk/.travis/travis.sh ] && source /home/arashrk/.travis/travis.sh
 
-# added by Anaconda3 4.1.1 installer
-export PATH="/home/arashrk/anaconda3/bin:$PATH"
+# added by Anaconda3 4.2.0 installer
+export PATH="/home/arash/anaconda3/bin:$PATH"

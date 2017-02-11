@@ -97,8 +97,8 @@ export SDKMAN_DIR="/home/arashrk/.sdkman"
 # added by travis gem
 [ -f /home/arashrk/.travis/travis.sh ] && source /home/arashrk/.travis/travis.sh
 
-# added by Anaconda3 4.1.1 installer (and then slightly modified by arash)
-export PATH="$HOME/anaconda3/bin:$PATH"
+# added by Anaconda3 4.2.0 installer
+export PATH="/home/arash/anaconda3/bin:$PATH"
 
 # Always make last command successful. Note that all errors (but the very last
 # command) is not going to be surfaced anyway.
