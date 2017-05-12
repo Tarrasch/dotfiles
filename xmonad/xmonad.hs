@@ -9,7 +9,6 @@ import qualified XMonad.Layout.IndependentScreens as IS
 import XMonad.Actions.SwapWorkspaces
 import qualified Data.Map        as M
 import qualified XMonad.StackSet as W
-import XMonad.Hooks.SetWMName (setWMName) -- For IntelliJ
 import GetProfile (getProfile, Profile(Rest))
 import XMonad.Hooks.EwmhDesktops (ewmh) -- http://ohspite.net/2013/05/02/keepass-global-autotype-in-xmonad/
 import qualified Graphics.X11.ExtraTypes.XF86 as XF86
@@ -29,6 +28,17 @@ myKeysP profile = idHook
     <+> spotifyKeys
     <+> volumeKeys
     <+> lockScreenKeys
+    -- <+> screenBrightnessKeys
+
+-- -- | Lightness/Brightness of monitor
+-- --
+-- --   $ canhaz xbacklight
+-- --
+-- -- Read more at: https://wiki.archlinux.org/index.php/backlight#Overview
+-- screenBrightnessKeys (XConfig {..}) =
+    -- M.fromList [((ctrlPlusAlt, xK_l),         spawn "slock")]
+  -- where
+    -- ctrlPlusAlt = controlMask .|. mod1Mask :: ButtonMask
 
 -- | Lock screen, using slock for now (suckless software)
 --
@@ -152,7 +162,6 @@ swapWorkspaceKeys (XConfig {..}) =
 myConfigP profile = desktopConfig {
     manageHook = manageHook desktopConfig
   , keys = myKeysP profile
-  , startupHook = setWMName "LG3D" -- For IntelliJ
     }
   where
     desktopConfig = xfceConfig { terminal = "gnome-terminal" }
