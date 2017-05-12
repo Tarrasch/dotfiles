@@ -20,6 +20,7 @@ import qualified Graphics.X11.ExtraTypes.XF86 as XF86
 
 myKeysP :: Profile -> (XConfig Layout -> M.Map (ButtonMask, KeySym) (X ()))
 myKeysP profile = idHook
+    <+> pasteKeys
     <+> workspaceKeys
     <+> colemakKeys
     <+> unityLauncherLikeKeysP profile
@@ -30,6 +31,25 @@ myKeysP profile = idHook
     <+> lockScreenKeys
     -- <+> screenBrightnessKeys
 
+
+-- | Keys related to the clipboard. So far only one key that removes
+-- formatting. Typically when you copy from OpenOffice or a browser,
+-- you'll end up opening a dummy Gedit buffer just to paste and re-copy
+-- to loose the formatting. Those days are now over.
+--
+--     $ canhaz xsel
+--
+-- For historic laughter reasons, I keep my first attempt :D
+--   safeSpawn "zsh" ["-c", "xdotool type \"$(xclip -out)\""]
+--
+-- Remember why it doesn't work? :)
+pasteKeys (XConfig {..}) =
+    M.fromList [((mod4Mask, xK_v), rewriteClipboard)]
+  where
+
+    rewriteClipboard = spawn "xsel --output --clipboard | xsel --input --clipboard"
+
+    --
 -- -- | Lightness/Brightness of monitor
 -- --
 -- --   $ canhaz xbacklight
