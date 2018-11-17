@@ -25,6 +25,7 @@ addpath () {
     fi
 }
 addpath ~/.cabal/bin
+addpath ~/.local/bin
 addpath ~/.bin
 addpath ~/repos/arcanist/bin
 addpath /usr/lib/ccache  # http://askubuntu.com/a/470636/43106
