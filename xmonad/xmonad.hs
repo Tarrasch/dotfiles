@@ -143,8 +143,9 @@ keyboardLayoutKeys (XConfig {..}) =
   -- ibus-daemon --daemonize --replace --xim
   M.fromList $
     [((mod4Mask, xK_m), spawn "ibus engine xkb:us:colemak:eng")
-    ,((mod4Mask, xK_k), spawn "ibus engine Unikey") -- This does not work for whatever reason ...
+    ,((mod4Mask, xK_k), spawn "ibus engine Unikey; setxkbmap -variant colemak") -- Had to add the setxbmap thing ...
     ,((mod4Mask, xK_b), spawn "ibus-daemon --daemonize --replace --xim") -- if there's problems with firefox
+    ,((mod4Mask, xK_comma), spawn "xkbcomp /usr/local/google/home/rouhani/repos/keyboard-layout-gist/keymap.xkb :0")
     ]
 
 -- In order to get the window names, the commands
