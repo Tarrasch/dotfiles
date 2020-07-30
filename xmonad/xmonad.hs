@@ -44,10 +44,12 @@ myKeysP profile = idHook
 --
 -- Remember why it doesn't work? :)
 pasteKeys (XConfig {..}) =
-    M.fromList [((mod4Mask, xK_v), rewriteClipboard)]
+    M.fromList [((mod4Mask, xK_v), rewriteClipboard),
+                ((noModMask, xK_F10), pasteKeyByKey)]
   where
-
     rewriteClipboard = spawn "xsel --output --clipboard | xsel --input --clipboard"
+    pasteKeyByKey = spawn "xdotool type \"$(xclip -out)\""
+    noModMask = 0 :: ButtonMask
 
     --
 -- -- | Lightness/Brightness of monitor
