@@ -15,9 +15,6 @@ endif
 " ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 """""""""""""""""""""""" GOOGLE """"""""""""""""""""""""""""
 
-" NeoBundle
-source ~/.vim/plugin-configs/neobundle.vim
-
 " Tags
 set tags=./tags;/
 
