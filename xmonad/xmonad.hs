@@ -64,7 +64,7 @@ pasteKeys (XConfig {..}) =
 --
 --   $ canhaz suckless-tools
 lockScreenKeys (XConfig {..}) =
-    M.fromList [((ctrlPlusAlt, xK_l),         spawn "slock")]
+    M.fromList [((ctrlPlusAlt, xK_l),         spawn "cinnamon-screensaver-command --lock")]
   where
     ctrlPlusAlt = controlMask .|. mod1Mask :: ButtonMask
 
@@ -141,7 +141,7 @@ keyboardLayoutKeys (XConfig {..}) =
   -- ibus-daemon --daemonize --replace --xim
   M.fromList $
     [((mod4Mask, xK_m), spawn "ibus engine xkb:us:colemak:eng")
-    ,((mod4Mask, xK_k), spawn "ibus engine Unikey") -- This does not work for whatever reason ...
+    ,((mod4Mask, xK_k), spawn "ibus engine Unikey; setxkbmap -variant colemak") -- Had to add the setxbmap thing ...
     ,((mod4Mask, xK_b), spawn "ibus-daemon --daemonize --replace --xim") -- if there's problems with firefox
     ]
 
@@ -158,7 +158,7 @@ unityLauncherLikeKeysP profile = const $ M.fromList $ concatMap aux [
       t xK_a "nautilus" "Nautilus"
     , t xK_r "gnome-terminal" "Gnome-terminal"
     , t xK_s "firefox" "Firefox"
-    , t xK_t "chromium-browser" "chromium-browser"
+    , t xK_t "google-chrome" "Google-chrome"
     , t xK_n "kupfer" "Kupfer"
   ] {- ++
   [

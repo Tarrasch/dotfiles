@@ -6,3 +6,7 @@ zmodload zsh/terminfo
 # at the time of writing all older versions are now history.
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+
+# Google: What I used to had at Spotify... hmmm
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down

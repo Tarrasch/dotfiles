@@ -2,6 +2,16 @@ HISTFILE=~/.histfile
 HISTSIZE=10000
 SAVEHIST=20000
 
+# TODO: Make more discrete ?
+if [[ "$HOME" =~ "rouhani" ]]
+then
+ GOOGLE='yep, set in .zshrc'
+ if ! [[ "$HOME" =~ "usr" ]]
+ then
+   GOOGLE_LAPTOP='yep, set in .zshrc'
+ fi
+fi
+
 # Allow extended glob patterns (like '**/' is actually '(*/)#')
 setopt extended_glob
 
@@ -56,24 +66,11 @@ bindkey ";5D" backward-word
 bindkey "5C" forward-word
 bindkey "5D" backward-word
 
-# At VNG I had this problem when I sshed into their CentOS machines.  Both tmux
-# and non-tmux was affected (in different ways). With these two lines, it seems
-# like Home/End keys always work.
-# https://wiki.archlinux.org/index.php/Home_and_End_keys_not_working
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
-
 # Initialize antigen-hs
 . ~/.zsh/antigen-hs/init.zsh
 
 # Python autocompletion (http://stackoverflow.com/a/246779/621449)
 export PYTHONSTARTUP=~/.pythonrc
-
-
-# -- Import VNG specific stuff --
-# This should only be done from my work computer and the file might contain
-# confidentialities and should therefor not be checked in!
-[[ -s "$HOME/.zsh/vng.zsh" ]] && . ~/.zsh/vng.zsh
 
 . ~/.zsh/util.zsh
 . ~/.zsh/plugin-configs.zsh
@@ -84,21 +81,16 @@ export PYTHONSTARTUP=~/.pythonrc
 # upgraded to 14.04. Ubuntu stopped doing keychain management for me
 # automatically. Instead, I employ this cli-software instead.
 # Nov 2015: Also only run conditionally if not sshing
-[[ -z $SSH_TTY ]] && eval $(keychain --eval --agents ssh id_rsa)
+(( ! ${+GOOGLE} )) && [[ -z $SSH_TTY ]] && eval $(keychain --eval --agents ssh id_rsa)
 
 # Make netbeans and stuff work with xmonad
 # http://superuser.com/a/480682/97600
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/arashrk/.sdkman"
-[[ -s "/home/arashrk/.sdkman/bin/sdkman-init.sh" ]] && source "/home/arashrk/.sdkman/bin/sdkman-init.sh"
-
-# added by travis gem
-[ -f /home/arashrk/.travis/travis.sh ] && source /home/arashrk/.travis/travis.sh
-
-# added by Anaconda3 4.2.0 installer
-export PATH="/home/arash/anaconda3/bin:$PATH"
+if (( ${+GOOGLE} )) && (( 1-${+GOOGLE_LAPTOP} ))
+then
+ . ~/.zsh/google.zsh
+fi
 
 # Always make last command successful. Note that all errors (but the very last
 # command) is not going to be surfaced anyway.

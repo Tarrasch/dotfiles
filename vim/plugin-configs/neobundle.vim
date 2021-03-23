@@ -30,7 +30,6 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'moll/vim-bbye' " Provides :Bdelete command
 NeoBundle 'rking/ag.vim'
-NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-abolish'  " :Subvert/child{,ren}/adult{,s}/g
 NeoBundle 'tpope/vim-commentary'
@@ -56,28 +55,9 @@ NeoBundle 'tfnico/vim-gradle'
 NeoBundle 'AndrewRadev/linediff.vim'  " Add :Linediff
 
 
-let g:localSession = ($SSH_CLIENT == "")
-if g:localSession
-  let g:neobundle#install_process_timeout = 1800  "YouCompleteMe is so slow
-  NeoBundle 'Valloric/YouCompleteMe', {
-              \ 'build' : {
-              \   'unix' : './install.sh'
-              \ },
-  \ }
-endif
-
-" The easy* plugins
-" https://app.asana.com/0/7514515131835/10893630261974
-" I set >= 7.4 dependency so it doesn't complain on startups //Arash
-NeoBundle 'easymotion/vim-easymotion', {
-    \   'vim_version' : '7.4'
-    \ }
-NeoBundle 'haya14busa/vim-easyoperator-phrase', {
-    \   'vim_version' : '7.4'
-    \ }
-NeoBundle 'haya14busa/vim-easyoperator-line', {
-    \   'vim_version' : '7.4'
-    \ }
+NeoBundle 'easymotion/vim-easymotion'
+NeoBundle 'haya14busa/vim-easyoperator-phrase'
+NeoBundle 'haya14busa/vim-easyoperator-line'
 
 call neobundle#end()
 

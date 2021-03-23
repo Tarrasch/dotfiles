@@ -4,6 +4,17 @@ set nocompatible
 " Map leader key
 let mapleader = " "
 
+" """""""""""""""""""""" GOOGLE """"""""""""""""""""""""""""
+" vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+
+" Google
+if filereadable("/usr/share/vim/google/google.vim")
+  source ~/.vim/google.vim
+endif
+
+" ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""" GOOGLE """"""""""""""""""""""""""""
+
 " NeoBundle
 source ~/.vim/plugin-configs/neobundle.vim
 
@@ -149,3 +160,5 @@ au BufRead,BufNewFile *.hsc set filetype=haskell
 "
 " https://github.com/tpope/vim-fugitive/issues/523
 set diffopt+=vertical
+
+

@@ -32,7 +32,3 @@ alias mkv='mk && view-pdf'
 # other
 alias ack=ack-grep
 alias neobundle='(cd $HOME/dotfiles && vim vim/plugin-configs/neobundle.vim)'
-
-# Due to color bug in vim+tmux+(maybe solarized)
-# http://unix.stackexchange.com/a/119988/61085
-alias tmux='TERM=xterm-256color tmux'
