@@ -44,10 +44,12 @@ myKeysP profile = idHook
 --
 -- Remember why it doesn't work? :)
 pasteKeys (XConfig {..}) =
-    M.fromList [((mod4Mask, xK_v), rewriteClipboard)]
+    M.fromList [((mod4Mask, xK_v), rewriteClipboard),
+                ((noModMask, xK_F10), pasteKeyByKey)]
   where
-
     rewriteClipboard = spawn "xsel --output --clipboard | xsel --input --clipboard"
+    pasteKeyByKey = spawn "xdotool type \"$(xclip -out)\""
+    noModMask = 0 :: ButtonMask
 
     --
 -- -- | Lightness/Brightness of monitor
@@ -143,6 +145,7 @@ keyboardLayoutKeys (XConfig {..}) =
     [((mod4Mask, xK_m), spawn "ibus engine xkb:us:colemak:eng")
     ,((mod4Mask, xK_k), spawn "ibus engine Unikey; setxkbmap -variant colemak") -- Had to add the setxbmap thing ...
     ,((mod4Mask, xK_b), spawn "ibus-daemon --daemonize --replace --xim") -- if there's problems with firefox
+    ,((mod4Mask, xK_comma), spawn "xkbcomp /usr/local/google/home/rouhani/repos/keyboard-layout-gist/keymap.xkb :0")
     ]
 
 -- In order to get the window names, the commands
