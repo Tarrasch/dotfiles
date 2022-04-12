@@ -1,6 +1,0 @@
-[submodule "zsh/plugins/completions"]
-	path = zsh/plugins/completions
-	url = git://github.com/zsh-users/zsh-completions.git
-[submodule "zsh/antigen-hs"]
-	path = zsh/antigen-hs
-	url = https://github.com/Tarrasch/antigen-hs.git
