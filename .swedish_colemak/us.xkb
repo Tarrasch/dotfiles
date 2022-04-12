@@ -1,0 +1,129 @@
+partial alphanumeric_keys modifier_keys 
+xkb_symbols "basic" {
+
+    name[Group1]= "English (US)";
+
+    // Alphanumeric section
+    key <TLDE> {	[     grave,	asciitilde	]	};
+    key <AE01> {	[	  1,	exclam 		]	};
+    key <AE02> {	[	  2,	at		]	};
+    key <AE03> {	[	  3,	numbersign	]	};
+    key <AE04> {	[	  4,	dollar		]	};
+    key <AE05> {	[	  5,	percent		]	};
+    key <AE06> {	[	  6,	asciicircum	]	};
+    key <AE07> {	[	  7,	ampersand	]	};
+    key <AE08> {	[	  8,	asterisk	]	};
+    key <AE09> {	[	  9,	parenleft	]	};
+    key <AE10> {	[	  0,	parenright	]	};
+    key <AE11> {	[     minus,	underscore	]	};
+    key <AE12> {	[     equal,	plus		]	};
+
+    key <AD01> {	[	  q,	Q 		]	};
+    key <AD02> {	[	  w,	W		]	};
+    key <AD03> {	[	  e,	E		]	};
+    key <AD04> {	[	  r,	R		]	};
+    key <AD05> {	[	  t,	T		]	};
+    key <AD06> {	[	  y,	Y		]	};
+    key <AD07> {	[	  u,	U		]	};
+    key <AD08> {	[	  i,	I		]	};
+    key <AD09> {	[	  o,	O		]	};
+    key <AD10> {	[	  p,	P		]	};
+    key <AD11> {	[ bracketleft,	braceleft	]	};
+    key <AD12> {	[ bracketright,	braceright	]	};
+
+    key <AC01> {	[	  a,	A 		]	};
+    key <AC02> {	[	  s,	S		]	};
+    key <AC03> {	[	  d,	D		]	};
+    key <AC04> {	[	  f,	F		]	};
+    key <AC05> {	[	  g,	G		]	};
+    key <AC06> {	[	  h,	H		]	};
+    key <AC07> {	[	  j,	J		]	};
+    key <AC08> {	[	  k,	K		]	};
+    key <AC09> {	[	  l,	L		]	};
+    key <AC10> {	[ semicolon,	colon		]	};
+    key <AC11> {	[ apostrophe,	quotedbl	]	};
+
+    key <AB01> {	[	  z,	Z 		]	};
+    key <AB02> {	[	  x,	X		]	};
+    key <AB03> {	[	  c,	C		]	};
+    key <AB04> {	[	  v,	V		]	};
+    key <AB05> {	[	  b,	B		]	};
+    key <AB06> {	[	  n,	N		]	};
+    key <AB07> {	[	  m,	M		]	};
+    key <AB08> {	[     comma,	less		]	};
+    key <AB09> {	[    period,	greater		]	};
+    key <AB10> {	[     slash,	question	]	};
+
+    key <BKSL> {	[ backslash,         bar	]	};
+    // End alphanumeric section
+};
+ 
+// Colemak symbols for xkb on X.Org Server 7.x
+// 2006-01-01 Shai Coleman, http://colemak.com/ . Public domain.
+
+// Swedish version by Arash Rouhani (undated)
+// A reattempt using Overlays (Nov 2017)
+default
+partial alphanumeric_keys
+xkb_symbols "colemak" {
+    include "us"
+    name[Group1]= "English (Colemak)";
+
+    // Alphanumeric section
+    key <TLDE> { [ grave, asciitilde, dead_tilde, asciitilde ] };
+    key <AE01> { [ 1, exclam, exclamdown, onesuperior ] };
+    key <AE02> { [ 2, at, masculine, twosuperior ] };
+    key <AE03> { [ 3, numbersign, ordfeminine, threesuperior ] };
+    key <AE04> { [ 4, dollar, cent, sterling ] };
+    key <AE05> { [ 5, percent, EuroSign, yen ] };
+    key <AE06> { [ 6, asciicircum, hstroke, Hstroke ] };
+    key <AE07> { [ 7, ampersand, eth, ETH ] };
+    key <AE08> { [ 8, asterisk, thorn, THORN ] };
+    key <AE09> { [ 9, parenleft, leftsinglequotemark, leftdoublequotemark ] };
+    key <AE10> { [ 0, parenright, rightsinglequotemark, rightdoublequotemark ] };
+    key <AE11> { [ minus, underscore, endash, emdash ] };
+    key <AE12> { [ equal, plus, multiply, division ] };
+
+    key <AD01> { [ q, Q, adiaeresis, Adiaeresis ] };
+    key <AD02> { [ w, W, Home, Home ] };
+    key <AD03> { [ f, F, End, End ] };
+    key <AD04> { [ p, P, End, End ] };
+    key <AD05> { [ g, G, dead_ogonek, asciitilde ] };
+    key <AD06> { [ j, J, dstroke, Dstroke ] };
+    key <AD07> { [ l, L, Next, Next ] };
+    key <AD08> { [ u, U, Next, Next ] };
+    key <AD09> { [ y, Y, Prior, Prior ] };
+    key <AD10> { [ semicolon, colon, odiaeresis, Odiaeresis ] };
+    key <AD11> { [ bracketleft, braceleft, guillemotleft, 0x1002039 ] };
+    key <AD12> { [ bracketright, braceright, guillemotright, 0x100203a ] };
+    key <BKSL> { [ backslash, bar, asciitilde, asciitilde ] };
+
+    key <AC01> { [ a, A, adiaeresis, Adiaeresis] };
+    key <AC02> { [ r, R, Escape, Return ] };
+    key <AC03> { [ s, S, Left, Left] };
+    key <AC04> { [ t, T, Right, Right] };
+    key <AC05> { [ d, D, dead_diaeresis, asciitilde ] };
+    key <AC06> { [ h, H, dead_caron, asciitilde ] };
+    key <AC07> { [ n, N, Down, Down] };
+    key <AC08> { [ e, E, Up, Up] };
+    key <AC09> { [ i, I, aring, Aring ] };
+    key <AC10> { [ o, O, odiaeresis, Odiaeresis ] };
+    key <AC11> { [ apostrophe, quotedbl, otilde, Otilde ] };
+
+    key <AB01> { [ z, Z, XF86AudioStop, AE ] };
+    key <AB02> { [ x, X, XF86AudioPlay, asciitilde ] };
+    key <AB03> { [ c, C, XF86AudioPrev, Ccedilla ] };
+    key <AB04> { [ v, V, XF86AudioNext, OE ] };
+    key <AB05> { [ b, B, dead_breve, asciitilde ] };
+    key <AB06> { [ k, K, dead_abovering, asciitilde ] };
+    key <AB07> { [ m, M, XF86AudioLowerVolume, asciitilde ] };
+    key <AB08> { [ comma, less, XF86AudioRaiseVolume, asciitilde ] };
+    key <AB09> { [ period, greater, XF86AudioMute, asciitilde ] };
+    key <AB10> { [ slash, question, questiondown, asciitilde ] };
+
+    key <CAPS> { [ BackSpace, BackSpace, BackSpace, BackSpace ] };
+    key <LSGT> { [ minus, underscore, endash, emdash ] };
+    key <SPCE> { [ space, space, space, nobreakspace ] };
+
+    include "level3(ralt_switch)"
+};
