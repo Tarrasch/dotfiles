@@ -67,9 +67,6 @@ bindkey ";5D" backward-word
 bindkey "5C" forward-word
 bindkey "5D" backward-word
 
-# Initialize antigen-hs
-. ~/.zsh/antigen-hs/init.zsh
-
 # Python autocompletion (http://stackoverflow.com/a/246779/621449)
 export PYTHONSTARTUP=~/.pythonrc
 
@@ -92,6 +89,9 @@ if (( ${+GOOGLE} )) && (( 1-${+GOOGLE_LAPTOP} ))
 then
  . ~/.zsh/google.zsh
 fi
+
+# Load my configs for zplug, which also initializes it.
+. ~/.zsh/zplug.zsh
 
 # Always make last command successful. Note that all errors (but the very last
 # command) is not going to be surfaced anyway.
