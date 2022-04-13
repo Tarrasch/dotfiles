@@ -21,37 +21,9 @@ sudo echo hi
 # suckless-tools: Contains slock, for the blue dead simple screen locker
 sudo apt-get install git vim zsh vim-gnome keychain silversearcher-ag xmonad suckless-tools
 
-# More dependencies, a bit more bloated dependencies
-#
-# Explenations
-# ------------
-# ghc, cabal and zlib1g-dev: For antigen-hs
-# nemo: It was in my .xsession file. Dunno if we still prefer over nautilus
-# cmake, g++ and python-dev:
-# exuberant-ctags: Some vim-plugins wants it
-sudo apt-get install ghc cabal-install zlib1g-dev nemo gnome-open-terminal cmake g++ python-dev xdotool exuberant-ctags
-
-# More crap for nowadays bloated antigen-hs
-cabal install cabal-install  # (requires zlib1g-dev)
-cabal install 'process >= 1.2'
-
 # Ok, now we can get the dotfiles...
 # --recursive to get stuff like antigen-hs submodule
-git clone --recursive https://github.com/Tarrasch/dotfiles.git
-
-# Neobundle installation
-mkdir -p ~/.vim/bundle
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-
-# Fix so that LightDM (Ubuntu login thingie) shows "Load ~/.xsession" as one of
-# the "theme" options among things like Ubuntu Unity.
-#
-# The .xsession file itself will be synced from this dotfile repo
-#
-# References
-# http://manpages.ubuntu.com/manpages/utopic/man5/Xsession.5.html
-# https://wiki.ubuntu.com/CustomXSession#LightDM_configuration (LightDM config section)
-sudo cp ~/dotfiles/.files/custom.desktop /usr/share/xsessions/custom.desktop
+git clone https://github.com/Tarrasch/dotfiles.git
 
 ##### Git config
 # This old gist is kind of related, but nowadays outdated I'll try to keep
@@ -76,15 +48,14 @@ cd ~/dotfiles
 ./.run.sh
 ```
 
-More thing to do include:
+Other tasks:
 
   * gnome-terminal:
     * Installing Solarized. [Link](https://github.com/Anthony25/gnome-terminal-colors-solarized)
     * Select airline font to "Ubuntu blah airline blah" in gnome-terminal. The
       `./.run.sh` automatically adds the selectable option though.
   * Start zsh -- install zsh plugins
-  * Start vim -- install vim plugins
+    * Run `zplug install`
   * `chsh --shell /usr/bin/zsh` (Requires re-login!)
-  * Relogin to see if chsh/xmonad works.
-  * Create [ssh keys](https://help.github.com/articles/generating-ssh-keys/#platform-linux)
+  * In personal computers, generate [ssh keys](https://help.github.com/articles/generating-ssh-keys/#platform-linux)
   * Add git info `git config --global ...`

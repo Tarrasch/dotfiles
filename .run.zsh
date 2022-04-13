@@ -19,9 +19,6 @@ do
     fi
 done
 
-mkdir "$HOME/.ssh"
-ln -s "$PWD/.ssh/rc" "$HOME/.ssh/rc"
-
 read \?" awaiting keypress ... "
 
 ##### Configure sudoers file
