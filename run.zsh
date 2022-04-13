@@ -1,12 +1,18 @@
 #!/bin/zsh
 
+if [[ ! $PWD == *dotfiles ]]; then
+    echo "must run from dotfiles directory"
+    return 1
+fi
+
 ##### Copy over files
-mkdir .local_backup/
+mkdir -p .local_backup/
 time=$(date +%s)
 bupf=.local_backup/$time/
 mkdir $bupf
+files_to_symlink=(zshrc vimrc zsh vim bin fonts gitignore-global tmux.conf)
 
-for f in $PWD/*
+for f in $files_to_symlink
 do
     echo $f
     src=$f
@@ -23,7 +29,7 @@ read \?" awaiting keypress ... "
 
 ##### Configure sudoers file
 sudo echo "Just asking for password"
-echo "run 'sudo visudo --check' to see that current state validates (before we start messing)"
+echo "run 'sudo visudo --check' to see that current state validates before we start messing"
 cat << EOL
 Ok, now we will run for you
 

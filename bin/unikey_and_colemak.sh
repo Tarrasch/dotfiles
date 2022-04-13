@@ -15,7 +15,7 @@
 #  ~/unikey_and_colemak.sh set_ibus_engine_to_eng
 #  ~/unikey_and_colemak.sh replace_ibus_deamon
 
-SWEDISH_COLEMAK=dotfiles/.swedish_colemak
+SWEDISH_COLEMAK=dotfiles/swedish_colemak
 
 case $1 in
 	enable_unikey)				
