@@ -22,3 +22,8 @@ bin/lein
 # (since I work there)
 ###################
 zsh/spotify.zsh
+
+# No idea what this is but I can't delete them ...
+fonts/.uuid
+fonts/UbuntuMono/.uuid
+
