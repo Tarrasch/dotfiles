@@ -13,10 +13,6 @@ fi
 alias ll='ls -alF'
 alias l='ls -CF'
 
-# Add template .gitignore
-alias makegitignore='cp ~/dotfiles/.files/.gitignore .'
-alias commitgitignore='makegitignore && git add .gitignore && git commit -m "Add gitignore" -- .gitignore'
-
 # jobba med latex
 mklatex() {
   (ls | grep --silent '\.tex') || return 1
@@ -28,7 +24,3 @@ alias mkmarkdown='(MD=$(ls *.m*d*) && [[ -f $MD ]] && pandoc $MD -o $(fold '"'"'
 alias mk='mklatex || mkmarkdown'
 alias view-pdf='(xdg-open *.pdf > /dev/null 2>&1)'
 alias mkv='mk && view-pdf'
-
-# other
-alias ack=ack-grep
-alias neobundle='(cd $HOME/dotfiles && vim vim/plugin-configs/neobundle.vim)'
