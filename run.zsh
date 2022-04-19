@@ -15,13 +15,13 @@ files_to_symlink=(zshrc vimrc zsh vim bin fonts gitignore-global tmux.conf)
 for f in $files_to_symlink
 do
     echo $f
-    src=$f
+    src="$PWD/$f"
     dest="$HOME/.${f##*/}"
     if diff "$src" "$dest" >/dev/null ; then
         echo $f are equal, no action taken
     else
         mv "$dest" "$bupf"
-        ln -s "$f" "$dest"
+        ln -s "$src" "$dest"
     fi
 done
 
