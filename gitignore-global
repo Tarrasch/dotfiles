@@ -1,13 +1,4 @@
 .lvimrc
-tags
-tags-te
-
-# Or ghc repo is a bitch to work with
-Setup.lhs
-.stack-work
-
-# gradle
-.gradle
 
 # backup files
 *.swp

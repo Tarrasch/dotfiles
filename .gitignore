@@ -2,26 +2,8 @@
 ###################
 .local_backup
 
-# Vim
-###################
-vim/.netrwhist
-vim/haskellmode.config
-vim/spell
-vim/bundle
 
-# XMonad
-###################
-*.errors
-xmonad-*-linux
-
-# Binaries
-###################
-bin/lein
-
-# Spotify stuff
-# (since I work there)
-###################
-zsh/spotify.zsh
+vim/cache
 
 # No idea what this is but I can't delete them ...
 fonts/.uuid
