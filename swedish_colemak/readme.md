@@ -9,13 +9,8 @@ which are independent of the language.
 
 ## Installation (most linux systems)
 
-Paste this in your terminal
-
-TODO: use the dated "us.xkb" file????
-
-    GISTDIR='https://gist.githubusercontent.com/Tarrasch/1293692/raw'
-    sudo cp /usr/share/X11/xkb/symbols/us{,-backup}
-    curl "$GISTDIR/us.xkb" | sudo tee /usr/share/X11/xkb/symbols/us > /dev/null
+    sudo cp /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us-backup
+    sudo cp ~/dotfiles/swedish_colemak/us.xkb  /usr/share/X11/xkb/symbols/us
     cd /var/lib/xkb/
     sudo rm *.xkm
 
