@@ -9,12 +9,11 @@ which are independent of the language.
 
 ## Installation (most linux systems)
 
-    sudo cp /usr/share/X11/xkb/symbols/us /usr/share/X11/xkb/symbols/us-backup
-    sudo cp ~/dotfiles/swedish_colemak/us.xkb  /usr/share/X11/xkb/symbols/us
-    cd /var/lib/xkb/
-    sudo rm *.xkm
+To directly modify the `/usr/share/X11/xkb/symbols/` files seems dangerous. I've
+had that my machine doesn't boot into any graphical interface when I've messed
+with `/usr/share/X11/xkb/symbols/`.
 
-Now log in and out and select the `English (Colemak)` layout from the GUI menus.
+See `unikey_and_colemak.sh` for usage.
 
 ## About this layout:
 
