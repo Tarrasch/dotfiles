@@ -38,7 +38,7 @@ presubmit_and_mail() {
   then
     echo "Using params to mail command: $@"
   fi
-  hg presubmit --rev "$rev_specifier" && hg mail --disable-presubmit --rev "$rev_specifier" $@
+  hg presubmit --rev "$rev_specifier" && hg mail --disable-presubmit --allow-dirty --rev "$rev_specifier" $@
 }
 
 
@@ -56,7 +56,7 @@ presubmit_reply_and_submit() {
 
   # Start doing stuff
   echo "Using http://cl/$cl_num"
-  hg presubmit --rev "cl/$cl_num" && reply_to_cl $cl_num && hg submit --rev "cl/$cl_num"
+  hg presubmit --rev "cl/$cl_num" && reply_to_cl $cl_num && hg submit --allow-dirty --rev "cl/$cl_num"
 }
 
 
