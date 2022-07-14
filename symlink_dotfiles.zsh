@@ -25,29 +25,4 @@ do
     fi
 done
 
-read \?" awaiting keypress ... "
-
-##### Configure sudoers file
-sudo echo "Just asking for password"
-echo "run 'sudo visudo --check' to see that current state validates before we start messing"
-cat << EOL
-Ok, now we will run for you
-
-sudo visudo --file=/etc/sudoers.d/arash-extra-rules
-
-and paste in the following:
-
-""""""""""""""""
-$(cat $PWD/.etc/sudoers.d/arash-extra-rules)
-""""""""""""""""
-
-EOL
-
-read \?" awaiting keypress ... "
-
-sudo visudo --file=/etc/sudoers.d/arash-extra-rules
-sudo visudo --check
-
-cat << EOL
-
-EOL
+echo "Done symlinking files"
