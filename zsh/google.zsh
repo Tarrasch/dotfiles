@@ -4,13 +4,7 @@ reply_to_cl () {
   stubby --proto2 call blade:codereview-rpc CodereviewRpcService.PublishComments "changelist_number: $1"
 }
 
-presubmit_and_reply() {
-  if (( $# != 1 ))
-  then
-    echo "expected exactly 1 param."
-    return 1
-  fi
-  rev_specifier=$1
+get_just_cl_number () {
   cl_num=$1
   # Remove "http://"
   if [[  $cl_num[1] == "h"  ]]
@@ -22,47 +16,50 @@ presubmit_and_reply() {
   then
     cl_num=${cl_num:3}
   fi
-
-  # Start doing stuff
-  echo "Using rev_specifier $rev_specifier and cl_num $cl_num"
-  hg presubmit --rev "$rev_specifier" && reply_to_cl $cl_num
+  echo $cl_num
 }
 
-presubmit_and_mail() {
-  rev_specifier=$1
-
-  # Start doing stuff
-  echo "Using rev_specifier $rev_specifier"
-  shift 1
-  if (( $# > 0 ))
-  then
-    echo "Using params to mail command: $@"
-  fi
-  hg presubmit --rev "$rev_specifier" && hg mail --disable-presubmit --allow-dirty --rev "$rev_specifier" $@
-}
-
-
-presubmit_reply_and_submit() {
+presubmit_and_reply() {
   if (( $# != 1 ))
   then
     echo "expected exactly 1 param."
     return 1
   fi
-  cl_num=$1
-  if [[  $cl_num[1] == "c"  ]]
+  rev_specifier=$1
+  cl_num=$(get_just_cl_number $rev_specifier)
+
+  echo "Using rev_specifier $rev_specifier and cl_num $cl_num"
+  if (( $# > 0 ))
   then
-    cl_num=${cl_num:3}
+    echo "Using params to presubmit: $@"
+  fi
+  hg presubmit --rev "$rev_specifier" $@ && reply_to_cl $cl_num
+}
+
+presubmit_and_mail() {
+  rev_specifier=$1
+
+  echo "Using rev_specifier $rev_specifier"
+  shift 1
+  if (( $# > 0 ))
+  then
+    echo "Using params to presubmit and mail command: $@"
+  fi
+  hg presubmit --rev "$rev_specifier" $@ && hg mail --disable-presubmit --rev "$rev_specifier" $@
+}
+
+
+presubmit_reply_and_submit() {
+  cl_num=$(get_just_cl_number $1)
+  echo "Using cl_num $cl_num"
+  if (( $# > 0 ))
+  then
+    echo "Using params to presubmit and submit command: $@"
   fi
 
-  # Start doing stuff
-  echo "Using http://cl/$cl_num"
-  hg presubmit --rev "cl/$cl_num" && reply_to_cl $cl_num && hg submit --allow-dirty --rev "cl/$cl_num"
+  hg presubmit --rev "cl/$cl_num" $@ && reply_to_cl $cl_num && hg submit --rev "cl/$cl_num" $@
 }
 
-
-get_cl_num_for_workspace() {
-  p4 -F'%clientName%' info
-}
 
 new_or_attach_piper () {
   local workspace
