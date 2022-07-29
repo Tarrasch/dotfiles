@@ -11,6 +11,6 @@ zplug "Tarrasch/zsh-i-know"
 zplug "Tarrasch/pure"
 zplug "Tarrasch/zsh-mcd"
 zplug "Tarrasch/zsh-syntax-highlighting"
-zplug "Tarrasch/zsh-history-substring-search"
+zplug "zsh-users/zsh-history-substring-search"
 
 zplug load
