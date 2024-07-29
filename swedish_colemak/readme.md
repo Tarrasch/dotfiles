@@ -64,9 +64,3 @@ I also tried to get the AltGr to be more "deep down" so more programs respect my
     sudo cp us-2019-06-03.xkb /usr/share/X11/xkb/symbols/us && xkbcomp keymap.xkb :0
 
 `xkbcomp` seems to both "reload everything" and compile and use `keymap.xkb`.
-
-## Note to self when pushing to gist
-
-I need a personal access token. I just create one for each push as I push so seldom: https://github.com/settings/tokens, I need that instead of entering my pw as stated in GitHub docs.
-
-[instructions]: http://ubuntuforums.org/showthread.php?t=18876
