@@ -1,0 +1,75 @@
+# Author and Date: Arash Rouhani on a VERY excited evening 29 July 2024.
+
+# This is whichever keyboard I find when I run `sudo target/release/evremap list-devices`
+# For example I got
+#
+#      ~/repos/evremap master
+#      ❯ sudo target/release/evremap list-devices
+#      [sudo] password for rouhani:
+#      Name: AT Translated Set 2 keyboard
+#      Path: /dev/input/event0
+#      Phys: isa0060/serio0/input0
+#
+#      < 20 other devices listed omitted>
+#
+# It seems the built in laptop keyboard was the first one though.
+
+
+device_name = "AT Translated Set 2 keyboard"
+
+# It seems this tool is before the keyboard layout is happening.
+# So in input I put the key that's there on my keyboard where I press, not what's coming out on the screen so to say.
+
+# To produce left arrow
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_D"]
+output = ["KEY_LEFT"]
+
+# To produce right arrow
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_F"]
+output = ["KEY_RIGHT"]
+
+# To produce down
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_J"]
+output = ["KEY_DOWN"]
+
+# To produce up
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_K"]
+output = ["KEY_UP"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_I"]
+output = ["KEY_PAGEDOWN"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_O"]
+output = ["KEY_PAGEUP"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_W"]
+output = ["KEY_HOME"]
+
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_E"]
+output = ["KEY_END"]
+
+# Producing the letters are a bit harder. Thankfully they're all producible in vanilla Colemak too using KEY_RIGHTALT.
+# I have to however look what has to be pressed physically to produce the letter. :)
+
+# To produce ö
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_SEMICOLON"]
+output = ["KEY_RIGHTALT", "KEY_P"]
+
+# To produce ä
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_A"]
+output = ["KEY_RIGHTALT", "KEY_Q"]
+
+# To produce å
+[[remap]]
+input = ["KEY_RIGHTALT", "KEY_L"]
+output = ["KEY_RIGHTALT", "KEY_W"]
