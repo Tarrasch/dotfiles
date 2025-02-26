@@ -22,54 +22,65 @@ device_name = "AT Translated Set 2 keyboard"
 
 # To produce left arrow
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_D"]
-output = ["KEY_LEFT"]
+input = "KEY_D"
+modifiers = ["RightAlt"]
+output = "KEY_LEFT"
 
 # To produce right arrow
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_F"]
-output = ["KEY_RIGHT"]
+input = "KEY_F"
+modifiers = ["RightAlt"]
+output = "KEY_RIGHT"
 
 # To produce down
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_J"]
-output = ["KEY_DOWN"]
+input = "KEY_J"
+modifiers = ["RightAlt"]
+output = "KEY_DOWN"
 
 # To produce up
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_K"]
-output = ["KEY_UP"]
+input = "KEY_K"
+modifiers = ["RightAlt"]
+output = "KEY_UP"
 
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_I"]
-output = ["KEY_PAGEDOWN"]
+input = "KEY_I"
+modifiers = ["RightAlt"]
+output = "KEY_PAGEDOWN"
 
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_O"]
-output = ["KEY_PAGEUP"]
+input = "KEY_O"
+modifiers = ["RightAlt"]
+output = "KEY_PAGEUP"
 
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_W"]
-output = ["KEY_HOME"]
+input = "KEY_W"
+modifiers = ["RightAlt"]
+output = "KEY_HOME"
 
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_E"]
-output = ["KEY_END"]
+input = "KEY_E"
+modifiers = ["RightAlt"]
+output = "KEY_END"
 
 # Producing the letters are a bit harder. Thankfully they're all producible in vanilla Colemak too using KEY_RIGHTALT.
 # I have to however look what has to be pressed physically to produce the letter. :)
 
 # To produce ö
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_SEMICOLON"]
-output = ["KEY_RIGHTALT", "KEY_P"]
+input = "KEY_SEMICOLON"
+modifiers = ["RightAlt"]
+output = "KEY_P"
 
 # To produce ä
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_A"]
-output = ["KEY_RIGHTALT", "KEY_Q"]
+input = "KEY_A"
+modifiers = ["RightAlt"]
+output = "KEY_Q"
 
 # To produce å
 [[remap]]
-input = ["KEY_RIGHTALT", "KEY_L"]
-output = ["KEY_RIGHTALT", "KEY_W"]
+input = "KEY_L"
+modifiers = ["RightAlt"]
+output = "KEY_W"
