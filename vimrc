@@ -31,11 +31,17 @@ set incsearch     " show search matches as you type
 " Wrap text instead of being on one line
 set linebreak
 
-" Set solarized (from `:help solarized`)
+" Set dracula theme
 syntax enable
 set background=dark
-colorscheme solarized
-set t_Co=16 " <https://github.com/sigurdga/gnome-terminal-colors-solarized>
+colorscheme dracula
+
+" Letting this sit here until I've decided to ditch solarized...
+" " Set solarized (from `:help solarized`)
+" syntax enable
+" set background=dark
+" colorscheme solarized
+" set t_Co=16 " <https://github.com/sigurdga/gnome-terminal-colors-solarized>
 
 " Use syntax highlighting
 syntax on
