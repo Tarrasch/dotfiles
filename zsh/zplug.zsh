@@ -8,9 +8,10 @@ zplug "Tarrasch/zsh-bd"
 zplug "Tarrasch/zsh-colors"
 zplug "Tarrasch/zsh-autoenv"
 zplug "Tarrasch/zsh-i-know"
-zplug "Tarrasch/pure"
+# zplug "Tarrasch/pure"  # replaced by dracula
 zplug "Tarrasch/zsh-mcd"
 zplug "Tarrasch/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-history-substring-search"
+zplug 'dracula/zsh', as:theme
 
 zplug load
