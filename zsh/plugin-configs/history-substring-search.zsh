@@ -1,3 +1,6 @@
+# July 2026: Gotta check some day if this does anything... it feels like these
+# keys haven't worked for ages.
+
 # bind UP and DOWN arrow keys for zsh-history-substring-search
 zmodload zsh/terminfo
 

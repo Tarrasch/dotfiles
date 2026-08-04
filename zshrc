@@ -35,29 +35,19 @@ addpath () {
     fi
 }
 addpath ~/.cabal/bin
-addpath ~/.local/bin
-addpath ~/.bin
-addpath ~/repos/arcanist/bin
-addpath /usr/lib/ccache  # http://askubuntu.com/a/470636/43106
-addpath ~/sbt/bin  # https://class.coursera.org/progfun-005/wiki/ToolsSetup
-addpath ~/repos/problemtools/bin
+addpath ~/.local/bin  # July 2026: Contains useful stuff, like `uv` Python package manager.
+addpath ~/.bin  # Custom programs
 
 
 # Add to completions
 fpath=(~/.zsh/plugins/completions/src $fpath)
-
-# Initialize colors
-# Necessary for
-#     $ echo "$fg[blue] hello world"
-# Like is uesd in zsh-colors
-autoload -U colors
-colors
 
 # Other modules we want to source
 . ~/.zsh/zsh_aliases
 . ~/.zsh/from-omz.zsh  # Import omz stuff
 
 ##############################
+# July 2026: Would need to verify these...
 # Key bidings
 bindkey ";5C" forward-word
 bindkey ";5D" backward-word
@@ -67,23 +57,7 @@ bindkey ";5D" backward-word
 bindkey "5C" forward-word
 bindkey "5D" backward-word
 
-# Python autocompletion (http://stackoverflow.com/a/246779/621449)
-export PYTHONSTARTUP=~/.pythonrc
-
-. ~/.zsh/util.zsh
 . ~/.zsh/plugin-configs.zsh
-
-. ~/.zsh/rsync.zsh
-
-# For some reason I always had to enter my ssh-key all the time when I
-# upgraded to 14.04. Ubuntu stopped doing keychain management for me
-# automatically. Instead, I employ this cli-software instead.
-# Nov 2015: Also only run conditionally if not sshing
-(( ! ${+GOOGLE} )) && [[ -z $SSH_TTY ]] && eval $(keychain --eval --agents ssh id_rsa)
-
-# Make netbeans and stuff work with xmonad
-# http://superuser.com/a/480682/97600
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 if (( ${+GOOGLE} )) && (( 1-${+GOOGLE_LAPTOP} ))
 then
