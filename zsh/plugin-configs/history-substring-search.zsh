@@ -8,3 +8,7 @@ else
   bindkey '^[[A' history-substring-search-up
   bindkey '^[[B' history-substring-search-down
 fi
+
+# It seems that I need this for the evremap up/down keys to work (thank you Gemini)
+bindkey '^[OA' history-substring-search-up
+bindkey '^[OB' history-substring-search-down
