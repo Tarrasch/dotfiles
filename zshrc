@@ -12,6 +12,9 @@ then
  fi
 fi
 
+# Load my configs for zplug, which also initializes it.
+. ~/.zsh/zplug.zsh
+
 # Allow extended glob patterns (like '**/' is actually '(*/)#')
 setopt extended_glob
 
@@ -42,9 +45,15 @@ addpath ~/.bin  # Custom programs
 # Add to completions
 fpath=(~/.zsh/plugins/completions/src $fpath)
 
-# Other modules we want to source
-. ~/.zsh/zsh_aliases
-. ~/.zsh/from-omz.zsh  # Import omz stuff
+## Command history configuration (from old oh-my-zsh config)
+setopt append_history
+setopt extended_history
+setopt hist_expire_dups_first
+setopt hist_ignore_dups # ignore duplication command history list
+setopt hist_ignore_space
+setopt hist_verify
+setopt inc_append_history
+setopt share_history # share command history data
 
 ##############################
 # July 2026: Would need to verify these...
@@ -63,9 +72,6 @@ if (( ${+GOOGLE} )) && (( 1-${+GOOGLE_LAPTOP} ))
 then
  . ~/.zsh/google.zsh
 fi
-
-# Load my configs for zplug, which also initializes it.
-. ~/.zsh/zplug.zsh
 
 # Always make last command successful. Note that all errors (but the very last
 # command) is not going to be surfaced anyway.
