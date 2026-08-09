@@ -56,9 +56,23 @@ set pastetoggle=<F2>
 " between them http://stackoverflow.com/a/2732336/621449
 set hidden
 
-" CtrlP shortcuts I actually still use as of 2022
-noremap k :CtrlPBuffer<CR>
-noremap l :CtrlP<CR>
+" Fzf (ctrlP replacement)
+" Find Files in project path
+function! LaunchFZFFiles()
+  packadd fzf
+  packadd fzf.vim-d2a59a9
+  execute 'Files'
+endfunction
+nnoremap <silent> l :call LaunchFZFFiles()<CR>
+
+" Find Active Buffers
+function! LaunchFZFBuffers()
+  packadd fzf
+  packadd fzf.vim-d2a59a9
+  execute 'Buffers'
+endfunction
+nnoremap <silent> k :call LaunchFZFBuffers()<CR>
+  
 
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.o,*.hi,*.bc,*.png,*.gif,*.pdf,_site,_cache,target
 

@@ -1,0 +1,58 @@
+---
+name: build
+
+on:
+  push:
+    branches: [ master, devel ]
+  pull_request:
+    branches: [ master, devel ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  LANG: C.UTF-8
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+    - uses: actions/checkout@v7
+      with:
+        fetch-depth: 0
+
+    - name: Set up Go
+      uses: actions/setup-go@v7
+      with:
+        go-version: "1.23"
+
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@95ef2b042f9d7a56d8268cba8559e2842e2ad01b # v1
+      with:
+        ruby-version: 3.4.6
+
+    - name: Install packages
+      run: |
+        sudo install -d -m 0755 /etc/apt/keyrings
+        wget -qO- https://apt.fury.io/nushell/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/fury-nushell.gpg
+        echo "deb [signed-by=/etc/apt/keyrings/fury-nushell.gpg] https://apt.fury.io/nushell/ /" | sudo tee /etc/apt/sources.list.d/fury-nushell.list
+        sudo apt-get update
+        sudo apt-get install --yes zsh fish tmux shfmt nushell
+
+    - name: Install Ruby gems
+      run: bundle install
+
+    - name: Rubocop
+      run: make lint
+
+    - name: Unit test
+      run: make test
+
+    - name: Fuzz test
+      run: |
+        go test ./src/algo/ -fuzz=FuzzIndexByteTwo -fuzztime=5s
+        go test ./src/algo/ -fuzz=FuzzLastIndexByteTwo -fuzztime=5s
+
+    - name: Integration test
+      run: make install && ./install --all && tmux new-session -d && ruby test/runner.rb --verbose
