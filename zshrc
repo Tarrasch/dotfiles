@@ -15,6 +15,15 @@ fi
 # Load my configs for zplug, which also initializes it.
 . ~/.zsh/zplug.zsh
 
+# Only alias worth keeping after I removed my zsh_aliases file.
+alias canhaz='sudo apt-get install'
+
+# Load unclear stuff I've saved ages ago.
+. ~/.zsh/omz/completions.zsh
+
+# I want ctrl+w to not delete through slashes
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
 # Allow extended glob patterns (like '**/' is actually '(*/)#')
 setopt extended_glob
 
